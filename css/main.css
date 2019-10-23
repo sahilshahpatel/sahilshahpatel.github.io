@@ -1,0 +1,87 @@
+html, body {
+    margin: 0;
+}
+
+/** Color Palette **/
+:root{
+    --light-gray: #ECECEC;
+    --dark-gray: #505050;
+}
+
+/** Responsive Design **/
+/* Don't let these elements overflow their container */
+img, embed, object, video{
+    max-width: 100%;
+}
+
+/* Keep tap targets at least 48px apart */
+a, button, .taptarget {
+    min-width: 48px;
+    min-height: 48px;
+}
+
+/** General Style **/
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+p, span, a {
+    font-family: 'Lato', sans-serif;
+}
+
+/** General Design **/
+:root{
+    --header-height: 100px;
+}
+
+header{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--light-gray);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 15px;
+}
+
+#header_title {
+    width: 40%;
+    display: flex;
+}
+
+#profile_img {
+    margin: auto;
+    margin-left: 25px;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Display as circle */
+}
+
+#name{
+    font-size: 50px;
+    line-height: var(--header-height);
+    margin: auto 0;
+    height: 100%;
+    text-align: center;
+}
+
+nav {
+    width: 60%;
+    display: flex;
+}
+
+nav a {
+    font-size: 30px;
+    line-height: var(--header-height);
+    margin: auto 0;
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    flex-grow: 1;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: var(--dark-gray);
+    color: white; 
+}

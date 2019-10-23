@@ -1,0 +1,15 @@
+#header_title{
+    width: 20%;
+}
+
+nav {
+    width: 80%;
+}
+
+#profile_img {
+    margin-right: 0;
+}
+
+#name{
+    display: none;
+}
