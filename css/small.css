@@ -13,3 +13,8 @@ nav {
 #name{
     display: none;
 }
+
+#aboutMeTextContainer {
+    width: 100%;
+    font-size: 1.5em;
+}

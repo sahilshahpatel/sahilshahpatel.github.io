@@ -1,11 +1,13 @@
 html, body {
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 /** Color Palette **/
 :root{
     --light-gray: #ECECEC;
     --dark-gray: #505050;
+    --gray-blue: #93afcc;
 }
 
 /** Responsive Design **/
@@ -21,7 +23,11 @@ a, button, .taptarget {
 }
 
 /** General Style **/
-h1, h2, h3 {
+h1 {
+    font-family: 'Handlee', sans-serif;
+}
+
+h2, h3 {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -40,7 +46,8 @@ header{
     justify-content: space-between;
     background-color: var(--light-gray);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
 }
 
 #header_title {
@@ -84,4 +91,46 @@ nav a {
 nav a:hover {
     background-color: var(--dark-gray);
     color: white; 
+}
+
+main {
+    background-color: white;
+    min-height: calc(100vh - var(--header-height))
+}
+
+#aboutMeContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    background-image: url("../images/aboutMeDenimFilter.jpg"), linear-gradient(90deg, black, black);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-color: var(--gray-blue);
+    background-blend-mode: soft-light;
+    min-height: 481px;
+    padding: 15px 0;
+    color: var(--light-gray);
+    text-align: center;
+}
+
+#aboutMeTextContainer {
+    width: 70%;
+    font-size: 1.75em;
+    margin: auto 0;
+}
+
+#About-Me {
+    margin:  0 auto;
+}
+
+#aboutMeTextContainer p {
+    width: 80%;
+    margin: 0 auto;
+}
+
+footer {
+    padding: 15px 0;
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
 }
