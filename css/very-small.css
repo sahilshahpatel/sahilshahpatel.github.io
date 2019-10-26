@@ -1,3 +1,7 @@
+html {
+    font-size: 0.6em;
+}
+
 #header_title{
     width: 100%;
     justify-content: center;

@@ -6,7 +6,9 @@ html, body {
 /** Color Palette **/
 :root{
     --light-gray: #ECECEC;
-    --dark-gray: #505050;
+    --dark-gray: rgb(80, 80, 80);
+    --dark-gray-opacity8: rgba(80, 80, 80, 0.8);
+    --dark-gray-opacity9: rgba(80, 80, 80, 0.9);
     --gray-blue: #93afcc;
 }
 
@@ -35,6 +37,11 @@ p, span, a {
     font-family: 'Lato', sans-serif;
 }
 
+a[target="_blank"]:after {
+    content: url(../images/externalLinkWhite.png);
+    margin: 0 3px 0 5px;
+}
+
 /** General Design **/
 :root{
     --header-height: 100px;
@@ -51,7 +58,7 @@ header{
 }
 
 #header_title {
-    width: 40%;
+    flex-grow: 2;
     display: flex;
 }
 
@@ -73,7 +80,7 @@ header{
 }
 
 nav {
-    width: 60%;
+    flex-grow: 3;
     display: flex;
 }
 
@@ -98,35 +105,103 @@ main {
     min-height: calc(100vh - var(--header-height))
 }
 
-#aboutMeContainer {
+.section {
     display: flex;
-    flex-direction: row-reverse;
-    width: 100%;
-    background-image: url("../images/aboutMeDenimFilter.jpg"), linear-gradient(90deg, black, black);
-    background-size: cover;
+    flex-direction: column;
     background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 1.75em;
+    padding: 50px;
+}
+
+.section h1 {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.section p {
+    margin: 0 auto;
+}
+
+#aboutMeContainer {
+    flex-direction: row-reverse;
+    background-image: url("../images/aboutMeDenimFilter.jpg"), linear-gradient(90deg, black, black);
     background-position: center left;
     background-color: var(--gray-blue);
     background-blend-mode: soft-light;
-    min-height: 481px;
-    padding: 15px 0;
     color: var(--light-gray);
-    text-align: center;
 }
 
 #aboutMeTextContainer {
     width: 70%;
-    font-size: 1.75em;
     margin: auto 0;
-}
-
-#About-Me {
-    margin:  0 auto;
 }
 
 #aboutMeTextContainer p {
     width: 80%;
-    margin: 0 auto;
+}
+
+.experienceListItem {
+    margin-top: 30px;
+}
+
+.experienceTextContainer {
+    margin-top: 0;
+}
+
+#experienceContainer {
+   background-color: var(--light-gray);
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+    --grid-item-height: 400px;
+    grid-template-columns: repeat(auto-fit, var(--grid-item-height));
+    /* This does the trick */
+    justify-content: center;
+}
+
+.gridItem {
+    /* Background image with caption/text underneath*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    flex-direction: column-reverse;
+    height: var(--grid-item-height);
+    width: var(--grid-item-height); /* Assuming square image */
+}
+
+.gridItemTextContainer {
+    /* Scroll up dark gray background from caption to display short description */
+    background-color: var(--dark-gray-opacity8);
+    --grid-item-text-container-height: 50px;
+    height: var(--grid-item-text-container-height);
+    transition: height 300ms linear, background-color 300ms linear;
+    overflow-y: hidden;
+    padding: 0 15px;
+    color: var(--light-gray);
+    font-size: 0.5em;
+}
+
+.gridItemTextContainer:hover {
+    height: 100%;
+    background-color: var(--dark-gray-opacity9);
+}
+
+.gridItemTextContainer h2 {
+    margin: 0;
+    line-height: var(--grid-item-text-container-height);
+}
+
+.gridItemTextContainer h2 a:hover, .gridItemTextContainer h2 a:visited, .gridItemTextContainer h2 a:active {
+    color: inherit;
+}
+
+#MechMania25 {
+    background-image: url(../images/MM25Square.png);
 }
 
 footer {
