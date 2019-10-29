@@ -45,6 +45,7 @@ a[target="_blank"]:after {
 /** General Design **/
 :root{
     --header-height: 100px;
+    --section-padding: 50px;
 }
 
 header{
@@ -111,12 +112,11 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 1.75em;
-    padding: 50px;
+    padding: var(--section-padding);
 }
 
 .section h1 {
     text-align: center;
-    margin: 0 auto;
     margin-bottom: 30px;
 }
 
@@ -172,6 +172,9 @@ main {
     flex-direction: column-reverse;
     height: var(--grid-item-height);
     width: var(--grid-item-height); /* Assuming square image */
+    max-height: 80vw;
+    max-width: 80vw;
+    margin: 0 auto;
 }
 
 .gridItemTextContainer {
@@ -196,7 +199,7 @@ main {
     line-height: var(--grid-item-text-container-height);
 }
 
-.gridItemTextContainer h2 a:hover, .gridItemTextContainer h2 a:visited, .gridItemTextContainer h2 a:active {
+.gridItemTextContainer h2 a, .gridItemTextContainer h2 a:hover, .gridItemTextContainer h2 a:visited, .gridItemTextContainer h2 a:active {
     color: inherit;
 }
 

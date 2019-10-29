@@ -7,3 +7,9 @@ header {
 main {
     margin-top: var(--header-height);
 }
+
+.anchorLink {
+    /* Applied to headings instead of divs because this margin technique doesn't play well with background images */
+    margin-top: calc(-1 * (var(--header-height) + var(--section-padding)));
+    padding-top: calc(var(--header-height) + var(--section-padding));
+}
