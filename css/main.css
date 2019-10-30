@@ -207,6 +207,26 @@ main {
     background-image: url(../images/MM25Square.png);
 }
 
+#Nokia-Robotics {
+    background-image: url(../images/nokiaRoboticsSquare.jpg);
+}
+
+#ECE120-Honors {
+    background-image: url(../images/ece120HonorsSquare.jpg);
+}
+
+#MechMania2018 {
+    background-image: url(../images/MM2018Square.jpeg);
+}
+
+#NHS-Website {
+    background-image: url(../images/NHSWebsiteSquare.jpg);
+}
+
+#Foodle {
+    background-image: url(../images/foodleSquare.jpg);
+}
+
 footer {
     padding: 15px 0;
     background-color: var(--dark-gray);
