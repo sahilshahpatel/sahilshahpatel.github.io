@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     scroll-behavior: smooth;
+    font-family: 'Lato', sans-serif; /* Default font */
 }
 
 /** Color Palette **/
@@ -33,13 +34,13 @@ h2, h3 {
     font-family: 'Roboto', sans-serif;
 }
 
-p, span, a {
-    font-family: 'Lato', sans-serif;
-}
-
-a[target="_blank"]:after {
+a.blankIcon[target="_blank"]:after {
     content: url(../images/externalLinkWhite.png);
     margin: 0 3px 0 5px;
+}
+
+a, a:hover, a:visited, a:active {
+    color: inherit;
 }
 
 /** General Design **/
@@ -154,24 +155,30 @@ main {
    background-color: var(--light-gray);
 }
 
+li {
+    margin: 10px 0;
+}
+
 .grid {
     display: grid;
+}
+
+#projectsGrid {
     gap: 20px;
-    --grid-item-height: 400px;
-    grid-template-columns: repeat(auto-fit, var(--grid-item-height));
-    /* This does the trick */
+    --projectsGrid-item-height: 400px;
+    grid-template-columns: repeat(auto-fit, var(--projectsGrid-item-height));
     justify-content: center;
 }
 
-.gridItem {
+#projectsGrid .gridItem {
     /* Background image with caption/text underneath*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
     display: flex;
     flex-direction: column-reverse;
-    height: var(--grid-item-height);
-    width: var(--grid-item-height); /* Assuming square image */
+    height: var(--projectsGrid-item-height);
+    width: var(--projectsGrid-item-height); /* Assuming square image */
     max-height: 80vw;
     max-width: 80vw;
     margin: 0 auto;
@@ -199,10 +206,6 @@ main {
     line-height: var(--grid-item-text-container-height);
 }
 
-.gridItemTextContainer h2 a, .gridItemTextContainer h2 a:hover, .gridItemTextContainer h2 a:visited, .gridItemTextContainer h2 a:active {
-    color: inherit;
-}
-
 #MechMania25 {
     background-image: url(../images/MM25Square.png);
 }
@@ -228,7 +231,22 @@ main {
 }
 
 footer {
-    padding: 15px 0;
+    padding: var(--section-padding);
     background-color: var(--dark-gray);
     color: var(--light-gray);
+    font-size: 1.75em;
+}
+
+footer p{
+    margin: 10px 0;
+}
+
+#Contact{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+#Contact img {
+    width: 40px;
 }
