@@ -25,8 +25,8 @@
             <nav>
                 <a href = "#About-Me">About</a>
                 <a href = "#Experience">Experience</a>
+                <a href = "#Abroad">Abroad</a>
                 <a href = "#Projects">Projects</a>
-                <a href = "#Contact">Contact</a>
             </nav>
         </header>
         <main>
@@ -34,9 +34,9 @@
                 <div id = "aboutMeTextContainer">
                     <h1 id = "About-Me" class = "anchorLink">&mdash; About Me &mdash;</h1>
                     <p>
-                        I am currently a Sophomore studying Computer Engineering at the University of Illinois Urbana-Champaign.
-                        I'm involved in multiple <a href = "https://acm.org" target = "_blank">ACM</a> special interests groups including SIGMusic
-                        and SIGGraph where I am a co-chair and a project lead respectively. As part of UIUC's 
+                        I am currently a Sophomore studying Computer Engineering at the University of Illinois Urbana-Champaign and pursuing a 
+                        minor in Spanish. I'm involved in multiple <a href = "https://acm.org" target = "_blank">ACM</a> special interests groups 
+                        including SIGMusic and SIGGraph where I am a co-chair and a project lead respectively. As part of UIUC's 
                         <a href = "https://reflectionsprojections.org" target="_blank">Reflections|Projections conference</a>, I am also the 
                         game engine lead for MechMania, an AI hackathon. My interests are varied and include audio, game development, signal processing,
                         cybersecurity, and machine learning.
@@ -70,6 +70,37 @@
                                         which had been reported by customers in the field.
                                     </li>
                                 </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id = "abroadContainer" class = "section">
+                <h1 id = "Abroad" class = "anchorLink">&mdash; Experience Abroad &mdash;</h1>
+                <div id = "abroadList">
+                    <div id = "guatemalaContainer" class = "abroadListItem">
+                        <div class = "abroadTextContainer">
+                            <h2 id = "Guatemala-Service-Project">Guatemala Service Project: January 2019</h2>
+                            <p>
+                                During my first semester at Illinois, I took an IEFX (Illinois Engineering First-Year Experience) class which culminated 
+                                in a trip to Guatemala to build houses for families in need in partnership with <a href = "https://www.theguatemalaproject.org/service-teams/" 
+                                target = "_blank" class = "blankIcon">the Guatemala Project</a>. During the semester, we learned about engineering ethics 
+                                and applied it to our own project by investigating Guatemalan culture and how it would impact our goals. Over winter 
+                                break, our class of 21 students and 2 teachers traveled to Antigua, Guatemala to meet with 
+                                <a href = "https://www.imagininguatemala.org/" target = "_blank" class = "blankIcon">Imagininguate</a>, sister organization 
+                                of the Guatemala Project. We stayed with a host family which provided us with a better cultural context for the city as 
+                                well as great practice with our Spanish! Over the two weeks that we were there, we switched between spending our day at 
+                                the worksite and going on excursions throughout the city and surrounding area. After five work days, we had built a one-room 
+                                home with a separate bathroom, outdoor stove, electricity, a window and a door.
+                            </p>
+                            <p>
+                                The experience taught me a lot about cultural awareness, the value of service, and the power of teamwork. Going in, it felt 
+                                like there was no way we could really make such a large difference in such a short time. In fact, we didn't know the first 
+                                thing about building a house before we arrived in Guatemala! But by learning from the Imagininguate workers we were able to 
+                                contribute meaningfully to the construction. At the end of our trip, we got to watch as the family 
+                                saw their new house for the first time. Many students gave their well-wishes in English and their message was translated for them. 
+                                As a Spanish-speaker, I was able to talk straight to them. To be able to communicate the happiness that I felt at that moment 
+                                in a more personal way brought profound contentment to my heart, and I could see it was reflected in their's as well.
                             </p>
                         </div>
                     </div>
@@ -120,19 +151,38 @@
                     <div id = "MechMania2018" class = "gridItem">
                         <div class = "gridItemTextContainer">
                             <h2 class = "gridItemTitle"><a href = "https://github.com/sahilshahpatel/MechMania2018" target = "_blank" class = "blankIcon">MechMania 2018</a></h2>
-                            <p class = "gridItemDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p class = "gridItemDescription">
+                                MechMania 2018 occured in September of 2018&mdash;during the beginning of my first semester at Illinois. I entered the hackathon interested in learning about
+                                basic AI and programming decision making. During the competition I created a bot that mimicked a neural network by outputting a decision based on a weighted sum
+                                of inputs. Due to a lack of time, we manually adjusted the weights based on our perception of the importance of certain bonuses instead of training the system over time.
+                                In the end, we placed 16th out of 36 teams in the rock-paper-scissors style battler. 
+                            </p>
                         </div>
                     </div>
                     <div id = "NHS-Website" class = "gridItem">
                         <div class = "gridItemTextContainer">
                             <h2 class = "gridItemTitle"><a href = "https://github.com/sahilshahpatel/LPNHS-Website" target = "_blank" class = "blankIcon">NHS Website</a></h2>
-                            <p class = "gridItemDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p class = "gridItemDescription">
+                                As part of my independent study during my senior year of high school, I decided to try to build a website for our local chapter of the National Honor Society 
+                                with a friend. At they time, they used Google Docs to keep track of who signed up to volunteer for each event. This was great for looking at records on a per-event 
+                                basis, but didn't allow students to easily see how many hours they had completed. To us, this sounded like the perfect problem for a relational database. The summer before senior year, we designed the database and a basic 
+                                web layout. Over the year we wrote the site using PHP with a MySQL database giving students the ability to easily find new events to sign up for, see their history, 
+                                and more. Administrators could access all student volunteering records and adjust them as needed as well as modify the main page 
+                                of the site. In the end, the project was not implemented by the school due to upkeep concerns. 
+                                However, we learned a lot about relational databases as well as cybersecurity by talking with our IT/Systems Manager and performing a security audit on the site.
+                            </p>
                         </div>
                     </div>
                     <div id = "Foodle" class = "gridItem">
                         <div class = "gridItemTextContainer">
                             <h2 class = "gridItemTitle"><a href = "https://github.com/sahilshahpatel/HackRidge2018" target = "_blank" class = "blankIcon">Foodle</a></h2>
-                            <p class = "gridItemDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p class = "gridItemDescription">
+                                HackRidge 2018 was the first hackathon I ever attended. The scope of the event was very general, so my group and I decided to try to create a recipe recommendation 
+                                site. Using an API called <a href = "https://www.food2fork.com/about/api" target = "_blank" class = "blankIcon">Food2Fork</a> and taking inspiration from collaborative 
+                                filtering algorithms used in other recommendation-based services like Netflix and Pandora, we built Foodle. Foodle users could search for recipes and like them, and would 
+                                recieve recommendations based on what other people who liked similar recipes also liked. Over the 24 hour period of the event, we wrote the backend with PHP and a MySQL 
+                                database and created a frontend styled with CSS. We were rewarded for our efforts with a first place medal!
+                            </p>
                         </div>
                     </div>
                 </div>

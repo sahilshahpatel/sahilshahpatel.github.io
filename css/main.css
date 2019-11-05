@@ -47,6 +47,7 @@ a, a:hover, a:visited, a:active {
 :root{
     --header-height: 100px;
     --section-padding: 50px;
+    --footer-padding: 25px;
 }
 
 header{
@@ -122,7 +123,7 @@ main {
 }
 
 .section p {
-    margin: 0 auto;
+    margin: 1em auto;
 }
 
 #aboutMeContainer {
@@ -151,12 +152,16 @@ main {
     margin-top: 0;
 }
 
-#experienceContainer {
-   background-color: var(--light-gray);
+#abroadContainer {
+    background-image: url("../images/guatemalaDenimFilter.jpg"), linear-gradient(90deg, black, black);
+    background-position: center;
+    background-color: var(--gray-blue);
+    background-blend-mode: soft-light;
+    color: var(--light-gray);
 }
 
 li {
-    margin: 10px 0;
+    margin: 1em 0;
 }
 
 .grid {
@@ -227,11 +232,11 @@ li {
 }
 
 #Foodle {
-    background-image: url(../images/foodleSquare.jpg);
+    background-image: url(../images/hackridgeSquare.jpg);
 }
 
 footer {
-    padding: var(--section-padding);
+    padding: var(--footer-padding);
     background-color: var(--dark-gray);
     color: var(--light-gray);
     font-size: 1.75em;
