@@ -211,6 +211,10 @@ li {
     line-height: var(--grid-item-text-container-height);
 }
 
+#Bahai-Game {
+    background-image: url(../images/BahaiGame.jpg);
+}
+
 #MechMania25 {
     background-image: url(../images/MM25Square.png);
 }
