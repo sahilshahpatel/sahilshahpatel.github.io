@@ -11,6 +11,7 @@ html, body {
     --dark-gray-opacity8: rgba(80, 80, 80, 0.8);
     --dark-gray-opacity9: rgba(80, 80, 80, 0.9);
     --gray-blue: #93afcc;
+    --dark-gray-blue: #88a2c5;
 }
 
 /** Responsive Design **/
@@ -144,10 +145,6 @@ main {
     width: 80%;
 }
 
-.experienceListItem {
-    margin-top: 30px;
-}
-
 .experienceTextContainer {
     margin-top: 0;
 }
@@ -158,6 +155,34 @@ main {
     background-color: var(--gray-blue);
     background-blend-mode: soft-light;
     color: var(--light-gray);
+}
+
+.glide__slide {
+    margin: 0;
+}
+
+.glide__bullets {
+    margin-top: 5px;
+    bottom: 0;
+}
+
+.glide__bullet{
+    border: 0;
+    background-color: var(--gray-blue);
+    min-height: auto;
+    min-width: auto;
+    height: 20px;
+    width: 20px;
+}
+
+.glide__bullet:hover {
+    background-color: var(--gray-blue);
+    border: 0;
+}
+
+.glide__bullet:focus {
+    background-color: var(--dark-gray);
+    border: 0;
 }
 
 li {

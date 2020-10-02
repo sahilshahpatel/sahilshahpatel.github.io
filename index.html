@@ -6,12 +6,17 @@
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Handlee&display=swap" rel="stylesheet">
         
-        <!--Stylesheets-->
+        <!--Glide Stylesheets-->
+        <link href = "css/glide.core.min.css" rel = "stylesheet" type = "text/css">
+        <link href = "css/glide.theme.min.css" rel = "stylesheet" type = "text/css">
+
+        <!--Local Stylesheets-->
         <link href = "css/main.css" rel = "stylesheet" type = "text/css">
         <link href = "css/small.css" media = "screen and (max-width: 800px)" rel = "stylesheet" type = "text/css">
         <link href = "css/very-small.css" media = "screen and (max-width: 600px)" rel = "stylesheet" type = "text/css">
         <link href = "css/tiny.css" media = "screen and (max-width: 350px)" rel = "stylesheet" type = "text/css">
         <link href = "css/sticky-nav.css" media = "screen and (min-width: 600px)" rel = "stylesheet" type = "text/css">
+
         
         <title>Sahil Patel</title>
     </head>
@@ -34,46 +39,81 @@
                 <div id = "aboutMeTextContainer">
                     <h1 id = "About-Me" class = "anchorLink">&mdash; About Me &mdash;</h1>
                     <p>
-                        I am currently a Sophomore studying Computer Engineering at the University of Illinois Urbana-Champaign and pursuing a 
+                        I am currently a Junior studying Computer Engineering at the University of Illinois Urbana-Champaign with a 
                         minor in Spanish. I'm involved in multiple <a href = "https://acm.org" target = "_blank">ACM</a> special interests groups 
-                        including SIGMusic and SIGGraph where I am a co-chair and a project lead respectively. As part of UIUC's 
+                        including SIGMusic and SIGGraph where I am a co-chair and president respectively. As part of UIUC's 
                         <a href = "https://reflectionsprojections.org" target="_blank">Reflections|Projections conference</a>, I am also the 
-                        game engine lead for MechMania, an AI hackathon. My interests are varied and include audio, game development, signal processing,
-                        cybersecurity, and machine learning.
+                        game engine lead for MechMania, an AI hackathon. My interests are varied and include audio processing, game development,
+                        and cybersecurity.
                     </p>
                 </div>
             </div>
             <div id = "experienceContainer" class = "section">
                 <h1 id = "Experience" class = "anchorLink">&mdash; Work Experience &mdash;</h1>
-                <div id = "experienceList">
-                    <div id = "nokiaContainer" class = "experienceListItem">
-                        <div class = "experienceTextContainer">
-                            <h2 id = "Nokia">Nokia: R&D Intern Summer 2019</h2>
-                            <p>
-                                This past summer I had the opportunity to intern at Nokia on the 5G and Small Cells team. Under the guidance of my
-                                mentor, I worked with the fault-correction team on three main projects:
-                                <ul>
-                                    <li>
-                                        I performed data analysis on fault correction efficiency to try to find the root cause of
-                                        large time-to-closure faults. After processing thousands of unlabeled records, we were able
-                                        to establish some thresholds which generally indicated fault correction issues. However, we
-                                        ultimately decided that the best solution moving forward would be to add a satisfaction label
-                                        to our fault correction records to better enable future data analysis.
-                                    </li>
-                                    <li>
-                                        I developed a mobile solution for data access to an on-premise database for Nokia sales representatives.
-                                        Using Microsoft Power BI and Visual Basic scripts, I automated the entire data update and sync processes
-                                        on a virtual machine.
-                                    </li>
-                                    <li>
-                                        I conducted virtual tests for an in-office 4G/5G lab site to assist developers in detecting a bug
-                                        which had been reported by customers in the field.
-                                    </li>
-                                </ul>
-                            </p>
+                <div id = "experienceList" class = "glide">
+                    <div class = "glide__track" data-glide-el = "track">
+                        <ul class = "glide__slides">
+                            <li id = "aarp" class = "glide__slide">
+                                <div id = "aarpContainer" class = "experienceListItem">
+                                    <div class = "experienceTextContainer">
+                                        <h2 id = "AARP">The Tech Nest (AARP): Software Engineer Summer/Fall 2020</h2>
+                                        <p>
+                                            In the summer and fall of 2020, I worked as at The Tech Nest, AARP's prototyping lab. As a student contractor, I was able to work on two projects:
+                                            <ul>
+                                                <li>
+                                                    I built a prototype for an Alexa voice application which taught older adults about brain health. After creating 
+                                                    this proof-of-concept and receiving positive feedback from user testing, we planned to extend the functionality 
+                                                    by making it compatible with the Google Assistant, among other objectives. I am currently continuing that work part-time.
+                                                </li>
+                                                <li>
+                                                    I used design thinking principles to advise Experience Corp in how it could be more accomodating to volunteers with 
+                                                    disabilities. This was a three month process that involved talking with Experience Corp leaders and volunteers to develop 
+                                                    a good understanding of the present situation, and to develop empathy with those who we were trying to help.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id = "nokia" class = "glide__slide">
+                                <div id = "nokiaContainer" class = "experienceListItem">
+                                    <div class = "experienceTextContainer">
+                                        <h2 id = "Nokia">Nokia: R&D Intern Summer 2019</h2>
+                                        <p>
+                                            In the summer of 2019, I had the opportunity to intern at Nokia on the 5G and Small Cells team. Under the guidance of my
+                                            mentor, I worked with the fault-correction team on two main projects:
+                                            <ul>
+                                                <li>
+                                                    I performed data analysis on fault correction efficiency to try to find the root cause of
+                                                    large time-to-closure faults. After processing thousands of unlabeled records, we were able
+                                                    to establish some thresholds which generally indicated fault correction issues. However, we
+                                                    ultimately decided that the best solution moving forward would be to add a satisfaction label
+                                                    to our fault correction records to better enable future data analysis.
+                                                </li>
+                                                <li>
+                                                    I developed a mobile solution for data access to an on-premise database for Nokia sales representatives.
+                                                    Using Microsoft Power BI and Visual Basic scripts, I automated the entire data update and sync processes
+                                                    on a virtual machine.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="glide__bullets" data-glide-el="controls[nav]">
+                            <button class="glide__bullet" data-glide-dir="=0"></button>
+                            <button class="glide__bullet" data-glide-dir="=1"></button>
                         </div>
                     </div>
                 </div>
+
+                <!--Script to enable Glide.js-->
+                <script src = "https://unpkg.com/@glidejs/glide"></script>
+                <script>
+                    new Glide('.glide').mount()
+                </script>        
             </div>
             <div id = "abroadContainer" class = "section">
                 <h1 id = "Abroad" class = "anchorLink">&mdash; Experience Abroad &mdash;</h1>
