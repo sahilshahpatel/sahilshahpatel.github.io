@@ -101,7 +101,7 @@ nav a {
 
 nav a:hover {
     background-color: var(--dark-gray);
-    color: white; 
+    color: white;
 }
 
 main {
@@ -234,6 +234,14 @@ li {
 .gridItemTextContainer h2 {
     margin: 0;
     line-height: var(--grid-item-text-container-height);
+}
+
+#MechMania26 {
+    background-image: url(../images/mm26Square.jpg);
+}
+
+#LurkingInTheDark {
+    background-image: url(../images/LurkingInTheDark.png);
 }
 
 #Bahai-Game {
