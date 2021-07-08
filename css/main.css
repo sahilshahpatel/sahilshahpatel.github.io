@@ -236,6 +236,10 @@ li {
     line-height: var(--grid-item-text-container-height);
 }
 
+#CS418 {
+    background-image: url(../images/ray-tracer.png);
+}
+
 #MechMania26 {
     background-image: url(../images/mm26Square.jpg);
 }
