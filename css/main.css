@@ -164,6 +164,7 @@ main {
 .glide__bullets {
     margin-top: 5px;
     bottom: 0;
+    z-index: auto;
 }
 
 .glide__bullet{
