@@ -1,9 +1,3 @@
-html, body {
-    margin: 0;
-    scroll-behavior: smooth;
-    font-family: 'Lato', sans-serif; /* Default font */
-}
-
 /** Color Palette **/
 :root{
     --light-gray: #ECECEC;
@@ -14,19 +8,31 @@ html, body {
     --dark-gray-blue: #88a2c5;
 }
 
-/** Responsive Design **/
-/* Don't let these elements overflow their container */
-img, embed, object, video{
-    max-width: 100%;
+/* Fix anchor links with sticky nav */
+.anchor-link::before { 
+    display: block; 
+    content: " "; 
+    margin-top: -5rem; 
+    height: 5rem; 
+    visibility: hidden; 
+    pointer-events: none;
 }
 
-/* Keep tap targets at least 48px apart */
-a, button, .taptarget {
-    min-width: 48px;
-    min-height: 48px;
+.bg-img {
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-/** General Style **/
+.bg-denim {
+    background-color: var(--gray-blue);
+    background-blend-mode: soft-light;
+    color: var(--light-gray);
+}
+
+.bg-denim a {
+    color: var(--light-gray);
+}
+
 h1 {
     font-family: 'Handlee', sans-serif;
 }
@@ -35,270 +41,16 @@ h2, h3 {
     font-family: 'Roboto', sans-serif;
 }
 
-a.blankIcon[target="_blank"]:after {
-    content: url(../images/externalLinkWhite.png);
-    margin: 0 3px 0 5px;
-}
-
-a, a:hover, a:visited, a:active {
-    color: inherit;
-}
-
-/** General Design **/
-:root{
-    --header-height: 100px;
-    --section-padding: 50px;
-    --footer-padding: 25px;
-}
-
-header{
-    height: var(--header-height);
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--light-gray);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    position: relative;
-    z-index: 1;
-}
-
-#header_title {
-    flex-grow: 2;
-    display: flex;
-}
-
-#profile_img {
-    margin: auto;
-    margin-left: 25px;
-    margin-right: 10px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%; /* Display as circle */
-}
-
-#name{
-    font-size: 50px;
-    line-height: var(--header-height);
-    margin: auto 0;
-    height: 100%;
-    text-align: center;
-}
-
-nav {
-    flex-grow: 3;
-    display: flex;
-}
-
-nav a {
-    font-size: 30px;
-    line-height: var(--header-height);
-    margin: auto 0;
-    text-decoration: none;
-    color: black;
-    height: 100%;
-    flex-grow: 1;
-    text-align: center;
-}
-
-nav a:hover {
-    background-color: var(--dark-gray);
-    color: white;
-}
-
-main {
-    background-color: white;
-    min-height: calc(100vh - var(--header-height))
-}
-
 .section {
-    display: flex;
-    flex-direction: column;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-size: 1.75em;
-    padding: var(--section-padding);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
-.section h1 {
-    text-align: center;
-    margin-bottom: 30px;
+.carousel-inner {
+    /* Make space for carousel indicators */
+    padding-bottom: 25px;
 }
 
-.section p {
-    margin: 1em auto;
-}
-
-#aboutMeContainer {
-    flex-direction: row-reverse;
-    background-image: url("../images/aboutMeDenimFilter.jpg"), linear-gradient(90deg, black, black);
-    background-position: center left;
-    background-color: var(--gray-blue);
-    background-blend-mode: soft-light;
-    color: var(--light-gray);
-}
-
-#aboutMeTextContainer {
-    width: 70%;
-    margin: auto 0;
-}
-
-#aboutMeTextContainer p {
-    width: 80%;
-}
-
-.experienceTextContainer {
-    margin-top: 0;
-}
-
-#abroadContainer {
-    background-image: url("../images/guatemalaDenimFilter.jpg"), linear-gradient(90deg, black, black);
-    background-position: center;
-    background-color: var(--gray-blue);
-    background-blend-mode: soft-light;
-    color: var(--light-gray);
-}
-
-.glide__slide {
-    margin: 0;
-}
-
-.glide__bullets {
-    margin-top: 5px;
-    bottom: 0;
-    z-index: auto;
-}
-
-.glide__bullet{
-    border: 0;
-    background-color: var(--gray-blue);
-    min-height: auto;
-    min-width: auto;
-    height: 20px;
-    width: 20px;
-}
-
-.glide__bullet:hover {
-    background-color: var(--gray-blue);
-    border: 0;
-}
-
-.glide__bullet:focus {
-    background-color: var(--dark-gray);
-    border: 0;
-}
-
-li {
-    margin: 1em 0;
-}
-
-.grid {
-    display: grid;
-}
-
-#projectsGrid {
-    gap: 20px;
-    --projectsGrid-item-height: 400px;
-    grid-template-columns: repeat(auto-fit, var(--projectsGrid-item-height));
-    justify-content: center;
-}
-
-#projectsGrid .gridItem {
-    /* Background image with caption/text underneath*/
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
-    display: flex;
-    flex-direction: column-reverse;
-    height: var(--projectsGrid-item-height);
-    width: var(--projectsGrid-item-height); /* Assuming square image */
-    max-height: 80vw;
-    max-width: 80vw;
-    margin: 0 auto;
-}
-
-.gridItemTextContainer {
-    /* Scroll up dark gray background from caption to display short description */
-    background-color: var(--dark-gray-opacity8);
-    --grid-item-text-container-height: 50px;
-    height: var(--grid-item-text-container-height);
-    transition: height 300ms linear, background-color 300ms linear;
-    overflow-y: hidden;
-    padding: 0 15px;
-    color: var(--light-gray);
-    font-size: 0.5em;
-}
-
-.gridItemTextContainer:hover {
-    height: 100%;
-    background-color: var(--dark-gray-opacity9);
-}
-
-.gridItemTextContainer h2 {
-    margin: 0;
-    line-height: var(--grid-item-text-container-height);
-}
-
-#CS418 {
-    background-image: url(../images/ray-tracer.png);
-}
-
-#ECE391 {
-    background-image: url(../images/391OS.png);
-}
-
-
-#MechMania26 {
-    background-image: url(../images/mm26Square.jpg);
-}
-
-#LurkingInTheDark {
-    background-image: url(../images/LurkingInTheDark.png);
-}
-
-#Bahai-Game {
-    background-image: url(../images/BahaiGame.jpg);
-}
-
-#MechMania25 {
-    background-image: url(../images/MM25Square.png);
-}
-
-#Nokia-Robotics {
-    background-image: url(../images/nokiaRoboticsSquare.jpg);
-}
-
-#ECE120-Honors {
-    background-image: url(../images/ece120HonorsSquare.jpg);
-}
-
-#MechMania2018 {
-    background-image: url(../images/MM2018Square.jpeg);
-}
-
-#NHS-Website {
-    background-image: url(../images/NHSWebsiteSquare.jpg);
-}
-
-#Foodle {
-    background-image: url(../images/hackridgeSquare.jpg);
-}
-
-footer {
-    padding: var(--footer-padding);
-    background-color: var(--dark-gray);
-    color: var(--light-gray);
-    font-size: 1.75em;
-}
-
-footer p{
-    margin: 10px 0;
-}
-
-#Contact{
-    width: 100%;
-    display: flex;
-    justify-content: left;
-}
-
-#Contact img {
-    width: 40px;
+.experience-item {
+    min-height: 300px;
 }
