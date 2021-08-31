@@ -33,320 +33,540 @@
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Handlee&display=swap" rel="stylesheet">
 
-        <!--Glide Stylesheets-->
-        <link href = "css/glide.core.min.css" rel = "stylesheet" type = "text/css">
-        <link href = "css/glide.theme.min.css" rel = "stylesheet" type = "text/css">
+        <!--Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
         <!--Local Stylesheets-->
-        <link href = "css/main.css" rel = "stylesheet" type = "text/css">
-        <link href = "css/small.css" media = "screen and (max-width: 800px)" rel = "stylesheet" type = "text/css">
-        <link href = "css/very-small.css" media = "screen and (max-width: 600px)" rel = "stylesheet" type = "text/css">
-        <link href = "css/tiny.css" media = "screen and (max-width: 350px)" rel = "stylesheet" type = "text/css">
-        <link href = "css/sticky-nav.css" media = "screen and (min-width: 600px)" rel = "stylesheet" type = "text/css">
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/bootstrap-addon.css" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <div id = "header_title">
-                <!--Profile Picture-->
-                <img id="profile_img" src = "images/profile.jpg" />
-                <p id = "name">Sahil Patel</p>
-            </div>
-            <nav>
-                <a href = "#About-Me">About</a>
-                <a href = "#Experience">Experience</a>
-                <a href = "#Abroad">Abroad</a>
-                <a href = "#Projects">Projects</a>
+        <header class="sticky-top">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <div class="d-inline-flex flex-col align-items-center">
+                        <img class="rounded-circle me-3" src="images/profile.jpg" style="height: 2.5rem;">
+                        <a class="navbar-brand">
+                            Sahil Patel
+                        </a>
+                    </div>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#About-Me">About</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#Experience">Experience</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#Abroad">Abroad</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#Projects">Projects</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#Socials">Socials</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
         </header>
         <main>
-            <div id = "aboutMeContainer" class = "section">
-                <div id = "aboutMeTextContainer">
-                    <h1 id = "About-Me" class = "anchorLink">&mdash; About Me &mdash;</h1>
-                    <p>
-                        I am a senior studying Computer Engineering at the University of Illinois Urbana-Champaign with a
-                        minor in Spanish. I'm involved in multiple <a href = "https://acm.org" target = "_blank">ACM</a> special interests groups
-                        including SIGGraph and SIGMusic where I am president and a former chair respectively. As part of UIUC's
-                        <a href = "https://reflectionsprojections.org" target="_blank">Reflections|Projections conference</a>, I have also held 
-                        leadership positions in MechMania, an AI hackathon, working as game engine and visualizer leads. My interests are varied 
-                        and include computer graphics, audio processing, and cybersecurity.
-                    </p>
-                </div>
-            </div>
-            <div id = "experienceContainer" class = "section">
-                <h1 id = "Experience" class = "anchorLink">&mdash; Work Experience &mdash;</h1>
-                <div id = "experienceList" class = "glide">
-                    <div class = "glide__track" data-glide-el = "track">
-                        <ul class = "glide__slides">
-                            <li class = "glide__slide">
-                                <div id = "samsungContainer" class = "experienceListItem">
-                                    <div class = "experienceTextContainer">
-                                        <h2 id = "Samsung">Samsung SARC/ACL: GPU System Software Intern Summer 2021</h2>
-                                        <p>
-                                            In the summer of 2021 I interned at Samsung's Advanced Computing Laboratory in San Jose (remotely). I was a part of the 
-                                            mobile GPU system software team, specifically working on pre-silicon simulation. My project was about using the open source
-                                            tool Verilator to create cycle-accurate C++ models from Verilog/SystemVerilog RTL. 
-                                        </p>
-                                        <p>
-                                            A large part of my time was spent learning about GPU hardware and how it is used by application level software. This helped 
-                                            me gain an appreciation for graphics APIs like OpenGL and Vulkan. 
-                                        </p>
-                                        <p>
-                                            In addition to learning more about the graphics pipeline I also developed my debugging and documentation skills as I used Verilator.
-                                            As incompatibilities between our RTL and Verilator's expectations arose, I created minimal reproducible examples of each error I came
-                                            across and wrote documentation as well.
-                                        </p>
-                                        <p>
-                                            At the end of the summer I had verilated a few submodules including cache and computation modules and documented about 20 issues with 
-                                            examples, explanations, and workarounds.
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class = "glide__slide">
-                                <div id = "aarpContainer" class = "experienceListItem">
-                                    <div class = "experienceTextContainer">
-                                        <h2 id = "AARP">The Tech Nest (AARP): Software Engineer Summer/Fall 2020</h2>
-                                        <p>
-                                            In the summer and fall of 2020, I worked as at The Tech Nest, AARP's prototyping lab. As a student contractor, I was able to work on two projects:
-                                            <ul>
-                                                <li>
-                                                    I built a prototype for an Alexa voice application which teaches older adults about brain health. After creating
-                                                    this proof-of-concept and receiving positive feedback from user testing, we extended the functionality
-                                                    by making it compatible with the Google Assistant, among other objectives.
-                                                </li>
-                                                <li>
-                                                    I used design thinking principles to advise Experience Corp in how it could be more accommodating to volunteers with
-                                                    disabilities. This was a three month process that involved talking with Experience Corp leaders and volunteers to develop
-                                                    a good understanding of the present situation, and to develop empathy with those who we were trying to help.
-                                                </li>
-                                            </ul>
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class = "glide__slide">
-                                <div id = "nokiaContainer" class = "experienceListItem">
-                                    <div class = "experienceTextContainer">
-                                        <h2 id = "Nokia">Nokia: R&D Intern Summer 2019</h2>
-                                        <p>
-                                            In the summer of 2019, I had the opportunity to intern at Nokia on the 5G and Small Cells team. Under the guidance of my
-                                            mentor, I worked with the fault-correction team on two main projects:
-                                            <ul>
-                                                <li>
-                                                    I performed data analysis on fault correction efficiency to try to find the root cause of
-                                                    large time-to-closure faults. After processing thousands of unlabeled records, we were able
-                                                    to establish some thresholds which generally indicated fault correction issues. However, we
-                                                    ultimately decided that the best solution moving forward would be to add a satisfaction label
-                                                    to our fault correction records to better enable future data analysis.
-                                                </li>
-                                                <li>
-                                                    I developed a mobile solution for data access to an on-premise database for Nokia sales representatives.
-                                                    Using Microsoft Power BI and Visual Basic scripts, I automated the entire data update and sync processes
-                                                    on a virtual machine.
-                                                </li>
-                                            </ul>
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+            <div class="section container-fluid bg-img bg-denim" style="background-position: center left;
+                background-image: url(/images/aboutMeDenimFilter.jpg), linear-gradient(90deg, black, black);">
 
-                        <div class="glide__bullets" data-glide-el="controls[nav]">
-                            <button class="glide__bullet" data-glide-dir="=0"></button>
-                            <button class="glide__bullet" data-glide-dir="=1"></button>
-                            <button class="glide__bullet" data-glide-dir="=2"></button>
-                        </div>
+                <div class="container d-flex flex-row-reverse">
+                    <div class="w-100 w-md-75 w-lg-50">
+                        <h1 id="About-Me" class="anchor-link text-center mb-4">&mdash; About Me &mdash;</h1>
+                        <p class="text-justify">
+                            I am a senior studying Computer Engineering at the University of Illinois Urbana-Champaign with a
+                            minor in Spanish. I'm involved in multiple <a href="https://acm.org" target="_blank">ACM</a> special interests groups
+                            including SIGGraph and SIGMusic where I am president and a former chair respectively. As part of UIUC's
+                            <a href="https://reflectionsprojections.org" target="_blank">Reflections|Projections conference</a>, I have also held 
+                            leadership positions in MechMania, an AI hackathon, working as game engine and visualizer leads. My interests are varied 
+                            and include computer graphics, audio processing, and cybersecurity.
+                        </p>
                     </div>
                 </div>
-
-                <!--Script to enable Glide.js-->
-                <script src = "https://unpkg.com/@glidejs/glide"></script>
-                <script>
-                    new Glide('.glide').mount()
-                </script>
             </div>
-            <div id = "abroadContainer" class = "section">
-                <h1 id = "Abroad" class = "anchorLink">&mdash; Experience Abroad &mdash;</h1>
-                <div id = "abroadList">
-                    <div id = "guatemalaContainer" class = "abroadListItem">
-                        <div class = "abroadTextContainer">
-                            <h2 id = "Guatemala-Service-Project">Guatemala Service Project: January 2019</h2>
+
+            <div class="section">
+                <h1 id="Experience" class="anchor-link text-center mb-4">&mdash; Experience &mdash;</h1>
+                <div id="experienceCarousel" class="carousel carousel-dark slide carousel-fixed-height" data-bs-ride="carousel" data-bs-interval="false">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#experienceCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#experienceCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#experienceCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+
+                    <div class="carousel-inner container w-75">
+                        <div class="carousel-item experience-item active">
+                            <h2>Samsung SARC/ACL: GPU System Software Intern Summer 2021</h2>
                             <p>
-                                During my first semester at Illinois, I took an IEFX (Illinois Engineering First-Year Experience) class which culminated
-                                in a trip to Guatemala to build houses for families in need in partnership with <a href = "https://www.theguatemalaproject.org/service-teams/"
-                                target = "_blank" class = "blankIcon">the Guatemala Project</a>. During the semester, we learned about engineering ethics
-                                and applied it to our own project by investigating Guatemalan culture and how it would impact our goals. Over winter
-                                break, our class of 21 students and 2 teachers traveled to Antigua, Guatemala to meet with
-                                <a href = "https://www.imagininguatemala.org/" target = "_blank" class = "blankIcon">Imagininguate</a>, sister organization
-                                of the Guatemala Project. We stayed with a host family which provided us with a better cultural context for the city as
-                                well as great practice with our Spanish! Over the two weeks that we were there, we switched between spending our day at
-                                the worksite and going on excursions throughout the city and surrounding area. After five work days, we had built a one-room
-                                home with a separate bathroom, outdoor stove, electricity, a window and a door.
+                                In the summer of 2021 I interned at Samsung's Advanced Computing Laboratory in San Jose (remotely). I was a part of the 
+                                mobile GPU system software team, specifically working on pre-silicon simulation. My project was about using the open source
+                                tool Verilator to create cycle-accurate C++ models from Verilog/SystemVerilog RTL. 
                             </p>
                             <p>
-                                The experience taught me a lot about cultural awareness, the value of service, and the power of teamwork. Going in, it felt
-                                like there was no way we could really make such a large difference in such a short time. In fact, we didn't know the first
-                                thing about building a house before we arrived in Guatemala! But by learning from the Imagininguate workers we were able to
-                                contribute meaningfully to the construction. At the end of our trip, we got to watch as the family saw their new house for
-                                the first time and give them our well-wishes. As a Spanish-speaker, I didn't need a translator and could to talk straight to
-                                them. To be able to communicate the happiness that I felt at that moment in a more personal way brought profound contentment
-                                to my heart, and I could see it was reflected in their's as well.
+                                A large part of my time was spent learning about GPU hardware and how it is used by application level software. This helped 
+                                me gain an appreciation for graphics APIs like OpenGL and Vulkan. 
                             </p>
+                            <p>
+                                In addition to learning more about the graphics pipeline I also developed my debugging and documentation skills as I used Verilator.
+                                As incompatibilities between our RTL and Verilator's expectations arose, I created minimal reproducible examples of each error I came
+                                across and wrote documentation as well.
+                            </p>
+                            <p>
+                                At the end of the summer I had verilated a few submodules including cache and computation modules and documented about 20 issues with 
+                                examples, explanations, and workarounds.
+                            </p>
+                        </div>
+
+                        <div class="carousel-item">
+                            <h2>The Tech Nest (AARP): Software Engineer Summer/Fall 2020</h2>
+                            <p>
+                                In the summer and fall of 2020, I worked as at The Tech Nest, AARP's prototyping lab. As a student contractor, I was able to work on two projects:
+                                <ul>
+                                    <li>
+                                        I built a prototype for an Alexa voice application which teaches older adults about brain health. After creating
+                                        this proof-of-concept and receiving positive feedback from user testing, we extended the functionality
+                                        by making it compatible with the Google Assistant, among other objectives.
+                                    </li>
+                                    <li>
+                                        I used design thinking principles to advise Experience Corp in how it could be more accommodating to volunteers with
+                                        disabilities. This was a three month process that involved talking with Experience Corp leaders and volunteers to develop
+                                        a good understanding of the present situation, and to develop empathy with those who we were trying to help.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <div class="carousel-item">
+                            <h2>Nokia: R&D Intern Summer 2019</h2>
+                            <p>
+                                In the summer of 2019, I had the opportunity to intern at Nokia on the 5G and Small Cells team. Under the guidance of my
+                                mentor, I worked with the fault-correction team on two main projects:
+                                <ul>
+                                    <li>
+                                        I performed data analysis on fault correction efficiency to try to find the root cause of
+                                        large time-to-closure faults. After processing thousands of unlabeled records, we were able
+                                        to establish some thresholds which generally indicated fault correction issues. However, we
+                                        ultimately decided that the best solution moving forward would be to add a satisfaction label
+                                        to our fault correction records to better enable future data analysis.
+                                    </li>
+                                    <li>
+                                        I developed a mobile solution for data access to an on-premise database for Nokia sales representatives.
+                                        Using Microsoft Power BI and Visual Basic scripts, I automated the entire data update and sync processes
+                                        on a virtual machine.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#experienceCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#experienceCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="section container-fluid bg-img bg-denim" style="background-position: center top;
+                background-image: url(../images/guatemalaDenimFilter.jpg), linear-gradient(90deg, black, black);">
+
+                <div class="container d-flex flex-row-reverse">
+                    <div class="w-100">
+                        <h1 id="Abroad" class="anchor-link text-center mb-4">&mdash; Abroad &mdash;</h1>
+
+                        <h2 class="fw-bold">Guatemala Service Project: January 2019</h2>
+                        <p>
+                            During my first semester at Illinois, I took an IEFX (Illinois Engineering First-Year Experience) class which culminated
+                            in a trip to Guatemala to build houses for families in need in partnership with <a href="https://www.theguatemalaproject.org/service-teams/"
+                            target="_blank">the Guatemala Project</a>. During the semester, we learned about engineering ethics
+                            and applied it to our own project by investigating Guatemalan culture and how it would impact our goals. Over winter
+                            break, our class of 21 students and 2 teachers traveled to Antigua, Guatemala to meet with
+                            <a href="https://www.imagininguatemala.org/" target="_blank">Imagininguate</a>, sister organization
+                            of the Guatemala Project. We stayed with a host family which provided us with a better cultural context for the city as
+                            well as great practice with our Spanish! Over the two weeks that we were there, we switched between spending our day at
+                            the worksite and going on excursions throughout the city and surrounding area. After five work days, we had built a one-room
+                            home with a separate bathroom, outdoor stove, electricity, a window and a door.
+                        </p>
+                        <p>
+                            The experience taught me a lot about cultural awareness, the value of service, and the power of teamwork. Going in, it felt
+                            like there was no way we could really make such a large difference in such a short time. In fact, we didn't know the first
+                            thing about building a house before we arrived in Guatemala! But by learning from the Imagininguate workers we were able to
+                            contribute meaningfully to the construction. At the end of our trip, we got to watch as the family saw their new house for
+                            the first time and give them our well-wishes. As a Spanish-speaker, I didn't need a translator and could to talk straight to
+                            them. To be able to communicate the happiness that I felt at that moment in a more personal way brought profound contentment
+                            to my heart, and I could see it was reflected in their's as well.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container section">
+                <h1 id="Projects" class="anchor-link text-center mb-4">&mdash; Projects &mdash;</h1>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/rayTracerSquare.png" class="card-img-top" alt="GPU Ray Tracer">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <div class="d-flex flex-column-reverse w-100 p-3 bg-white">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">GPU Ray Tracer</h5>
+                                        <div class="d-flex">
+                                            <a class="btn btn-outline-dark" role="button" href="https://sahilshahpatel.github.io/CS418/ray-tracer/gpu" target="_blank">
+                                                <i class="bi bi-tv"></i>
+                                            </a>
+
+                                            <a class="btn btn-outline-dark ms-1" role="button" href="https://github.com/sahilshahpatel/CS418/ray-tracer/gpu" target="_blank">
+                                                <i class="bi bi-github"></i>
+                                            </a>
+
+                                            <button class="btn btn-primary ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#rayTracerBody" aria-expanded="false" aria-controls="rayTracerBody">
+                                                <i class="bi bi-info-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="rayTracerBody" class="collapse w-100">
+                                        <p class="card-text mb-3">
+                                            A fragment shader-based ray tracer built in WebGL which supports sphere,
+                                            plane, and triangle primitives. It's accelerated with a BVH encoded into a
+                                            texture and traversed on the GPU. This project was based of of Pete Shirley's
+                                            <i>Ray Tracing in One Weekend</i>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/391OS.png" class="card-img-top" alt="My Operating System">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <div class="d-flex flex-column-reverse w-100 p-3 bg-white">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">My Operating System</h5>
+                                        <div class="d-flex">
+                                            <a class="disabled btn btn-outline-dark" role="button" href="https://github.com/sahilshahpatel/391OS" target="_blank" title="Code unavailable for academic integrity">
+                                                <i class="bi bi-github"></i>
+                                            </a>
+
+                                            <button class="btn btn-primary ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#OSBody" aria-expanded="false" aria-controls="OSBody">
+                                                <i class="bi bi-info-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="OSBody" class="collapse w-100">
+                                        <p class="card-text mb-3">
+                                            As a part of our Computer Systems Engineering course at UIUC,
+                                            we create our own operating system based on a single-processor
+                                            32-bit x86 architecture. The repository is private to prevent plaigarism.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/mm26Square.jpg" class="card-img-top" alt="MechMania 26">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <div class="d-flex flex-column-reverse w-100 p-3 bg-white">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">MechMania 26</h5>
+                                        <div class="d-flex">
+                                            <a class="btn btn-outline-dark" role="button" href="https://github.com/jackducham/mm26-engine" target="_blank">
+                                                <i class="bi bi-github"></i>
+                                            </a>
+
+                                            <button class="btn btn-primary ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#mm26Body" aria-expanded="false" aria-controls="mm26Body">
+                                                <i class="bi bi-info-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="mm26Body" class="collapse w-100">
+                                        <p class="card-text mb-3">
+                                            I was the Game Engine lead for MechMania 26, the UIUC's AI hackathon.
+                                            For this competition we created an MMO game in Java which communicated
+                                            with competitor scripts via Google's protocol buffers.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/LurkingInTheDark.png" class="card-img-top" alt="Lurking in the Dark">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <div class="d-flex flex-column-reverse w-100 p-3 bg-white">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">Lurking in the Dark</h5>
+                                        <div class="d-flex">
+                                            <a class="btn btn-outline-dark" role="button" href="https://github.com/sahilshahpatel/ece-385-final-project" target="_blank">
+                                                <i class="bi bi-github"></i>
+                                            </a>
+
+                                            <button class="btn btn-primary ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#lurkingInTheDarkBody" aria-expanded="false" aria-controls="LurkingInTheDarkBody">
+                                                <i class="bi bi-info-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="lurkingInTheDarkBody" class="collapse w-100">
+                                        <p class="card-text mb-3">
+                                            For the final project in our FPGA course, my partner and I decided to emulate the game
+                                            <a href="https://asheraryam.itch.io/lurking-in-the-dark" target="_blank" class="fst-italic">Lurking in the Dark</a>. 
+                                            We created a double-buffered graphics accelerator hardware module in SystemVerilog to control VGA output and to take
+                                            drawing requests from the software (game logic). See the <a href="../files/LurkingInTheDarkReport.pdf">final report</a>
+                                            for more detailed information and diagrams.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/BahaiGame.jpg" class="card-img-top" alt="Bahai Game">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <div class="d-flex flex-column-reverse w-100 p-3 bg-white">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">Bahai Game</h5>
+                                        <div class="d-flex">
+                                            <a class="btn btn-outline-dark" role="button" href="files/The Baha'i House of Worship Game/index.html" target="_blank">
+                                                <i class="bi bi-controller"></i>
+                                            </a>
+
+                                            <button class="btn btn-primary ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#bahaiBody" aria-expanded="false" aria-controls="bahaiBody">
+                                                <i class="bi bi-info-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="bahaiBody" class="collapse w-100">
+                                        <p class="card-text mb-3">
+                                            A historical simulation about Corinne Knight True, one of the main
+                                            people behind the Baha'i House of Worship in Wilmette, Illinois built in Inform 7, a natural language
+                                            progamming language used to create interactive fiction, or text-based games.
+                                            Made as part of a class involving historical research, and game design. 
+                                            Click <a href="files/Baha'i House of Worship Report.pdf">here</a> to see the report.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/MM25Square.png" class="card-img-top" alt="MechMania 25">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <div class="d-flex flex-column-reverse w-100 p-3 bg-white">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">MechMania 25</h5>
+                                        <div class="d-flex">
+                                            <a class="btn btn-outline-dark" role="button" href="https://github.com/HoelzelJon/mm25_game_engine" target="_blank">
+                                                <i class="bi bi-github"></i>
+                                            </a>
+
+                                            <button class="btn btn-primary ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#mm25Body" aria-expanded="false" aria-controls="mm25Body">
+                                                <i class="bi bi-info-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="mm25Body" class="collapse w-100">
+                                        <p class="card-text mb-3">
+                                            My first year on the MechMania team we built a strategy-oriented battler to be played by competitors at our annual AI hackathon.
+                                            Working on the game engine team, I helped build the engine and C++, Java, and Python starter packs for the competitors.
+                                            These scripts communicated via HTTP with the engine to beat out their opponents in an epic tournament!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/nokiaRoboticsSquare.jpg" class="card-img-top" alt="Nokia Intern Robotics">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <div class="d-flex flex-column-reverse w-100 p-3 bg-white">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">Nokia Intern Robotics</h5>
+                                        <div class="d-flex">
+                                            <a class="btn btn-outline-dark" role="button" href="https://github.com/sahilshahpatel/Nokia-Robotics-Intern-Challenge" target="_blank">
+                                                <i class="bi bi-github"></i>
+                                            </a>
+
+                                            <button class="btn btn-primary ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#nokiaRoboticsBody" aria-expanded="false" aria-controls="nokiaRoboticsBody">
+                                                <i class="bi bi-info-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="nokiaRoboticsBody" class="collapse w-100">
+                                        <p class="card-text mb-3">
+                                            During my internship at Nokia the interns competed in a three-event competition with our BOE Bots.
+                                            Each challenge required the robots to scan and interpret there environment in different ways like
+                                            escaping a maze, counting objects, and finding and encircling two towers.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/ece120HonorsSquare.jpg" class="card-img-top" alt="ECE 120 Honors Project">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <div class="d-flex flex-column-reverse w-100 p-3 bg-white">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">ECE 120 Honors Project</h5>
+                                        <div class="d-flex">
+                                            <a class="btn btn-outline-dark" role="button" href="https://github.com/sahilshahpatel/ECE120-Honors-Lab-Dual-Method-Security-System" target="_blank">
+                                                <i class="bi bi-github"></i>
+                                            </a>
+
+                                            <button class="btn btn-primary ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#ece120Body" aria-expanded="false" aria-controls="ece120Body">
+                                                <i class="bi bi-info-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="ece120Body" class="collapse w-100">
+                                        <p class="card-text mb-3">
+                                            In the honors section of our Introduction to Computing class my group learned about Arduinos, RFID, keypads, and LCDs by building a dual-method security system.
+                                            A user can either scan an RFID card or enter a passcode to gain access. To learn more about ICs we built the comparator using XNOR gates rather than doing it
+                                            through the Arduino. Check out the full report <a href="files/ECE 120 Honors Lab Report.pdf">here</a>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/MM2018Square.jpeg" class="card-img-top" alt="MechMania 2018">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <div class="d-flex flex-column-reverse w-100 p-3 bg-white">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">MechMania 2018</h5>
+                                        <div class="d-flex">
+                                            <a class="btn btn-outline-dark" role="button" href="https://github.com/sahilshahpatel/MechMania2018" target="_blank">
+                                                <i class="bi bi-github"></i>
+                                            </a>
+
+                                            <button class="btn btn-primary ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#mm2018Body" aria-expanded="false" aria-controls="mm2018Body">
+                                                <i class="bi bi-info-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="mm2018Body" class="collapse w-100">
+                                        <p class="card-text mb-3">
+                                            My first semester on campus I competed in MechMania 2018. MechMania is a 24-hour AI hackathon where contestants are given
+                                            a game and must right bots to implement a strategy of their choice. We created a weights-and-biases bot and set the parameters manually
+                                            based on our perception of the best strategy.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/NHSWebsiteSquare.jpg" class="card-img-top" alt="NHS Website">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <div class="d-flex flex-column-reverse w-100 p-3 bg-white">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">NHS Website</h5>
+                                        <div class="d-flex">
+                                            <a class="btn btn-outline-dark" role="button" href="https://github.com/sahilshahpatel/NHS-Website" target="_blank">
+                                                <i class="bi bi-github"></i>
+                                            </a>
+
+                                            <button class="btn btn-primary ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#nhsWebsiteBody" aria-expanded="false" aria-controls="nhsWebsiteBody">
+                                                <i class="bi bi-info-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="nhsWebsiteBody" class="collapse w-100">
+                                        <p class="card-text mb-3">
+                                            For a CS independent during my senior year of high school, I built a website for our local chapter of the National Honor Society.
+                                            Using an SQL database we made it easy for administrators to see which events were full and for students to see how many hours they had.
+                                            We also were able to talk to our IT/Systems Manager about cybersecurity on the web.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/hackridgeSquare.jpg" class="card-img-top" alt="Foodle">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <div class="d-flex flex-column-reverse w-100 p-3 bg-white">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">Foodle</h5>
+                                        <div class="d-flex">
+                                            <a class="btn btn-outline-dark" role="button" href="https://github.com/sahilshahpatel/HackRidge2018" target="_blank">
+                                                <i class="bi bi-github"></i>
+                                            </a>
+
+                                            <button class="btn btn-primary ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#foodleBody" aria-expanded="false" aria-controls="foodleBody">
+                                                <i class="bi bi-info-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="foodleBody" class="collapse w-100">
+                                        <p class="card-text mb-3">
+                                            At my first hackathon, HackRidge 2018, my team decided to create recipe recommendation website. We took inspiration from
+                                            collaborative filtering algorithms and other recommendation-based services to build Foodle. Foodle users could like recipes
+                                            and receive recommendations based on similar users. At the end, our project was awarded a first place medal!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id = "projectsContainer" class = "section">
-                <h1 id = "Projects" class = "anchorLink">&mdash; Projects &mdash;</h1>
-                <div id = "projectsGrid" class = "grid">
-                    <div id = "CS418" class = "gridItem">
-                        <div class = "gridItemTextContainer">
-                            <h2 class = "gridItemTitle"><a href = "https://sahilshahpatel.github.io/CS418/">CS 418: Computer Graphics</a></h2>
-                            <p class = "gridItemDescription">
-                                I joined SIGGraph my freshman year of college, but it wasn't until my junior year that I was able to take CS 418: Interactive Computer Graphics. In 
-                                this class we learned about the graphics pipeline and made many toy examples with WebGL to solidify the concepts taught in lecture. I am especially 
-                                proud of the extra-credit project I did: my <a style="font-weight:bold;" href="https://sahilshahpatel.github.io/CS418/ray-tracer/gpu/">ray-tracer</a>. I initially began writing 
-                                it in JavaScript but decided to switch to using OpenGL as a way to better learn WebGL and GLSL (and also to get operator-overloaded vector math!)
-                            </p>
-                        </div>
-                    </div>
-                    <div id = "ECE391" class = "gridItem">
-                        <div class = "gridItemTextContainer">
-                            <h2 class = "gridItemTitle">391OS: My Operating System</h2>
-                            <p class = "gridItemDescription">
-                                The coolest part of UIUC's computer engineering curriculum is ECE 391: Computer Systems Engineering. Most of the class is focused on one project 
-                                completed in five phases: building our own operating system. Using QEMU for emulation, we write a kernel to interface with hardware. The OS 
-                                has a few basic drivers including for the read-only file system, the real-time clock, and the keyboard. The most interesting part of the project 
-                                was implementing execute and halt system calls using x86 assembly for context switching. In the course of the project we had to look at a lot of 
-                                Intel documentation to understand how to work with the processor on, for example, memory paging. My repository for this project is currently 
-                                private in the interest of preventing plagiarism, but you may contact me to learn more.
-                            </p>
-                        </div>
-                    </div>
-                    <div id = "MechMania26" class = "gridItem">
-                        <div class = "gridItemTextContainer">
-                            <h2 class = "gridItemTitle"><a href = "https://github.com/jackducham/mm26-engine" target = "_blank" class = "blankIcon">MechMania 26</a></h2>
-                            <p class = "gridItemDescription">
-                                Starting with MechMania 26, I became the Game Engine Lead for the MechMania team. As Engine Lead, I was in charge of the design of
-                                our system and organizing the communication between our system, the contestant's code, and our infrastructure. In this year, we decided
-                                to try using Google's protocol buffers instead of JSON objects to communicate between our systems. The engine itself was written in Java
-                                with multiple HTTP servers for different types of communications, and the contestant starter packs were written in Python and Java, also
-                                with an HTTP server to communicate with engine. The game idea for MechMania 26 was a persistent MMO game. The idea of persistence is
-                                something MechMania had never attempted before, so it was a great challenge and learning experience to attempt it. The lessons I learned
-                                during my first year as Game Engine Lead will help me improve designs for MechMania 27, which is underway.
-                            </p>
-                        </div>
-                    </div>
-                    <div id = "LurkingInTheDark" class = "gridItem">
-                        <div class = "gridItemTextContainer">
-                            <h2 class = "gridItemTitle"><a href = "https://github.com/sahilshahpatel/ece-385-final-project" target = "_blank" class = "blankIcon">Lurking in the Dark</a></h2>
-                            <p class = "gridItemDescription">
-                                For ECE 385, our FPGA course, we were allowed to propose any final project which we felt demonstrated the principles of digital system
-                                design that we had learned over the semester. My partner and I decided to emulate the game
-                                <a href = "https://asheraryam.itch.io/lurking-in-the-dark" target = "_blank" class = "blankIcon">Lurking in the Dark</a>, originally created
-                                as part of a game jam. This arcade-style game was perfect because it was simple enough to understand, and required minimal game logic (written
-                                in C), which allowed us to focus on the graphics accelerator. Because we used the NIOS II/e processor, which is quite slow, trying to write to
-                                frame buffers through software would be much too slow. Instead we created hardware modules in System Verilog to control VGA output and to take
-                                drawing requests from the software. We used a double-buffered approach with separate controllers for each and a scheduler to switch between the two.
-                                See the <a href = "../files/LurkingInTheDarkReport.pdf">final report</a> for more detailed information and diagrams.
-                            </p>
-                        </div>
-                    </div>
-                    <div id = "Bahai-Game" class = "gridItem">
-                        <div class = "gridItemTextContainer">
-                            <h2 class = "gridItemTitle"><a href = "files/The Baha'i House of Worship Game/index.html">Baha'i Temple Game</a></h2>
-                            <p class = "gridItemDescription">
-                                As part of the class GCL 143 - Mapping Inequalities, I wrote a historical simulation about Corinne Knight True, one of the main
-                                people behind the Baha'i House of Worship in Wilmette, Illinois. Throughout the semester, we learned Inform 7, a natural language
-                                progamming language used to create interactive fiction, or text-based games. Our class involved intensive historical research,
-                                learning game design principles, and developing proficiency in Inform. Click <a href = "files/Baha'i House of Worship Report.pdf">here</a> to see the report. <b>Click the link above to play the game.</b>
-                            </p>
-                        </div>
-                    </div>
-                    <div id = "MechMania25" class = "gridItem">
-                        <div class = "gridItemTextContainer">
-                            <h2 class = "gridItemTitle"><a href = "https://github.com/HoelzelJon/mm25_game_engine" target = "_blank" class = "blankIcon">MechMania 25</a></h2>
-                            <p class = "gridItemDescription">
-                                I worked on the game engine team for MechMania 25 where we created a strategy-oriented battler designed to be played by AI which the hackathon
-                                competitors wrote. Over 24 hours, over 50 competitors in 17 teams developed their own strategies using our starter packs written in Java, Python, and C++. The starter
-                                packs abstracted out the HTTP-server-based communication between the game engine and competitor code as well as providing helper functions for
-                                path finding and targeting. The game was written to provide a lot of freedom to competitors, including the ability to design their own attack patterns
-                                and control of three mechs per match allowing for multiple strategies to be tested at once. The competition ended with a round-robin tournament to decided
-                                the champion.
-                            </p>
-                        </div>
-                    </div>
-                    <div id = "Nokia-Robotics" class = "gridItem">
-                        <div class = "gridItemTextContainer">
-                            <h2 class = "gridItemTitle"><a href = "https://github.com/sahilshahpatel/Nokia-Robotics-Intern-Challenge" target = "_blank" class = "blankIcon">Nokia Intern Robotics</a></h2>
-                            <p class = "gridItemDescription">
-                                At Nokia, aside from their work with their mentors, interns compete in a robotics challenge. Using base code written for the BOE Bot (an Arduino-based bot
-                                with four wheels and an ultrasonic sensor on a rotating turret), we competed in three separate events. For the first event, we were tasked with
-                                navigating through a maze. For the second event, we had to scan the field and park in a spot indicating how many towers there were. For the last event,
-                                we had to find two towers and drive a circle around each one. In preparation for the competition, my team first designed algorithmic solutions for each
-                                event and then set out to implement them. We learned a lot about the challenges of implementing a theoretical design once real-world errors come into play
-                                like wheel slippage and inaccurate sensor readings. Despite these hardships, our team was the only one to have a functioning program for all three events.
-                            </p>
-                        </div>
-                    </div>
-                    <div id = "ECE120-Honors" class = "gridItem">
-                        <div class = "gridItemTextContainer">
-                            <h2 class = "gridItemTitle"><a href = "https://github.com/sahilshahpatel/ECE120-Honors-Lab-Dual-Method-Security-System" target = "_blank" class = "blankIcon">ECE 120 Honors Project</a></h2>
-                            <p class = "gridItemDescription">
-                                To earn honors credit for ECE 120 (Introduction to Computing) as part of the James Scholar program, my group and I had to create a project which solved
-                                a real-world problem and used logic gates in some capacity. Our idea was to create a dual-method security system with the idea that it could be used on
-                                MTD public-transport busses at the university to allow students to get on the bus faster using their i-card for RFID authentication and with a keypad for
-                                backup use. To implement the idea, we used an Arduino with the MFRC522 RFID reader, a 3x4 matrix keypad, and an LCD screen. We used the on-board EEPROM of the
-                                Arduino to store the valid passcode and RFID tag. A serial comparator (using an XNOR gate and a flip-flop) checked if an inputted passcode/RFID tag was
-                                valid and displayed the result on the LCD screen. The full lab report can be found <a href = "files/ECE 120 Honors Lab Report.pdf">here</a>.
-                            </p>
-                        </div>
-                    </div>
-                    <div id = "MechMania2018" class = "gridItem">
-                        <div class = "gridItemTextContainer">
-                            <h2 class = "gridItemTitle"><a href = "https://github.com/sahilshahpatel/MechMania2018" target = "_blank" class = "blankIcon">MechMania 2018</a></h2>
-                            <p class = "gridItemDescription">
-                                MechMania 2018 occured in September of 2018&mdash;during the beginning of my first semester at Illinois. I entered the hackathon interested in learning about
-                                basic AI and programming decision making. During the competition I created a bot that mimicked a neural network by outputting a decision based on a weighted sum
-                                of inputs. Due to a lack of time, we manually adjusted the weights based on our perception of the importance of certain bonuses instead of training the system over time.
-                                In the end, we placed 16th out of 36 teams in the rock-paper-scissors style battler.
-                            </p>
-                        </div>
-                    </div>
-                    <div id = "NHS-Website" class = "gridItem">
-                        <div class = "gridItemTextContainer">
-                            <h2 class = "gridItemTitle"><a href = "https://github.com/sahilshahpatel/LPNHS-Website" target = "_blank" class = "blankIcon">NHS Website</a></h2>
-                            <p class = "gridItemDescription">
-                                As part of my independent study during my senior year of high school, I decided to try to build a website for our local chapter of the National Honor Society
-                                with a friend. At they time, they used Google Docs to keep track of who signed up to volunteer for each event. This was great for looking at records on a per-event
-                                basis, but didn't allow students to easily see how many hours they had completed. To us, this sounded like the perfect problem for a relational database. The summer before senior year, we designed the database and a basic
-                                web layout. Over the year we wrote the site using PHP with a MySQL database giving students the ability to easily find new events to sign up for, see their history,
-                                and more. Administrators could access all student volunteering records and adjust them as needed as well as modify the main page
-                                of the site. In the end, the project was not implemented by the school due to upkeep concerns.
-                                However, we learned a lot about relational databases as well as cybersecurity by talking with our IT/Systems Manager and performing a security audit on the site.
-                            </p>
-                        </div>
-                    </div>
-                    <div id = "Foodle" class = "gridItem">
-                        <div class = "gridItemTextContainer">
-                            <h2 class = "gridItemTitle"><a href = "https://github.com/sahilshahpatel/HackRidge2018" target = "_blank" class = "blankIcon">Foodle</a></h2>
-                            <p class = "gridItemDescription">
-                                HackRidge 2018 was the first hackathon I ever attended. The scope of the event was very general, so my group and I decided to try to create a recipe recommendation
-                                site. Using an API called <a href = "https://www.food2fork.com/about/api" target = "_blank" class = "blankIcon">Food2Fork</a> and taking inspiration from collaborative
-                                filtering algorithms used in other recommendation-based services like Netflix and Pandora, we built Foodle. Foodle users could search for recipes and like them, and would
-                                recieve recommendations based on what other people who liked similar recipes also liked. Over the 24 hour period of the event, we wrote the backend with PHP and a MySQL
-                                database and created a frontend styled with CSS. We were rewarded for our efforts with a first place medal!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </main>
-        <footer>
-            <div id = "Contact">
-                <a class = "gridItem" href = "https://linkedin.com/in/sahilshahpatel" title = "Sahil on LinkedIn"><img src = "images/linkedin.svg"></a>
-                <a class = "gridItem" href = "https://github.com/sahilshahpatel" title = "Sahil on GitHub"><img src = "images/github.png"></a>
+
+        <footer class="bg-dark pt-2 pb-2 d-flex justify-content-center">
+            <div id="Socials" class="anchor-link">
+                <a class="btn btn-dark btn-lg" href="https://linkedin.com/in/sahilshahpatel" title="Sahil on LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a class="btn btn-dark btn-lg" href="https://github.com/sahilshahpatel" title="Sahil on GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
             </div>
         </footer>
+
+        <!--JavaScript-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="/js/carousel-fixed-height.js"></script>
     </body>
 </html>
