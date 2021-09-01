@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         throttleTimer = true;
         setTimeout(() => {
-            console.log("throttle over");
             callback();
             throttleTimer = false;
         }, time);
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     for(carousel of carousels) {
         let items = carousel.getElementsByClassName("carousel-item");
         let resizeItems = () => {
-            console.log("resizing");
             let maxHeight = 0;
             for(item of items) {
                 maxHeight = Math.max(maxHeight, item.clientHeight);

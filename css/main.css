@@ -54,3 +54,15 @@ h2, h3 {
 .experience-item {
     min-height: 300px;
 }
+
+
+/* Hover for GIF class */
+.card .hover-gif img:last-child {
+    display: none;
+}
+.card:hover .hover-gif img:last-child {
+    display: block;
+}
+.card:hover .hover-gif img:first-child {
+    display: none;
+}
