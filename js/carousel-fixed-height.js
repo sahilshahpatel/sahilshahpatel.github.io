@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let resizeItems = () => {
             let maxHeight = 0;
             for(item of items) {
+                const hidden = getComputedStyle(item, null).display === "none";
+                if (hidden) item.style.display = "block";
                 maxHeight = Math.max(maxHeight, item.clientHeight);
+                if (hidden) item.style.display = "";
             }
             
             for(item of items) {

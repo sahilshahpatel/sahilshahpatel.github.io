@@ -46,6 +46,10 @@ h2, h3 {
     padding-bottom: 5rem;
 }
 
+.carousel {
+    transition: height 200ms ease;
+}
+
 .carousel-inner {
     /* Make space for carousel indicators */
     padding-bottom: 25px;
