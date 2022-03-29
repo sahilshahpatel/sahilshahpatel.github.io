@@ -70,3 +70,12 @@ h2, h3 {
 .card:hover .hover-gif img:first-child {
     display: none;
 }
+
+/* Stack children */
+.stack-children {
+    display: grid;
+}
+.stack-children > * {
+    grid-column: 1;
+    grid-row: 1;
+}
