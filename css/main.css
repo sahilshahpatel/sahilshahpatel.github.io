@@ -1,0 +1,71 @@
+/* ======== Color palette ======== */
+:root {
+    /* Color palette derived from https://color.adobe.com */
+    --clr-primary-100: #E6E6FF;
+    --clr-primary-400: #CCCCFF; /* Base primary */
+    --clr-primary-500: #B8B8E6;
+    --clr-primary-600: #9999BF;
+    --clr-primary-800: #666680;
+    --clr-primary-900: #333340;
+
+    --clr-gradient: linear-gradient(90deg, rgba(226,191,255,1) 0%, rgba(204,204,255,1) 50%, rgba(191,225,255,1) 100%);
+    
+    --clr-accent-400: #BFFFD7;
+    --clr-accent-500: #ACE6C2;
+    --clr-accent-600: #8FBFA2;
+    --clr-accent-800: #60806C;
+    --clr-accent-900: #304036;
+
+    --clr-important-400: #FFAAA6;
+}
+
+
+/* ======== General styles ======== */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+body > main {
+    flex-grow: 1;
+}
+
+body > footer.primary-footer {
+    justify-self: flex-end;
+}
+
+
+/* ======== Attribute classes ======== */
+.text-gradient {
+    color: transparent;
+    background-image: var(--clr-gradient);
+    background-clip: text;
+}
+
+
+/* ======== Components ======== */
+.primary-header {
+    display: flex;
+    align-items: center;
+}
+
+.primary-header nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.primary-footer {
+    background-color: var(--clr-primary-900);
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.primary-footer nav {
+    display: grid;
+    row-gap: var(--size-100);
+    column-gap: var(--size-300);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
