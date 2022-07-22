@@ -8,15 +8,16 @@
     --clr-primary-800: #666680;
     --clr-primary-900: #333340;
 
-    --clr-gradient: linear-gradient(90deg, rgba(226,191,255,1) 0%, rgba(204,204,255,1) 50%, rgba(191,225,255,1) 100%);
-    
     --clr-accent-400: #BFFFD7;
     --clr-accent-500: #ACE6C2;
     --clr-accent-600: #8FBFA2;
     --clr-accent-800: #60806C;
     --clr-accent-900: #304036;
-
+    
     --clr-important-400: #FFAAA6;
+
+    --gradient-primary: linear-gradient(90deg, var(--clr-accent-400) 0%, var(--clr-primary-400) 100%);
+    --gradient-accent: linear-gradient(108deg,#b16cea 8%,#ff5e69 40%,#ff8a56 77%,#ffa84b 91%);
 }
 
 
@@ -24,6 +25,8 @@
 body {
     display: flex;
     flex-direction: column;
+
+    font-family: 'Rubik', sans-serif;
 }
 
 body > main {
@@ -34,16 +37,63 @@ body > footer.primary-footer {
     justify-self: flex-end;
 }
 
-
-/* ======== Attribute classes ======== */
-.text-gradient {
-    color: transparent;
-    background-image: var(--clr-gradient);
-    background-clip: text;
+.section-title {
+    font-size: var(--fs-600);
+    text-align: center;
 }
 
 
-/* ======== Components ======== */
+/* ======== Attribute classes ======== */
+.visually-hidden:not(:focus):not(:active) {
+    /* From https://www.a11yproject.com/posts/how-to-hide-content/ */
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;    
+} 
+
+.text-gradient-accent {
+    color: transparent;
+    background-image: var(--gradient-accent);
+    background-clip: text;
+    display: inline;
+}
+
+.text-gradient-primary {
+    color: transparent;
+    background-image: var(--gradient-primary);
+    background-clip: text;
+    display: inline;
+}
+
+img.cover {
+    object-fit: cover;
+}
+
+img.fill {
+    height: 100%;
+    width: 100%;
+}
+
+.center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-inline {
+    margin-inline: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* ======== Universal components ======== */
 .primary-header {
     display: flex;
     align-items: center;
@@ -54,8 +104,12 @@ body > footer.primary-footer {
     justify-content: space-evenly;
 }
 
+
 .primary-footer {
     background-color: var(--clr-primary-900);
+    color: white;
+
+    padding-block: var(--size-400);
     
     display: flex;
     flex-direction: row;
@@ -67,5 +121,33 @@ body > footer.primary-footer {
     row-gap: var(--size-100);
     column-gap: var(--size-300);
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+}
+
+.primary-footer nav a {
+    color: inherit;
+}
+
+.container {   
+    width: min(1000px, 100% - var(--size-400) * 2);
+    margin-inline: auto;
+}
+
+.container[data-fluid] {
+    width: 100%;
+    padding-inline: var(--size-400);
+}
+
+main > section.container {
+    margin-block: var(--size-600);
+}
+
+.heading-spread {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: rgba(0, 0, 0, 0.55);
 }

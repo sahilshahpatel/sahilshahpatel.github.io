@@ -7,14 +7,19 @@
     
     <title>Sahil Patel</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet"> 
     
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/util.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <header class="primary-header">
-        <a href="#" class="text-gradient fs-600">Sahil Patel</a>
+    <header class="primary-header | container">
+        <a href="/#" class="text-gradient-accent fs-800 fw-bold">Sahil Patel</a>
         <nav class="primary-nav">
             <div><a href="experience.html">Experience</a></div>
             <div><a href="abroad.html">Abroad</a></div>
@@ -23,23 +28,39 @@
     </header>
     
     <main>
-        <section>
-            <h1>A <span class="text-gradient">journey</span> in computer graphics.</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae quae temporibus nulla debitis reiciendis enim exercitationem perspiciatis dolor animi voluptatem tempore eaque, eveniet rerum delectus suscipit, adipisci inventore porro magni.</p>
+        <section id="about" class="hero | container">
+            <div>
+                <h1 class="fs-600">A journey in computer graphics.</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae quae temporibus nulla debitis reiciendis enim exercitationem perspiciatis dolor animi voluptatem tempore eaque, eveniet rerum delectus suscipit, adipisci inventore porro magni.</p>
+            </div>
+            <div>
+                <img class="fill cover" src="images/profile.jpg" alt="" loading="lazy">
+            </div>
         </section>
 
-        <section>
-            <h1>Work Experience</h1>
-            <div>
-                <h2>Samsung SARC/ACL: GPU System Software Intern</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi a iure pariatur magnam eum quod deleniti rerum laboriosam sequi modi dignissimos tenetur veniam labore, vel quos est aliquid maiores suscipit!</p>
+        <section id="experience" class="work-experience | container">
+            <h1 class="section-title">Work Experience</h1>
+            <div class="work-item">
+                <div class="work-logo | center-content">
+                    <img src="images/logos/Samsung_Orig_Wordmark_BLUE_RGB.png" alt="Samsung" loading="lazy">
+                </div>
+                <div class="work-heading">
+                    <h2 class="heading-spread | text-gradient-accent">Samsung</h2>
+                    <h3 class="fw-bold">GPU System Software Intern</h3>
+                    <span class="subtitle">June 2021 - August 2021</span>
+                </div>
+                <div class="work-description">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur ipsam, expedita eos earum quisquam explicabo, nisi maiores unde cum fugit sint culpa exercitationem excepturi in hic numquam, obcaecati repudiandae. Blanditiis.</p>
+                </div>
             </div>
 
-            <a href="experience.html">See full work history</a>
+            <div class="text-center my-200">
+                <a href="experience.html">See full work history</a>
+            </div>    
         </section>
 
-        <section>
-            <h1>Travel Abroad</h1>
+        <section id="abroad" class="abroad | container">
+            <h1 class="section-title">Travel Abroad</h1>
             <div>
                 <div>
                     <h2>KTH: Study Abroad in Stockholm, Sweden</h2>
@@ -52,8 +73,8 @@
             </div>
         </section>
 
-        <section>
-            <h1>Projects</h1>
+        <section id="projects" class="projects | container">
+            <h1 class="section-title">Projects</h1>
             <div>
                 <div>
                     <h2>Project 1</h2>
@@ -69,12 +90,14 @@
                 </div>
             </div>
 
-            <a href="projects.html">See all projects</a>
+            <div class="text-center">
+                <a href="projects.html">See all projects</a>
+            </div>
         </section>
     </main>
 
-    <footer class="primary-footer">
-        <a href="#" class="text-gradient fs-600">Sahil Patel</a>
+    <footer class="primary-footer | container" data-fluid>
+        <a href="/#" class="text-gradient-primary fs-800 fw-bold">Sahil Patel</a>
         <nav>
             <div><a href="experience.html">Experience</a></div>
             <div><a href="abroad.html">Abroad</a></div>
