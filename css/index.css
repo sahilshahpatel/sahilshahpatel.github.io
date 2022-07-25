@@ -1,12 +1,36 @@
 /* Hero section */
 section.hero {
-    display: flex;
-    flex-direction: row;
-    gap: var(--size-200);
+    display: grid;
+    grid-auto-rows: auto;
+    row-gap: var(--size-600);
 }
 
 section.hero h1 {
-    margin-bottom: var(--size-400);
+    margin-bottom: var(--size-600);
+    font-size: 5rem;
+    line-height: 6.5rem;
+    font-weight: 900;
+}
+
+section.hero img {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 700px) {
+    section.hero{
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    section.hero .hero-text-container {
+        padding-right: var(--size-400);
+    }
+
+    section.hero img {
+        width: 100%;
+        margin: 0;
+    }
 }
 
 
