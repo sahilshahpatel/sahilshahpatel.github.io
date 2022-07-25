@@ -18,6 +18,8 @@
     --fs-700: 1.75rem;
     --fs-800: 2rem;
     --fs-900: 2.25rem;
+
+    --box-shadow-light: 0px 4px 6px -1px rgba(0,0,0,0.1) , 0px 2px 4px -1px rgba(0,0,0,0.06);
 }
 
 /* ======== Utility classes ======== */
@@ -217,4 +219,9 @@
 
 .w-50 { 
     width: 50% !important;
+}
+
+
+.box-shadow-light {
+    box-shadow: var(--box-shadow-light);
 }
