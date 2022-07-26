@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/util.css">
@@ -70,9 +70,7 @@
             <div class="text-center my-200">
                 <a class="see-more-link subtitle" href="projects.html">
                     See full work history
-                    <span class="material-symbols-outlined">
-                        arrow_right_alt
-                    </span>
+                    <i class="bi-arrow-right"></i>
                 </a>    
             </div>   
         </section>
@@ -83,7 +81,7 @@
             </div>
             <div>
                 <div class="travel-card fig-caption">
-                    <img src="images/abroad/stockholm-sunset.jpg" />
+                    <img src="images/abroad/stockholm-sunset.jpg" alt="Stockholm at sunset"/>
                     <div class="caption">
                         <div class="container flex-between">
                             <div>
@@ -94,9 +92,7 @@
                             <div class="flex-column flex-center p-400">
                                 <a class="see-more-link subtitle-light" href="abroad/kth.html">
                                     Read more
-                                    <span class="material-symbols-outlined">
-                                        arrow_right_alt
-                                    </span>
+                                    <i class="bi-arrow-right"></i>
                                 </a>
                             </div>
                         </div>
@@ -104,7 +100,7 @@
                 </div>
 
                 <div class="travel-card fig-caption">
-                    <img src="images/abroad/guatemala-building.jpg" />
+                    <img src="images/abroad/guatemala-building.jpg" alt="Build day in Guatemala"/>
                     <div class="caption">
                         <div class="container flex-between">
                             <div>
@@ -115,9 +111,7 @@
                             <div class="flex-column flex-center p-400">
                                 <a class="see-more-link subtitle-light" href="abroad/imagininguate.html">
                                     Read more
-                                    <span class="material-symbols-outlined">
-                                        arrow_right_alt
-                                    </span>
+                                    <i class="bi-arrow-right"></i>
                                 </a>
                             </div>
                         </div>
@@ -128,34 +122,50 @@
 
         <section id="projects" class="projects | container">
             <h1 class="section-title">Projects</h1>
-            <div>
-                <div>
-                    <h2>Project 1</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi soluta quis ratione. Minima esse doloremque quisquam error labore sit dignissimos! Quis assumenda et laborum voluptas distinctio aliquid in minus illum!</p>
+            <div class="flow" style="--flow-spacer: var(--size-500);">
+                <div class="project-card">
+                    <div class="hover-gif">
+                        <img src="images/fluidSim.jpg" alt="Fluid simulation" loading="lazy">
+                        <img src="images/fluidSim.gif" alt="Fluid simulation" loading="lazy" data-gif>
+                    </div>
+
+                    <div class="project-content | flow" style="--flow-spacer: var(--size-200);">
+                        <h2 class="fw-bold">WebGL Fluid Simulation</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi soluta quis ratione. Minima esse doloremque quisquam error labore sit dignissimos! Quis assumenda et laborum voluptas distinctio aliquid in minus illum!</p>
+                        
+                        <div class="project-links">
+                            <a class="see-more-link subtitle" href="abroad/imagininguate.html">
+                                <span>Read more</span>
+                                <i class="bi-arrow-right"></i>
+                            </a>
+                            <div class="project-link-icons | inline-flow fs-500">
+                                <a href="/fluid-sim" title="View demo"><i class="bi-display"></i></a>
+                                <a href="https://github.com/sahilshahpatel/fluid-sim" title="View source"><i class="bi-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
+                <div class="project-card">
                     <h2>Project 2</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, nemo quo. Ipsam vero, nisi commodi repellat quaerat, officia obcaecati hic libero inventore dignissimos necessitatibus dolores ea in maxime repellendus iusto.</p>
                 </div>
-                <div>
+                <div class="project-card">
                     <h2>Project 3</h2>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos cum pariatur facilis qui perspiciatis illum, quidem numquam iusto corrupti? Perspiciatis fugiat dicta commodi inventore nesciunt eaque quia cumque. Ducimus, tempora!</p>
                 </div>
-            </div>
-
-            <div class="text-center my-200">
-                <a class="see-more-link subtitle" href="projects.html">
-                    See all projects
-                    <span class="material-symbols-outlined">
-                        arrow_right_alt
-                    </span>
-                </a>    
+                
+                <div class="text-center">
+                    <a class="see-more-link subtitle" href="projects.html">
+                        <span>See all projects</span>
+                        <i class="bi-arrow-right"></i>
+                    </a>    
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="primary-footer">
-        <a href="/#" class="text-gradient-primary fs-800 fw-bold">Sahil Patel</a>
+        <a href="/#" class="text-gradient-accent fs-800 fw-bold">Sahil Patel</a>
         <nav>
             <div><a href="experience.html">Experience</a></div>
             <div><a href="abroad.html">Abroad</a></div>
