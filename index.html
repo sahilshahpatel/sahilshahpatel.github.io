@@ -22,7 +22,9 @@
 </head>
 <body>
     <header class="primary-header">
-        <a href="/#" class="primary-logo | text-gradient-accent fs-800 fw-bold">Sahil Patel</a>
+        <div class="primary-logo">
+            <a href="/#" class="text-gradient-accent fs-800 fw-bold">Sahil Patel</a>
+        </div>
         <div class="mobile-nav-toggle">
             <span class="mobile-nav-open material-symbols-outlined">
                 menu
@@ -53,7 +55,7 @@
             <h1 class="section-title">Work Experience</h1>
             <div class="work-item">
                 <div class="work-heading">
-                    <h2 class="heading-spread | text-gradient-accent">Samsung</h2>
+                    <h2 class="heading-spread text-gradient-accent">Samsung</h2>
                     <h3 class="fw-bold">GPU System Software Intern</h3>
                     <span class="subtitle">June 2021 - August 2021</span>
                 </div>
@@ -66,7 +68,7 @@
             </div>
 
             <div class="text-center my-200">
-                <a class="see-more-link" href="projects.html">
+                <a class="see-more-link subtitle" href="projects.html">
                     See full work history
                     <span class="material-symbols-outlined">
                         arrow_right_alt
@@ -75,16 +77,51 @@
             </div>   
         </section>
 
-        <section id="abroad" class="abroad | container">
-            <h1 class="section-title">Travel Abroad</h1>
+        <section id="abroad" class="abroad">
+            <div class="container">
+                <h1 class="section-title">Travel Abroad</h1>
+            </div>
             <div>
-                <div>
-                    <h2>KTH: Study Abroad in Stockholm, Sweden</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo minima aperiam voluptatem atque libero impedit, porro quas cum nesciunt mollitia similique laudantium, sit nostrum obcaecati maxime, unde illum amet magnam?</p>
+                <div class="travel-card fig-caption">
+                    <img src="images/abroad/stockholm-sunset.jpg" />
+                    <div class="caption">
+                        <div class="container flex-between">
+                            <div>
+                                <h2 class="heading-spread text-gradient-accent">Stockholm, Sweden</h2>
+                                <h3 class="fw-bold">KTH Royal Institute of Technology</h3>
+                                <p class="subtitle-light">January 2022 - June 2022</p>
+                            </div>
+                            <div class="flex-column flex-center p-400">
+                                <a class="see-more-link subtitle-light" href="abroad/kth.html">
+                                    Read more
+                                    <span class="material-symbols-outlined">
+                                        arrow_right_alt
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h2>ImagininGuate: Service Project in Antigua, Guatemala</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore perferendis amet totam praesentium doloribus molestias laboriosam repudiandae, ex, expedita unde asperiores nemo distinctio recusandae ad! Magni cumque a quibusdam excepturi.</p>
+
+                <div class="travel-card fig-caption">
+                    <img src="images/abroad/guatemala-building.jpg" />
+                    <div class="caption">
+                        <div class="container flex-between">
+                            <div>
+                                <h2 class="heading-spread text-gradient-accent">Antigua, Guatemala</h2>
+                                <h3 class="fw-bold">ImagininGuate</h3>
+                                <p class="subtitle-light">January 2018</p>
+                            </div>
+                            <div class="flex-column flex-center p-400">
+                                <a class="see-more-link subtitle-light" href="abroad/imagininguate.html">
+                                    Read more
+                                    <span class="material-symbols-outlined">
+                                        arrow_right_alt
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -107,7 +144,7 @@
             </div>
 
             <div class="text-center my-200">
-                <a class="see-more-link" href="projects.html">
+                <a class="see-more-link subtitle" href="projects.html">
                     See all projects
                     <span class="material-symbols-outlined">
                         arrow_right_alt
