@@ -22,9 +22,9 @@
     --clr-important-400: #FFAAA6;
 
     --clr-text-dark: black;
-    --clr-text-dark-medium: rgba(0, 0, 0, 0.65);
+    --clr-text-dark-medium: rgba(0, 0, 0, 0.7);
     --clr-text-light: white;
-    --clr-text-light-medium: rgba(255, 255, 255, 0.65);
+    --clr-text-light-medium: rgba(255, 255, 255, 0.7);
 
     --gradient-primary: linear-gradient(90deg, var(--clr-accent-400) 0%, var(--clr-primary-400) 100%);
     --gradient-accent: linear-gradient(108deg,#b16cea 8%,#ff5e69 40%,#ff8a56 77%,#ffa84b 91%);
@@ -78,7 +78,7 @@ img.cover {
     object-fit: cover;
 }
 
-img.fill {
+.fill {
     height: 100%;
     width: 100%;
 }
@@ -97,9 +97,19 @@ img.fill {
     text-align: center;
 }
 
+.flex {
+    display: flex;
+}
+
 .flex-center {
     display: flex;
     justify-content: center;
+}
+
+.flex-full-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .flex-between {
@@ -110,6 +120,16 @@ img.fill {
 .flex-column {
     display: flex;
     flex-direction: column;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -263,54 +283,35 @@ main > section.container {
     text-decoration: none;
 }
 
-.see-more-link i.bi-arrow-right {
+.see-more-link i[class^="bi-arrow"] {
     margin-left: var(--size-100);
 
     transform: translateX(0px); /* Eliminates some small vertical shifting on Firefox */
     transition: transform 200ms ease;
 }
 
-.see-more-link:hover i.bi-arrow-right {
+.see-more-link:hover i[class^="bi-arrow"] {
     transform: translateX(var(--size-200));
 }
 
 
-.fig-caption {
-    position: relative;
-    display: grid;
-}
+.bg-img-overlay {
+    --overlay: rgba(0, 0, 0, 0.8);
+    background-image:
+        linear-gradient(to bottom, transparent, var(--overlay)),
+        var(--bg-img-url, linear-gradient(to bottom, var(--clr-primary-400), var(--clr-primary-400)));
 
-.fig-caption > * {
-    grid-area: 1 / 1 / 1 / 1;
-}
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: var(--bg-position, center);
 
-.fig-caption img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-.fig-caption::after {
-    content: "";
-    position: absolute;
-    display: block;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.6) 100%) repeat 0 0;
-    z-index: 1;
-}
-
-.fig-caption .caption {
-    display: block;
-    position: absolute;
-    width: 100%;
     color: var(--clr-text-light);
-    left: 0;
-    bottom: 0;
-    padding: 1em;
-    z-index: 2;
+}
+
+.bg-img-overlay[data-overlay="solid"] {
+    background-image:
+        linear-gradient(to bottom, var(--overlay), var(--overlay)),
+        var(--bg-img-url, linear-gradient(to bottom, var(--clr-primary-400), var(--clr-primary-400)));
 }
 
 
