@@ -1,3 +1,6 @@
+@import url(reset.css);
+@import url(util.css);
+
 /* ======== Color palette ======== */
 :root {
     /* Color palette derived from https://color.adobe.com */
@@ -81,12 +84,6 @@ img.cover {
 .fill {
     height: 100%;
     width: 100%;
-}
-
-.center-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .center-inline {

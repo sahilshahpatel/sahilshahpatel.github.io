@@ -13,12 +13,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/util.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
 
     <script src="js/main.js" defer></script>
+    
+    <script src="components/work-item/work-item.js"></script>
+    <script src="components/travel-card/travel-card.js"></script>
 </head>
 <body>
     <header class="primary-header">
@@ -49,26 +50,25 @@
 
         <section id="experience" class="work-experience | container">
             <h1 class="section-title">Work Experience</h1>
-            <div class="work-item">
-                <div class="work-heading">
-                    <h2 class="heading-spread text-gradient-accent">Samsung</h2>
-                    <h3 class="fw-bold">GPU System Software Intern</h3>
-                    <span class="subtitle">June 2021 - August 2021</span>
-                </div>
-                <div class="work-logo | center-content">
-                    <img src="images/logos/Samsung_Orig_Wordmark_BLUE_RGB.png" alt="Samsung" loading="lazy">
-                </div>
-                <div class="work-description">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur ipsam, expedita eos earum quisquam explicabo, nisi maiores unde cum fugit sint culpa exercitationem excepturi in hic numquam, obcaecati repudiandae. Blanditiis.</p>
-                </div>
+            
+            <div class="flow">
+                <work-item>
+                    <span slot="company">Samsung</span>
+                    <span slot="job-title">GPU System Software Intern</span>
+                    <span slot="time">June 2021 - August 2021</span>
+                    <img slot="logo" src="images/logos/Samsung_Orig_Wordmark_BLUE_RGB.png" alt="Samsung" loading="lazy">
+                    <span slot="description">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi maxime, vitae, nam laudantium iure quaerat dolorem, vel commodi praesentium nesciunt fuga in voluptatibus accusantium consequuntur quod sit earum iusto? Tempore?</p>
+                    </span>
+                </work-item>
+                
+                <div class="text-center">
+                    <a class="see-more-link subtitle" href="projects.html">
+                        See full work history
+                        <i class="bi-arrow-right"></i>
+                    </a>    
+                </div>   
             </div>
-
-            <div class="text-center my-200">
-                <a class="see-more-link subtitle" href="projects.html">
-                    See full work history
-                    <i class="bi-arrow-right"></i>
-                </a>    
-            </div>   
         </section>
 
         <section id="abroad" class="abroad">
@@ -76,37 +76,19 @@
                 <h1 class="section-title">Travel Abroad</h1>
             </div>
             <div>
-                <div class="travel-card bg-img-overlay container-fluid flex-column flex-end p-600" data-fig-overlay="solid" style="--bg-img-url: url(/images/abroad/stockholm-sunset.jpg);">
-                    <div class="container flex-between flex-wrap">
-                        <div>
-                            <h2 class="heading-spread text-gradient-accent">Stockholm, Sweden</h2>
-                            <h3 class="fw-bold">KTH Royal Institute of Technology</h3>
-                            <p class="subtitle-light">January 2022 - June 2022</p>
-                        </div>
-                        <div class="flex-column flex-center">
-                            <a class="see-more-link subtitle-light" href="abroad/kth.html">
-                                Read more
-                                <i class="bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="travel-card bg-img-overlay container-fluid flex-column flex-end p-600" data-fig-overlay="solid" style="--bg-img-url: url(/images/abroad/guatemala-building.jpg); --bg-position: 20% 55%;">
-                    <div class="container flex-between flex-wrap">
-                        <div>
-                            <h2 class="heading-spread text-gradient-accent">Antigua, Guatemala</h2>
-                            <h3 class="fw-bold">ImagininGuate</h3>
-                            <p class="subtitle-light">January 2018</p>
-                        </div>
-                        <div class="flex-column flex-center">
-                            <a class="see-more-link subtitle-light" href="abroad/imagininguate.html">
-                                Read more
-                                <i class="bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <travel-card style="--bg-img-url: url(/images/abroad/stockholm-sunset.jpg);">
+                    <span slot="where">Stockholm, Sweden</span>
+                    <span slot="what">KTH Royal Institute of Technology</span>
+                    <span slot="when">January 2022 - June 2022</span>
+                    <a slot="link" href="/abroad/kth.html"></a>
+                </travel-card>
+                
+                <travel-card style="--bg-img-url: url(/images/abroad/guatemala-building.jpg); --bg-position: 20% 55%;">
+                    <span slot="where">Antigua, Guatemala</span>
+                    <span slot="what">ImagininGuate</span>
+                    <span slot="when">January 2019</span>
+                    <a slot="link" href="/abroad/imagininguate.html"></a>
+                </travel-card>
             </div>
         </section>
 

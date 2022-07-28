@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/components/travel-card/travel-card.css">
+
+<div class="travel-card bg-img-overlay container-fluid flex-column flex-end p-600" data-fig-overlay="solid">
+    <div class="container flex-between flex-wrap">
+        <div>
+            <h2 class="heading-spread text-gradient-accent">
+                <slot name="where"></slot>
+            </h2>
+            <h3 class="fw-bold">
+                <slot name="what"></slot>
+            </h3>
+            <p class="subtitle-light">
+                <slot name="when"></slot>
+            </p>
+        </div>
+        <div class="flex-column flex-center">
+            <a class="see-more-link subtitle-light" href="#">
+                Read more
+                <i class="bi-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
