@@ -151,10 +151,11 @@ img.cover {
 }
 
 
-main > section {
+/* Flow style main sections */
+:where(main > section:not(:first-child)) {
     margin-top: var(--size-800);
-    margin-bottom: var(--size-800);
 }
+
 
 .section-title {
     font-size: var(--fs-800);

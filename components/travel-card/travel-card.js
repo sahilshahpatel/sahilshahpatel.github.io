@@ -1,34 +1,31 @@
-fetch('/components/travel-card/travel-card.html')
-.then(stream => stream.text())
-.then(html => {
+Promise.all([
+    fetch('/components/travel-card/travel-card.html')
+    .then(stream => stream.text()),
+    
+    fetch('data/abroad.json')
+    .then(stream => stream.json())
+]).then(([html, abroad_data]) => {
     class TravelCard extends HTMLElement {
         constructor() {
             super();
 
-            // Create element to store slot information
-            let data = document.createElement('div');
-            data.innerHTML = this.innerHTML;
-            const attributes = Array.from(this.attributes);
-
+            const data = abroad_data[this.dataset.slug];
             this.innerHTML = html;
 
+            this.style.setProperty("--bg-img-url", `url(${data.img.url})`);
+            this.style.setProperty("--bg-position", data.img.pos);
+
             this.querySelectorAll('slot').forEach(slot => {
-                let injection = data.querySelector(`[slot="${slot.name}"]`);
-                if(injection !== null) {
-                    slot.replaceWith(injection.cloneNode(true));
+                const injection = data[slot.name];
+                if(injection !== undefined) {
+                    slot.replaceWith(document.createTextNode(injection));
                 } else {
-                    console.warn(`Missing value for slot ${slot.name} in element ${this}`);
+                    console.warn(`Missing value for slot ${slot.name} in abroad item`, data);
                     slot.remove();
                 }
             });
 
-            attributes.forEach(attr => {
-                this.setAttribute(attr.name, attr.value);
-            });
-
-            this.querySelector('a').href = data.querySelector('[slot="link"]').href;
-
-            data.remove();
+            this.querySelector('a[href="slot:link"]').href = `/abroad/${this.dataset.slug}.html`;
         }
     }
 

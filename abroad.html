@@ -20,6 +20,12 @@
     <script src="components/primary-footer/primary-footer.js"></script>
 
     <script src="components/travel-card/travel-card.js"></script>
+
+    <style>
+        .travel-card {
+            margin-bottom: var(--size-400);
+        }
+    </style>
 </head>
 <body>
     <primary-header></primary-header>
@@ -30,20 +36,15 @@
                 fetch('/data/abroad.json')
                 .then(stream => stream.json())
                 .then(json => {
-                    let cards = "";
-                    json.forEach(item => {
-                        cards += `
-                        <travel-card style="--bg-img-url: url(${item.img});">
-                            <span slot="where">${item.where}</span>
-                            <span slot="when">${item.when}</span>
-                            <span slot="what">${item.title}</span>
-                            <a slot="link" href="${item.slug}"></a>
-                        </travel-card>
-                        `;
-                    });
-
                     const container = document.querySelector('.abroad-items');
-                    container.innerHTML = cards;
+
+                    const tmp = document.createElement('div');
+                    for(const slug in json){
+                        // Must create travel-card with slug in place, so we can't use createElement
+                        tmp.innerHTML = `<travel-card data-slug="${slug}"></travel-card>`;
+                        container.appendChild(tmp.firstChild);
+                    }
+                    tmp.remove();
                 });
             </script>
         </section>
