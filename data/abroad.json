@@ -1,0 +1,19 @@
+[
+    {
+        "slug": "kth",
+        "title": "KTH Royal Institute of Technology",
+        "where": "Stockholm, Sweden",
+        "when": "January 2022 - June 2022",
+        "img": "/images/abroad/stockholm-sunset.jpg",
+        "description": ""
+    },
+
+    {
+        "slug": "imagininguate",
+        "title": "ImagininGuate",
+        "where": "Antigua, Guatemala",
+        "when": "January 2019",
+        "img": "/images/abroad/guatemala-building.jpg",
+        "description": ""
+    }
+]

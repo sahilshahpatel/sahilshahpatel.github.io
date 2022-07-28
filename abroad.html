@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Abroad | Sahil Patel</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+    
+    <script src="components/primary-header/primary-header.js"></script>
+    <script src="components/primary-footer/primary-footer.js"></script>
+
+    <script src="components/travel-card/travel-card.js"></script>
+</head>
+<body>
+    <primary-header></primary-header>
+    
+    <main>
+        <section class="abroad-items | container">
+            <script>
+                fetch('/data/abroad.json')
+                .then(stream => stream.json())
+                .then(json => {
+                    let cards = "";
+                    json.forEach(item => {
+                        cards += `
+                        <travel-card style="--bg-img-url: url(${item.img});">
+                            <span slot="where">${item.where}</span>
+                            <span slot="when">${item.when}</span>
+                            <span slot="what">${item.title}</span>
+                            <a slot="link" href="${item.slug}"></a>
+                        </travel-card>
+                        `;
+                    });
+
+                    const container = document.querySelector('.abroad-items');
+                    container.innerHTML = cards;
+                });
+            </script>
+        </section>
+    </main>
+
+    <primary-footer></primary-footer>
+</body>
+</html>
