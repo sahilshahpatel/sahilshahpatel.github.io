@@ -4,6 +4,7 @@
         "logo": "/images/logos/Samsung_Orig_Wordmark_BLUE_RGB.png",
         "job-title": "GPU System Software Intern",
         "timeframe": "June 2022 - August 2022",
-        "description": ""
+        "description": "",
+        "description-long": "<p>In the summer of 2021 I interned at Samsung's Advanced Computing Laboratory in San Jose (remotely). I was a part of the mobile GPU system software team, specifically working on pre-silicon simulation. My project was about using the open source tool Verilator to create cycle-accurate C++ models from Verilog/SystemVerilog RTL.</p><p>A large part of my time was spent learning about GPU hardware and how it is used by application level software. This helped me gain an appreciation for graphics APIs like OpenGL and Vulkan.</p><p>In addition to learning more about the graphics pipeline I also developed my debugging and documentation skills as I used Verilator. As incompatibilities between our RTL and Verilator's expectations arose, I created minimal reproducible examples of each error I came across and wrote documentation as well.</p><p>At the end of the summer I had verilated a few submodules including cache and computation modules and documented about 20 issues with examples, explanations, and workarounds.</p>"
     }
 }

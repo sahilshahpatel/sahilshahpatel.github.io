@@ -12,6 +12,10 @@ Promise.all([
             const data = jobs_data[this.dataset.slug];
             this.innerHTML = html;
 
+            if("long" in this.dataset) {
+                this.querySelector('slot[name="description"]').name = "description-long";
+            }
+
             this.querySelectorAll('slot').forEach(slot => {
                 const injection = data[slot.name];
                 if(injection !== undefined) {
@@ -19,7 +23,11 @@ Promise.all([
                     tmp.innerHTML = injection;
                     
                     if(injection !== ""){
-                        slot.replaceWith(tmp.firstChild);
+                        if(tmp.children.length > 0){
+                            slot.replaceWith(...tmp.children);
+                        } else {
+                            slot.replaceWith(tmp.firstChild);
+                        }
                     } else {
                         slot.remove();
                     }
