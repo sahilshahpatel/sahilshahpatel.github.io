@@ -26,17 +26,30 @@ fetch('${fileName}.html')
             this.innerHTML = html;
 
             this.querySelectorAll('slot').forEach(slot => {
-                let injection = data.querySelector(\`[slot="\${slot.name}"]\`);
-                if(injection !== null) {
-                    slot.replaceWith(injection.cloneNode(true));
+                const injection = data[slot.name];
+                if(injection !== undefined) {
+                    let tmp = document.createElement("div");
+                    tmp.innerHTML = injection;
+                    
+                    if(injection !== ""){
+                        slot.replaceWith(tmp.firstChild);
+                    } else {
+                        slot.remove();
+                    }
+                    tmp.remove();
                 } else {
-                    console.warn(\`Missing value for slot \${slot.name} in element \${this}\`);
+                    console.warn(\`Missing value for slot \${slot.name} in ${componentName}\`, data);
                     slot.remove();
                 }
             });
 
-            attributes.forEach(attr => {
-                this.setAttribute(attr.name, attr.value);
+            this.querySelectorAll('[src^="slot:"]').forEach(elt => {
+                Array.from(elt.attributes).forEach(attr => {
+                    if(attr.nodeValue.startsWith("slot:")){
+                        const key = attr.nodeValue.substring(5);
+                        elt.setAttribute(attr.name, data[key]);
+                    }
+                });
             });
 
             data.remove();

@@ -9,12 +9,11 @@
             <slot name="job-title">Job Title</slot>
         </h3>
         <span class="subtitle">
-            <slot name="time">Start - End</slot>
+            <slot name="timeframe">Start - End</slot>
         </span>
     </div>
     <div class="work-logo | flex-column flex-end">
-        <slot name="logo"></slot>
-        <!-- <img src="images/logos/Samsung_Orig_Wordmark_BLUE_RGB.png" alt="Samsung" loading="lazy"> -->
+        <img src="slot:logo" alt="" loading="lazy">
     </div>
     <div class="work-description">
         <slot name="description">

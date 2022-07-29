@@ -1,26 +1,36 @@
-fetch('/components/work-item/work-item.html')
-.then(stream => stream.text())
-.then(html => {
+Promise.all([
+    fetch('/components/work-item/work-item.html')
+    .then(stream => stream.text()),
+    
+    fetch('data/jobs.json')
+    .then(stream => stream.json())
+]).then(([html, jobs_data]) => {
     class WorkItem extends HTMLElement {
         constructor() {
             super();
 
-            // Create element to store slot information
-            let data = document.createElement('div');
-            data.innerHTML = this.innerHTML;
+            const data = jobs_data[this.dataset.slug];
             this.innerHTML = html;
 
             this.querySelectorAll('slot').forEach(slot => {
-                let injection = data.querySelector(`[slot="${slot.name}"]`);
-                if(injection !== null) {
-                    slot.replaceWith(injection.cloneNode(true));
+                const injection = data[slot.name];
+                if(injection !== undefined) {
+                    let tmp = document.createElement("div");
+                    tmp.innerHTML = injection;
+                    
+                    if(injection !== ""){
+                        slot.replaceWith(tmp.firstChild);
+                    } else {
+                        slot.remove();
+                    }
+                    tmp.remove();
                 } else {
-                    console.warn(`Missing value for slot ${slot.name} in element ${this}`);
+                    console.warn(`Missing value for slot ${slot.name} in work item`, data);
                     slot.remove();
                 }
             });
 
-            data.remove();
+            this.querySelector('img[src="slot:logo"]').src = data.logo;
         }
     }
 

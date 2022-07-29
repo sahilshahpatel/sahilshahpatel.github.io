@@ -18,9 +18,17 @@ Promise.all([
             this.querySelectorAll('slot').forEach(slot => {
                 const injection = data[slot.name];
                 if(injection !== undefined) {
-                    slot.replaceWith(document.createTextNode(injection));
+                    let tmp = document.createElement("div");
+                    tmp.innerHTML = injection;
+                    
+                    if(injection !== ""){
+                        slot.replaceWith(tmp.firstChild);
+                    } else {
+                        slot.remove();
+                    }
+                    tmp.remove();
                 } else {
-                    console.warn(`Missing value for slot ${slot.name} in abroad item`, data);
+                    console.warn(`Missing value for slot ${slot.name} in work item`, data);
                     slot.remove();
                 }
             });
