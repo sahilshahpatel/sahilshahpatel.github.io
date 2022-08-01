@@ -1,0 +1,33 @@
+.project-card {
+    background-color: var(--clr-primary-100);
+    box-shadow: var(--box-shadow-float);
+}
+
+.project-card img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.project-card .project-content {
+    padding: var(--size-400);
+}
+
+.project-card h2 {
+    font-size: var(--fs-600);
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.project-link-icons a {
+    transition: color 200ms ease;
+    color: var(--clr-text-dark-medium);
+}
+
+.project-link-icons a:hover {
+    color: var(--clr-text-dark);
+}

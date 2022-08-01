@@ -21,6 +21,7 @@
 
     <script src="components/work-item/work-item.js"></script>
     <script src="components/travel-card/travel-card.js"></script>
+    <script src="components/project-card/project-card.js"></script>
 </head>
 <body>
     <primary-header></primary-header>
@@ -40,7 +41,7 @@
             <h1 class="section-title">Work Experience</h1>
             
             <div class="flow">
-                <work-item data-slug="samsung-intern" data></work-item>
+                <work-item data-slug="samsung-intern"></work-item>
                 
                 <div class="text-center">
                     <a class="see-more-link subtitle" href="experience.html">
@@ -64,37 +65,8 @@
 
         <section id="projects" class="projects | container">
             <h1 class="section-title">Projects</h1>
-            <div class="flow" style="--flow-spacer: var(--size-500);">
-                <div class="project-card">
-                    <div class="hover-gif">
-                        <img src="images/fluidSim.jpg" alt="Fluid simulation" loading="lazy">
-                        <img src="images/fluidSim.gif" alt="Fluid simulation" loading="lazy" data-gif>
-                    </div>
-
-                    <div class="project-content | flow" style="--flow-spacer: var(--size-200);">
-                        <h2 class="fw-bold">WebGL Fluid Simulation</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi soluta quis ratione. Minima esse doloremque quisquam error labore sit dignissimos! Quis assumenda et laborum voluptas distinctio aliquid in minus illum!</p>
-                        
-                        <div class="project-links">
-                            <a class="see-more-link subtitle" href="/projects/fluid-sim.html">
-                                <span>Read more</span>
-                                <i class="bi-arrow-right"></i>
-                            </a>
-                            <div class="project-link-icons | inline-flow fs-500">
-                                <a href="/fluid-sim" title="View demo"><i class="bi-display"></i></a>
-                                <a href="https://github.com/sahilshahpatel/fluid-sim" title="View source"><i class="bi-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h2>Project 2</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, nemo quo. Ipsam vero, nisi commodi repellat quaerat, officia obcaecati hic libero inventore dignissimos necessitatibus dolores ea in maxime repellendus iusto.</p>
-                </div>
-                <div class="project-card">
-                    <h2>Project 3</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos cum pariatur facilis qui perspiciatis illum, quidem numquam iusto corrupti? Perspiciatis fugiat dicta commodi inventore nesciunt eaque quia cumque. Ducimus, tempora!</p>
-                </div>
+            <div class="projects-grid">
+                <project-card data-slug="fluid-sim"></project-card>
                 
                 <div class="text-center">
                     <a class="see-more-link subtitle" href="projects.html">

@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/components/project-card/project-card.css">
+
+<div class="project-card">
+    <div class="hover-gif">
+        <img src="images/fluidSim.jpg" alt="Fluid simulation" loading="lazy">
+        <img src="images/fluidSim.gif" alt="Fluid simulation" loading="lazy" data-gif>
+    </div>
+
+    <div class="project-content | flow" style="--flow-spacer: var(--size-200);">
+        <div>
+            <p class="heading-spread text-gradient-accent">Computer Graphics</p>
+            <h2 class="fw-bold"><slot name="title">WebGL Fluid Simulation</slot></h2>
+        </div>
+        
+        <slot name="description">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi soluta quis ratione. Minima esse doloremque quisquam error labore sit dignissimos! Quis assumenda et laborum voluptas distinctio aliquid in minus illum!</p>
+        </slot>
+
+        <div class="project-links">
+            <a class="see-more-link subtitle" href="/projects/fluid-sim.html">
+                <span>Read more</span>
+                <i class="bi-arrow-right"></i>
+            </a>
+            <div class="project-link-icons | inline-flow fs-500">
+                <slot name="links"></slot>
+                <!-- <a href="/fluid-sim" title="View demo"><i class="bi-display"></i></a>
+                <a href="https://github.com/sahilshahpatel/fluid-sim" title="View source"><i class="bi-github"></i></a> -->
+            </div>
+        </div>
+    </div>
+</div>

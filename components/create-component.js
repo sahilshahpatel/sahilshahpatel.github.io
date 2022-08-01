@@ -11,19 +11,24 @@ const fileName = `${path}${componentName}`;
 const html = `<link rel="stylesheet" href="${fileName}.css">`;
 
 const js = `
-fetch('${fileName}.html')
-.then(stream => stream.text())
-.then(html => {
+Promise.all([
+    fetch('${fileName}.html')
+    .then(stream => stream.text()),
+    
+    // TODO: replace data file
+    fetch('data/jobs.json')
+    .then(stream => stream.json())
+]).then(([html, all_data]) => {
     class ${componentCamelName} extends HTMLElement {
         constructor() {
             super();
 
-            // Create element to store slot information
-            let data = document.createElement('div');
-            data.innerHTML = this.innerHTML;
-            const attributes = Array.from(this.attributes);
-
+            const data = all_data[this.dataset.slug];
             this.innerHTML = html;
+
+            if("long" in this.dataset) {
+                this.querySelector('slot[name="description"]').name = "description-long";
+            }
 
             this.querySelectorAll('slot').forEach(slot => {
                 const injection = data[slot.name];
@@ -32,7 +37,7 @@ fetch('${fileName}.html')
                     tmp.innerHTML = injection;
                     
                     if(injection !== ""){
-                        slot.replaceWith(tmp.firstChild);
+                        slot.replaceWith(...tmp.childNodes);
                     } else {
                         slot.remove();
                     }
@@ -43,16 +48,7 @@ fetch('${fileName}.html')
                 }
             });
 
-            this.querySelectorAll('[src^="slot:"]').forEach(elt => {
-                Array.from(elt.attributes).forEach(attr => {
-                    if(attr.nodeValue.startsWith("slot:")){
-                        const key = attr.nodeValue.substring(5);
-                        elt.setAttribute(attr.name, data[key]);
-                    }
-                });
-            });
-
-            data.remove();
+            this.querySelector('img[src="slot:logo"]').src = data.logo;
         }
     }
 

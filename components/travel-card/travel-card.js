@@ -22,7 +22,7 @@ Promise.all([
                     tmp.innerHTML = injection;
                     
                     if(injection !== ""){
-                        slot.replaceWith(tmp.firstChild);
+                        slot.replaceWith(...tmp.childNodes);
                     } else {
                         slot.remove();
                     }
