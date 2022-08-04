@@ -1,0 +1,14 @@
+{
+    "fluid-sim": {
+        "title": "WebGL Fluid Simulation",
+        "category": "Computer Graphics",
+        "img": "/images/projects/fluidSim.jpg",
+        "gif": "",
+        "links": {
+            "demo": "/fluid-sim",
+            "github": "https://github.com/sahilshahpatel/fluid-sim"
+        },
+        "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi soluta quis ratione. Minima esse doloremque quisquam error labore sit dignissimos! Quis assumenda et laborum voluptas distinctio aliquid in minus illum!</p>",
+        "description-long": ""
+    }
+}

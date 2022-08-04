@@ -1,0 +1,35 @@
+@use "../global/variables" as *;
+
+.project-card {
+    background-color: $clr-primary-100;
+    box-shadow: $box-shadow-float;
+}
+
+.project-card img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.project-card .project-content {
+    padding: map-get($sizes, 400);
+}
+
+.project-card h2 {
+    font-size: map-get($font-sizes, 600);
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.project-link-icons a {
+    transition: color 200ms ease;
+    color: $clr-text-dark-medium;
+}
+
+.project-link-icons a:hover {
+    color: $clr-text-dark;
+}

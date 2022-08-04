@@ -1,0 +1,71 @@
+@use "../global/variables" as *;
+
+.primary-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding-inline: map-get($sizes, 500);
+    padding-block: map-get($sizes, 400);
+}
+
+.primary-header .primary-logo {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+
+.primary-nav {
+    display: flex;
+    justify-content: space-evenly;
+    gap: map-get($sizes, 800);
+}
+
+.primary-nav a {
+    color: $clr-text-dark;
+    text-decoration: none;
+
+    transition: color 200ms ease;
+}
+
+.primary-nav a:hover {
+    color: $clr-text-dark-medium;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .primary-nav {
+        display: none;
+    }
+
+    .primary-nav.open {
+        flex-basis: 100%;
+
+        margin-top: map-get($sizes, 400);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding-top: map-get($sizes, 200);
+        padding-bottom: map-get($sizes, 200);
+        gap: map-get($sizes, 200);
+
+        box-shadow: $box-shadow-light;
+
+        background-color: $clr-primary-100;
+    }
+
+    .mobile-nav-toggle {
+        display: flex;
+        align-items: center;
+    
+        cursor: pointer;
+    }
+}

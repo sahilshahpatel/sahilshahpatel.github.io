@@ -1,0 +1,61 @@
+@use "variables" as *;
+
+// From https://gist.github.com/sarahdayan/4d2cc04a636e8039f10a889a0e29fbd9
+@mixin modifiers($map, $attribute, $prefix: '-', $separator: '-', $base: 'base') {
+    @each $key, $value in $map {
+        &#{if($key != $base, #{$prefix}#{$key}, '')} {
+            @if type-of($value) == 'map' {
+                @include modifiers($value, $attribute, $separator);
+            }
+            @else {
+                #{$attribute}: $value;
+            }
+        }
+    }
+}
+
+@mixin box-modifiers($map, $attribute) {
+    $borders: (
+        "t": "top",
+        "b": "bottom",
+        "y": ("top", "bottom"),
+        "l": "left",
+        "r": "right",
+        "x": ("left", "right"),
+        "base": ("top", "bottom", "left", "right")
+    );
+
+    @each $key, $value in $borders {
+        &#{if($key != "base", #{$key}, '')} {
+            @if type-of($value) == 'list' {
+                @each $inner-value in $value {
+                    @include modifiers($map, unquote($attribute + "-" + unquote($inner-value)));
+                }
+            }
+            @else {
+                @include modifiers($map, unquote($attribute + "-" + unquote($value)));
+            }
+        }
+    } 
+}
+
+.fs {
+    @include modifiers($font-sizes, "font-size");
+}
+
+.fw {
+    @include modifiers($font-weights, "font-weight");
+}
+
+.p {
+    @include box-modifiers($sizes, "padding");
+}
+
+.m {
+    @include box-modifiers($sizes, "margin");
+}
+
+.flow {
+    @include modifiers($sizes, "--flow-spacer");
+}
+

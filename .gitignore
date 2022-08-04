@@ -1,2 +1,6 @@
 .vscode/
-colors.html
+
+node_modules
+package-lock.json
+
+dist/

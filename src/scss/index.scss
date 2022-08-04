@@ -1,0 +1,42 @@
+@use "global/variables" as *;
+
+/* Hero section */
+section.hero {
+    display: grid;
+    grid-auto-rows: auto;
+    row-gap: map-get($sizes, 600);
+}
+
+section.hero h1 {
+    margin-bottom: map-get($sizes, 600);
+    font-size: 5rem;
+    line-height: 6.5rem;
+    font-weight: 900;
+}
+
+section.hero img {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: $mobile-breakpoint) {
+    section.hero{
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    section.hero .hero-text-container {
+        padding-right: map-get($sizes, 400);
+    }
+
+    section.hero img {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+
+.projects-grid {
+    display: grid;
+    row-gap: map-get($sizes, 500);
+}
