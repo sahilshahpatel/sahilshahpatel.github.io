@@ -1,35 +1,48 @@
 @use "../global/variables" as *;
 
 .project-card {
-    background-color: $clr-primary-100;
     box-shadow: $box-shadow-float;
-}
+    padding: min(7%, map-get($sizes, 800));
 
-.project-card img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-}
+    background-image: var(--bg-gif-url, var(--bg-img-url));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: var(--bg-position, center);
 
-.project-card .project-content {
-    padding: map-get($sizes, 400);
-}
-
-.project-card h2 {
-    font-size: map-get($font-sizes, 600);
-}
-
-.project-links {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 350px;
+
+    .project-content {
+        background-color: $clr-primary-100;
+        padding: map-get($sizes, 400);
+        opacity: 0.95;
+    }
+    
+    h2 {
+        font-size: map-get($font-sizes, 600);
+    }
+    
+    .project-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    
+    .project-link-icons a {
+        transition: color 200ms ease;
+        color: $clr-text-dark-medium;
+    }
+    
+    .project-link-icons a:hover {
+        color: $clr-text-dark;
+    }
 }
 
-.project-link-icons a {
-    transition: color 200ms ease;
-    color: $clr-text-dark-medium;
-}
-
-.project-link-icons a:hover {
-    color: $clr-text-dark;
+@media (prefers-reduced-motion: reduce) {
+    .project-card {
+        background-image: var(--bg-img-url);
+    }
 }

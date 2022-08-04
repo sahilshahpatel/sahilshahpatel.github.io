@@ -10,8 +10,12 @@ module.exports = {
     plugins: {
         "posthtml-modules": {
             root: "./src/views",
-            initial: true,
+            attributeAsLocals: true,
             locals: data,
+        },
+
+        "posthtml-expressions": {
+            locals: data
         },
 
         htmlnano: {}

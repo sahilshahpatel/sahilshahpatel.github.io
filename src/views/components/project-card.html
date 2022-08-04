@@ -1,23 +1,13 @@
-<div class="project-card">
-    <if condition="projects[slug].gif !== undefined && projects[slug].gif != ''">
-        <div class="hover-gif">
-            <img src="{{ projects[slug].img }}" alt="" loading="lazy">
-            <img src="{{ projects[slug].gif }}" alt="" loading="lazy" data-gif>
-        </div>
-    </if>
-    <else>
-        <img src="{{ projects[slug].img }}" alt="" loading="lazy">
-    </else>
-
+<div class="project-card" style="--bg-img-url: url({{ projects[slug].img }}); {{projects[slug].gif ? '--bg-gif-url: url(' + projects[slug].gif + ');' : ''}} {{projects[slug].imgPos ? '--bg-position: ' + projects[slug].imgPos + ';' : ''}}">
     <div class="project-content | flow">
         <div>
             <p class="heading-spread text-gradient-accent">{{ projects[slug].category }}</p>
             <h2 class="fw-bold">{{ projects[slug].title }}</h2>
         </div>
         
-        <slot name="description">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi soluta quis ratione. Minima esse doloremque quisquam error labore sit dignissimos! Quis assumenda et laborum voluptas distinctio aliquid in minus illum!</p>
-        </slot>
+        <div>
+            {{{ projects[slug].description }}}
+        </div>
 
         <div class="project-links">
             <a class="see-more-link subtitle" href="/projects/{{ slug }}.html">
@@ -25,8 +15,12 @@
                 <i class="bi-arrow-right"></i>
             </a>
             <div class="project-link-icons | inline-flow flow-200 fs-500">
-                <a href="/fluid-sim" title="View demo"><i class="bi-display"></i></a>
-                <a href="https://github.com/sahilshahpatel/fluid-sim" title="View source"><i class="bi-github"></i></a>
+                <if condition="projects[slug].links.demo">
+                    <a href="{{ projects[slug].links.demo }}" title="View demo"><i class="bi-display"></i></a>
+                </if>
+                <if condition="projects[slug].links.github">
+                    <a href="{{ projects[slug].links.github }}" title="View source"><i class="bi-github"></i></a>
+                </if>
             </div>
         </div>
     </div>

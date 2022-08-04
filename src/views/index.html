@@ -12,11 +12,11 @@
     <main>
       <section id="about" class="hero | container">
         <div class="hero-text-container">
-            <h1>A journey in computer graphics</h1>
-            <p class="fs-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae quae temporibus nulla debitis reiciendis enim exercitationem perspiciatis dolor animi voluptatem tempore eaque, eveniet rerum delectus suscipit, adipisci inventore porro magni.</p>
+          <h1>A journey in computer graphics</h1>
+          <p class="fs-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae quae temporibus nulla debitis reiciendis enim exercitationem perspiciatis dolor animi voluptatem tempore eaque, eveniet rerum delectus suscipit, adipisci inventore porro magni.</p>
         </div>
         <div>
-            <img src="images/profiles/sahil-park.jpg" alt="" loading="lazy">
+          <img src="images/profiles/sahil-park.jpg" alt="" loading="lazy">
         </div>
       </section>
 
@@ -24,39 +24,41 @@
         <h1 class="section-title">Work Experience</h1>
         
         <div class="flow">
-            <module href="/components/work-item.html" locals='{"slug": "samsung-intern"}'></module>
-            
-            <div class="text-center">
-                <a class="see-more-link subtitle" href="/experience.html">
-                    See full work history
-                    <i class="bi-arrow-right"></i>
-                </a>    
-            </div>   
+          <module href="/components/work-item.html" locals='{"slug": "samsung-intern"}'></module>
+          
+          <div class="text-center">
+            <a class="see-more-link subtitle" href="/experience.html">
+              See full work history
+              <i class="bi-arrow-right"></i>
+            </a>    
+          </div>   
         </div>
       </section>
 
       <section id="abroad" class="abroad">
         <div class="container">
-            <h1 class="section-title">Travel Abroad</h1>
+          <h1 class="section-title">Travel Abroad</h1>
         </div>
 
         <div>
-            <module href="/components/travel-card.html" locals='{"slug": "kth"}'></module>
-            <module href="/components/travel-card.html" locals='{"slug": "imagininguate"}'></module>
+          <module href="/components/travel-card.html" slug="kth"></module>
+          <module href="/components/travel-card.html" slug="imagininguate"></module>
         </div>
       </section>
 
       <section id="projects" class="projects | container">
         <h1 class="section-title">Projects</h1>
         <div class="projects-grid">
-          <module href="/components/project-card.html" locals='{"slug": "fluid-sim"}'></module>
-            
-            <div class="text-center">
-                <a class="see-more-link subtitle" href="projects.html">
-                    <span>See all projects</span>
-                    <i class="bi-arrow-right"></i>
-                </a>    
-            </div>
+          <each loop="value, key in projects">
+            <module href="/components/project-card.html" slug="{{ key }}"></module>
+          </each>
+
+          <div class="text-center">
+            <a class="see-more-link subtitle" href="projects.html">
+              <span>See all projects</span>
+              <i class="bi-arrow-right"></i>
+            </a>    
+          </div>
         </div>
       </section>
       

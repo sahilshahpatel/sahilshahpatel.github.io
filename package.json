@@ -15,7 +15,7 @@
     "css:lint": "stylelint src/scss/*.scss --custom-syntax postcss-scss",
     "build:css": "npm run css:lint && npm run css:scss && npm run css:autoprefixer",
     "build:js": "webpack --mode=production",
-    "build:html": "posthtml -c posthtml.config.js",
+    "build:html": "posthtml -c posthtml.config.js -u posthtml-expressions -u posthtml-modules",
     "build:images": "rm -r dist/images && cp -r src/images dist/",
     "build": "run-s build:*",
     "serve": "browser-sync start --server \"dist\" --files \"dist\"",
