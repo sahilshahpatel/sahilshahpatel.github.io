@@ -8,7 +8,14 @@
                 @include modifiers($value, $attribute, $separator);
             }
             @else {
-                #{$attribute}: $value;
+                @if type-of($attribute) == "list" {
+                    @each $attr in $attribute {
+                        #{$attr}: $value;    
+                    }
+                }
+                @else {
+                    #{$attribute}: $value;
+                }
             }
         }
     }
@@ -27,14 +34,11 @@
 
     @each $key, $value in $borders {
         &#{if($key != "base", #{$key}, '')} {
-            @if type-of($value) == 'list' {
-                @each $inner-value in $value {
-                    @include modifiers($map, unquote($attribute + "-" + unquote($inner-value)));
-                }
+            $attributes: ();
+            @each $inner-value in $value {
+                $attributes: append($attributes, $attribute + "-" + unquote($inner-value));
             }
-            @else {
-                @include modifiers($map, unquote($attribute + "-" + unquote($value)));
-            }
+            @include modifiers($map, $attributes);
         }
     } 
 }
