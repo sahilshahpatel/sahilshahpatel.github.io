@@ -24,7 +24,9 @@
         <h1 class="section-title">Work Experience</h1>
         
         <div class="flow">
-          <module href="/components/work-item.html" locals='{"slug": "samsung-intern"}'></module>
+          <each loop="slug in featured.jobs">
+            <module href="/components/work-item.html" slug="{{ slug }}"></module>
+          </each>
           
           <div class="text-center">
             <a class="see-more-link subtitle" href="/experience.html">
@@ -41,16 +43,17 @@
         </div>
 
         <div>
-          <module href="/components/travel-card.html" slug="kth"></module>
-          <module href="/components/travel-card.html" slug="imagininguate"></module>
+          <each loop="slug in featured.abroad">
+            <module href="/components/travel-card.html" slug="{{ slug }}"></module>
+          </each>
         </div>
       </section>
 
       <section id="projects" class="projects | container">
         <h1 class="section-title">Projects</h1>
         <div class="flow">
-          <each loop="value, key in projects">
-            <module href="/components/project-card.html" slug="{{ key }}"></module>
+          <each loop="slug in featured.projects">
+            <module href="/components/project-card.html" slug="{{ slug }}"></module>
           </each>
 
           <div class="text-center">

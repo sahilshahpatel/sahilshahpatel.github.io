@@ -1,7 +1,8 @@
 const data = {
     abroad: require("./src/data/abroad.json"),
     jobs: require("./src/data/jobs.json"),
-    projects: require("./src/data/projects.json")
+    projects: require("./src/data/projects.json"),
+    featured: require("./src/data/featured.js")
 }
 
 module.exports = {
