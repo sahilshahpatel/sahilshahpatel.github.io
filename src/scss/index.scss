@@ -9,9 +9,9 @@ section.hero {
 
 section.hero h1 {
     margin-bottom: map-get($sizes, 600);
-    font-size: 5rem;
-    line-height: 6.5rem;
-    font-weight: 900;
+    font-size: map-get($font-sizes, 1000);
+    line-height: 110%;
+    font-weight: map-get($font-weights, "bold");
 }
 
 section.hero img {

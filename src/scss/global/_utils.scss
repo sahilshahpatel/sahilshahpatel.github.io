@@ -10,11 +10,11 @@
             @else {
                 @if type-of($attribute) == "list" {
                     @each $attr in $attribute {
-                        #{$attr}: $value;    
+                        #{$attr}: $value !important;    
                     }
                 }
                 @else {
-                    #{$attribute}: $value;
+                    #{$attribute}: $value !important;
                 }
             }
         }
@@ -63,3 +63,57 @@
     @include modifiers($sizes, "--flow-spacer");
 }
 
+
+/* Text Styles */
+.text-dark {
+    color: $clr-text-dark;
+}
+
+.text-light {
+    color: $clr-text-light;
+}
+
+.section-title {
+    font-size: map-get($font-sizes, 900);
+    font-weight: map-get($font-weights, "semi-bold");
+    text-align: center;
+    margin-bottom: map-get($sizes, 500);
+}
+
+.heading-spread {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: $clr-text-dark-medium !important;
+}
+
+.subtitle-light {
+    color: $clr-text-light-medium !important;
+}
+
+
+/* Text on Image Overlay */
+.bg-img-overlay {
+    --overlay: rgba(0, 0, 0, 0.8);
+    background-image: linear-gradient(to bottom, transparent, var(--overlay)),
+        var(--bg-img-url, linear-gradient(to bottom, $clr-primary-400, $clr-primary-400));
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: var(--bg-position, center);
+
+    color: $clr-text-light;
+}
+
+.bg-img-overlay[data-overlay="solid"] {
+    background-image: linear-gradient(to bottom, var(--overlay), var(--overlay)),
+        var(--bg-img-url, linear-gradient(to bottom, $clr-primary-400, $clr-primary-400));
+}
+
+.bg-img-overlay[data-overlay="inverse"] {
+    --overlay: rgba(255, 255, 255, 0.8);
+    color: $clr-text-dark;
+}

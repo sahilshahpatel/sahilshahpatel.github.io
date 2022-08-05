@@ -8,21 +8,22 @@
     padding-inline: map-get($sizes, 500);
     padding-block: map-get($sizes, 400);
 
-    margin-top: map-get($sizes, 600);
+    margin-top: map-get($sizes, 800);
     
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
 
-.primary-footer nav {
-    display: grid;
-    row-gap: map-get($sizes, 100);
-    column-gap: map-get($sizes, 300);
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 1fr;
-}
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 
-.primary-footer nav a {
-    color: inherit;
+    nav {
+        display: grid;
+        row-gap: map-get($sizes, 100);
+        column-gap: map-get($sizes, 300);
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+    }
 }

@@ -40,7 +40,8 @@ $sizes: (
     600: 2rem,
     700: 3rem,
     800: 4rem,
-    900: 5rem
+    900: 5rem,
+    1000: 8rem
 );
 
 $font-sizes: (
@@ -50,12 +51,14 @@ $font-sizes: (
     600: 1.5rem,
     700: 1.75rem,
     800: 2rem,
-    900: 2.25rem
+    900: 3rem,
+    1000: 5rem
 );
 
 $font-weights: (
     "light": 300,
     "normal": 400,
+    "semi-bold": 500,
     "bold": 700
 );
 
