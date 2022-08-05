@@ -27,6 +27,8 @@ $clr-text-light-medium: rgba(255, 255, 255, 0.7);
 $gradient-primary: linear-gradient(90deg, $clr-accent-400 0%, $clr-primary-400 100%);
 $gradient-accent: linear-gradient(108deg,#B16CEA 8%,#FF5E69 40%,#FF8A56 77%,#FFA84B 91%);
 
+$vignette: radial-gradient(transparent 45%, rgba(0, 0, 0, 0.3));
+
 $mobile-breakpoint: 700px;
 
 $sizes: (

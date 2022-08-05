@@ -4,7 +4,7 @@
     box-shadow: $box-shadow-float;
     padding: min(7%, map-get($sizes, 800));
 
-    background-image: var(--bg-gif-url, var(--bg-img-url));
+    background-image: $vignette, var(--bg-gif-url, var(--bg-img-url));
     background-repeat: no-repeat;
     background-size: cover;
     background-position: var(--bg-position, center);
