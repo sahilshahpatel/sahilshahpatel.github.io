@@ -16,7 +16,7 @@
     "build:css": "npm run css:lint && npm run css:scss && npm run css:autoprefixer",
     "build:js": "webpack --mode=production",
     "build:html": "posthtml -c posthtml.config.js -u posthtml-expressions -u posthtml-modules",
-    "build:images": "rm -r dist/images && cp -r src/images dist/",
+    "build:images": "rm -rf dist/images && cp -r src/images dist/",
     "build": "run-s build:*",
     "serve": "browser-sync start --server \"dist\" --files \"dist\"",
     "watch:css": "onchange \"src/scss\" -- npm run build:css",
@@ -24,7 +24,7 @@
     "watch:data": "onchange \"src/data\" -- npm run build:html",
     "watch:images": "onchange \"src/images\" -- npm run build:images",
     "watch:js": "onchange \"src/js\" -- webpack --mode=development",
-    "watch": "npm run build && run-p serve watch:*"
+    "watch": "run-p serve watch:*"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.18.10",

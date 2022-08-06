@@ -6,8 +6,10 @@ const data = {
 }
 
 module.exports = {
-    input: "src/views/*.html",
+    root: "src/views",
+    input: ["*.html", "projects/*.html"],
     output: "dist",
+    allInOutput: true,
     plugins: {
         "posthtml-modules": {
             root: "./src/views",

@@ -1,0 +1,14 @@
+@use "global/variables" as *;
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    gap: map-get($sizes, 400);
+}
+
+@media (min-width: $mobile-breakpoint) {
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
