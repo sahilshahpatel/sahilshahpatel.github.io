@@ -81,7 +81,7 @@
         "category": "Academic Project",
         "img": "/images/projects/BahaiGame.jpg",
         "links": {
-            "demo": "/files/The%20Baha'i%20House%20of%20Worship%20Game/index.html"
+            "demo": "/files/The%20Baha'i%20House%20of%20Worship%20Game/play.html"
         },
         "description": "A text-based video game that takes the player through the history of the founding of the Baha'i temple in Willmette, Illinois."
     },
