@@ -1,0 +1,10 @@
+@use "../global/variables" as *;
+
+.project-link-icons a {
+    transition: color 200ms ease;
+    color: $clr-text-dark-medium;
+}
+
+.project-link-icons a:hover {
+    color: $clr-text-dark;
+}

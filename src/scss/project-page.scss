@@ -1,0 +1,11 @@
+@use "global/variables" as *;
+
+.project-banner {
+    min-height: min(60vh, 600px);
+
+    .project-link-icons {
+        display: flex;
+        justify-content: center;
+        gap: map-get($sizes, 200);
+    }
+}

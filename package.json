@@ -20,7 +20,7 @@
     "build:videos": "rm -rf dist/videos && cp -r src/videos dist/",
     "build:files": "rm -rf dist/files && cp -r src/files dist/",
     "build": "run-s build:*",
-    "serve": "browser-sync start --server \"dist\" --files \"dist\"",
+    "serve": "browser-sync start --server \"dist\" --files \"dist\" --extensions \"html\"",
     "watch:css": "onchange \"src/scss\" -- npm run build:css",
     "watch:html": "onchange \"src/views\" -- npm run build:html",
     "watch:data": "onchange \"src/data\" -- npm run build:html",

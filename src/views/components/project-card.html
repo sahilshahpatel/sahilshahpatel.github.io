@@ -1,5 +1,5 @@
-<div class="project-card" style="--bg-img-url: url({{ projects[slug].img }}); {{projects[slug].gif ? '--bg-gif-url: url(' + projects[slug].gif + ');' : ''}} {{projects[slug].imgPos ? '--bg-position: ' + projects[slug].imgPos + ';' : ''}}">
-    <div class="project-content | flow">
+<div class="project-card | bg-img-overlay" style="--bg-img-url: url({{ projects[slug].img }}); {{projects[slug].gif ? '--bg-gif-url: url(' + projects[slug].gif + ');' : ''}} {{projects[slug].imgPos ? '--bg-position: ' + projects[slug].imgPos + ';' : ''}}">
+    <div class="overlay w-100 flow p-400">
         <div>
             <p class="heading-spread text-gradient-accent">{{ projects[slug].category }}</p>
             <h2 class="fw-bold">{{ projects[slug].title }}</h2>
@@ -14,14 +14,7 @@
                 <span>Read more</span>
                 <i class="bi-arrow-right"></i>
             </a>
-            <div class="project-link-icons | inline-flow flow-200 fs-500">
-                <if condition="projects[slug].links.demo">
-                    <a href="{{ projects[slug].links.demo }}" title="View demo"><i class="bi-display"></i></a>
-                </if>
-                <if condition="projects[slug].links.github">
-                    <a href="{{ projects[slug].links.github }}" title="View source"><i class="bi-github"></i></a>
-                </if>
-            </div>
+            <module href="/components/project-link-icons.html" slug="{{ slug }}"></module>
         </div>
     </div>
 </div>

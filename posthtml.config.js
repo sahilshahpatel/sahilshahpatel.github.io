@@ -1,8 +1,8 @@
-const data = {
+const locals = {
     abroad: require("./src/data/abroad.json"),
     jobs: require("./src/data/jobs.json"),
     projects: require("./src/data/projects.json"),
-    featured: require("./src/data/featured.js")
+    featured: require("./src/data/featured.js"),
 }
 
 module.exports = {
@@ -14,11 +14,12 @@ module.exports = {
         "posthtml-modules": {
             root: "./src/views",
             attributeAsLocals: true,
-            locals: data,
+            locals: locals,
         },
 
         "posthtml-expressions": {
-            locals: data
+            removeScriptLocals: true,
+            locals: locals,
         },
 
         htmlnano: {}
