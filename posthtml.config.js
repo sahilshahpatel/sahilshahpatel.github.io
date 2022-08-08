@@ -22,6 +22,8 @@ module.exports = {
             locals: locals,
         },
 
+        "posthtml-markdownit": {},
+
         htmlnano: {}
     }
 }
