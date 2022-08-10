@@ -1,4 +1,14 @@
 <script locals>module.exports = {slug: "mm25"}</script>
 <module href="/components/project-page.html" slug="{{ slug }}">
-    
+    <markdown>
+        Mech Mania is a student-run AI hackathon run as a part of [Reflections|Projections](https://reflectionsprojections.org), UIUC's annual tech conference. Each year we build a game to be played by scripts written by our contestants. 
+
+        Mech Mania 25 was my first experience being on the development team, and I started on the Game Engine. For our 25th anniversary we decided to go back to the original theme: mechs. Our game was inspired by the hit game **Into the Breach**. It was played on a grid with each team controlling multiple units in a turn-based battle. Teams could customize their units' stats and weapons to play towards their unique strategy.
+
+        To interface with contestants' scripts, we built the engine in Java and ran bots as separate processes. The game engine handled all game logic as well as communication with the bots and visualizer.
+
+        I personally worked on resolving movement edge cases where units might choose to move into the same grid cell. We worked together to work out an ideal solution, and my task was to write the function that resolved the movement phase of each turn taking into account edge case interactions.
+
+        Mech Mania 25 was a pretty big success, and I enjoyed the experience so much that I stuck around for another two years, first as Game Engine Lead and then Visualizer Lead.
+    </markdown>
 </module>

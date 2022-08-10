@@ -158,11 +158,11 @@ img.cover {
     display: inline-flex;
     text-decoration: none;
 
-    &:not([data-point-left]){
-        margin-left: map-get($sizes, 200);
+    &:not([data-point-left]) i[class^="bi-arrow"]{
+        margin-left: map-get($sizes, 100);
     }
-    &[data-point-left]{
-        margin-right: map-get($sizes, 200);
+    &[data-point-left] i[class^="bi-arrow"]{
+        margin-right: map-get($sizes, 100);
     }
 
     i[class^="bi-arrow"] {

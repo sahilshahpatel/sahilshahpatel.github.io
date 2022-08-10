@@ -1,4 +1,12 @@
 <script locals>module.exports = {slug: "ece120-honors"}</script>
 <module href="/components/project-page.html" slug="{{ slug }}">
-    
+    <markdown>
+        At UIUC I was part of the ECE James Scholars program. In my freshman year, that meant I had to complete one honors course. I decided to make ECE 120: Introduction to Computing that course.
+
+        To get honors credit for the class we had to complete an extra final project that used logic gates in some way. My group was curious to gain more experience with arduinos and breadboards, as well as other circuitry peripherals, so we devised a simple project that would use many of these interesting components.
+
+        Our project was a dual-method security system. Essentially, we would keep a variable in the arduino to represent the lock and allow the user two ways of authenticating and thus opening the lock. The first mechanism was a numpad, and the second an RFID chip. By using these two methods we were able to gain experience looking at datasheets to see how these devices output their signals and decode them in the arduino. To incorporate logic gates we decided to do password matching for the numpad with a simple XNOR circuit on the breadboard rather than within the arduino.
+
+        Overall, this project was a nice, simple entry into the land of digital circuitry projects.
+    </markdown>
 </module>
