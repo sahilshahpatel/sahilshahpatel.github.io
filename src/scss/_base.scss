@@ -36,10 +36,27 @@ body > footer.primary-footer {
 .markdown {
     h1, h2, h3, h4, h5, h6 {
        margin-top: 1.5em; 
+       font-weight: map-get($font-weights, "bold");
     }
     
     p {
         margin-top: 1em;
+    }
+
+    ol, ul {
+        padding-inline-start: 2.5em;
+    }
+
+    h1 {
+        font-size: map-get($font-sizes, 700);
+    }
+
+    h2 {
+        font-size: map-get($font-sizes, 600);
+    }
+
+    h3, h4, h5, h6 {
+        font-size: map-get($font-sizes, 500);
     }
 }
 

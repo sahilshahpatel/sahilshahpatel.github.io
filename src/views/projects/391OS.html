@@ -1,4 +1,17 @@
 <script locals>module.exports = {slug: "391OS"}</script>
 <module href="/components/project-page.html" slug="{{ slug }}">
-    
+    <markdown>
+        ECE 391: Computer Systems Engineering is regarded as one of the toughest courses in UIUC's computer engineering curriculum. For a lot of people, it is not a great experience. Working with x86 assembly and low level C code and needing to refer back to the Intel ISA Reference Manual every other line of code was certainly frustrating at times. But for me, the wonder of learning how kernels work at a low level and grappling with the design decisions that present themselves was an amazing learning opportunity.
+
+        Each group built their own kernel in five stages:
+        1. Initial boot, paging, and PIC interrupt routing
+        2. Basic driver support with open/close/read/write interface (including file system and terminal driver)
+        3. System calls (including file system and execution of child processes)
+        4. Multiple terminals and expanded system calls
+        5. Scheduling (concurrent process execution)
+
+        I personally took a lead on many of the features of our kernel because I had special interest. In particular I worked on process execution, terminal switching, and scheduling. I was also quite interested in code organization and reorganized our repository during our project to make our workflow simpler.
+
+        The source code for this project isn't public because it risks being abused for academic dishonesty. If you have particular interest in seeing it, you can contact me personally. In good news, because it was built to run in a virtual environment, the whole kernel is runnable via web assembly! You can find the demo [here]({{projects[slug].links.demo}}).
+    </markdown>
 </module>
