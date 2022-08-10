@@ -157,17 +157,26 @@ img.cover {
 .see-more-link {
     display: inline-flex;
     text-decoration: none;
-}
 
-.see-more-link i[class^="bi-arrow"] {
-    margin-left: map-get($sizes, 100);
+    &:not([data-point-left]){
+        margin-left: map-get($sizes, 200);
+    }
+    &[data-point-left]{
+        margin-right: map-get($sizes, 200);
+    }
 
-    transform: translateX(0px); /* Eliminates some small vertical shifting on Firefox */
-    transition: transform 200ms ease;
-}
+    i[class^="bi-arrow"] {
+        transform: translateX(0px); /* Eliminates some small vertical shifting on Firefox */
+        transition: transform 200ms ease;
+    }
 
-.see-more-link:hover i[class^="bi-arrow"] {
-    transform: translateX(map-get($sizes, 200));
+
+    &:not([data-point-left]):hover i[class^="bi-arrow"]{
+        transform: translateX(map-get($sizes, 200));
+    }
+    &[data-point-left]:hover i[class^="bi-arrow"] {
+        transform: translateX(-1 * map-get($sizes, 200));
+    }
 }
 
 
