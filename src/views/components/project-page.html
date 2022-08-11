@@ -10,7 +10,7 @@
     <module href="/components/primary-header.html"></module>
 
     <main>
-      <div class="project-banner | bg-img-overlay p-400" style="--bg-img-url: url({{ projects[slug].img }}); {{projects[slug].gif ? '--bg-gif-url: url(' + projects[slug].gif + ');' : ''}} {{projects[slug].imgPos ? '--bg-position: ' + projects[slug].imgPos + ';' : ''}}">
+      <div class="project-banner | bg-img-overlay" style="--bg-img-url: url({{ projects[slug].img }}); {{projects[slug].gif ? '--bg-gif-url: url(' + projects[slug].gif + ');' : ''}} {{projects[slug].imgPos ? '--bg-position: ' + projects[slug].imgPos + ';' : ''}}">
         <div class="overlay p-400 text-center">
           <h1>
             <div class="heading-spread text-gradient-accent">{{ projects[slug].category }}</div>

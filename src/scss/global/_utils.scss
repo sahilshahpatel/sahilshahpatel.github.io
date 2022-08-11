@@ -51,6 +51,10 @@
     @include modifiers($font-weights, "font-weight");
 }
 
+.box-shadow {
+    @include modifiers($box-shadows, "box-shadow");
+}
+
 .p {
     @include box-modifiers($sizes, "padding");
 }

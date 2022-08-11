@@ -66,3 +66,9 @@ $font-weights: (
 $box-shadow-light: 0px 4px 6px -1px rgba(0,0,0,0.1) , 0px 2px 4px -1px rgba(0,0,0,0.06);
 $box-shadow-float: 0px 20px 25px -5px rgba(0,0,0,0.1) , 0px 10px 10px -5px rgba(0,0,0,0.04);
 $box-shadow-float-high: 0px 25px 50px -12px rgba(0,0,0,0.25);
+
+$box-shadows: (
+    "light": $box-shadow-light,
+    "float": $box-shadow-float,
+    "float-high": $box-shadow-float-high,
+);

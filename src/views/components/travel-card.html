@@ -1,4 +1,4 @@
-<div class="travel-card bg-img-captioned container-fluid flex-column flex-end p-600" style="--bg-img-url: url({{ abroad[slug].img.url }})">
+<div class="travel-card bg-img-captioned container-fluid flex-column flex-end p-600" style="--bg-img-url: url({{ abroad[slug].img }}); {{ abroad[slug].imgPos ? '--bg-position: ' + abroad[slug].imgPos + ';' : ''}}">
     <div class="container flex-between flex-wrap">
         <div>
             <h2 class="heading-spread text-gradient-accent">

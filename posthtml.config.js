@@ -7,7 +7,7 @@ const locals = {
 
 module.exports = {
     root: "src/views",
-    input: ["*.html", "projects/*.html"],
+    input: ["*.html", "projects/*.html", "abroad/*.html"],
     output: "dist",
     allInOutput: true,
     plugins: {
