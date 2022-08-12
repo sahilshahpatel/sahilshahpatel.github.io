@@ -14,6 +14,9 @@
     display: flex;
     flex-wrap: wrap;
 
+    margin-top: map-get($sizes, 400);
+    margin-bottom: map-get($sizes, 600);
+
     .column {
         flex-direction: column;
     }
