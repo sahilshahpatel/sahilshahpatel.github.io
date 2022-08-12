@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Abroad | Sahil Patel</title>
+    <title>Experience | Sahil Patel</title>
     <module href="/components/head.html"></module>
   </head>
 
@@ -10,16 +10,17 @@
 
     <main>
       <div class="container">
-        <h1 class="section-title">Travel Abroad</h1>
+        <h1 class="section-title">Work Experience</h1>
       </div>
 
       <div>
-        <each loop="value, slug in abroad">
+        <each loop="item, slug in jobs">
           <div id="{{ slug }}" class="container m-400">
-              <module href="/components/travel-card.html" slug="{{ slug }}"></module>
+            <module href="/components/work-item.html" slug="{{ slug }}" long="true"></module>
           </div>
         </each>
       </div>
+    </section>
     </main>
     
     <module href="/components/primary-footer.html"></module>

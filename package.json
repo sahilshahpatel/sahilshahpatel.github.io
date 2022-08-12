@@ -15,7 +15,7 @@
     "css:lint": "stylelint src/scss/*.scss --custom-syntax postcss-scss",
     "build:css": "npm run css:lint && npm run css:scss && npm run css:autoprefixer",
     "build:js": "webpack --mode=production",
-    "build:html": "posthtml -c posthtml.config.js -u posthtml-expressions -u posthtml-markdownit -u posthtml-modules",
+    "build:html": "posthtml -c posthtml.config.js -u posthtml-expressions -u posthtml-modules -u posthtml-markdownit",
     "build:images": "rm -rf dist/images && cp -r src/images dist/",
     "build:videos": "rm -rf dist/videos && cp -r src/videos dist/",
     "build:files": "rm -rf dist/files && cp -r src/files dist/",

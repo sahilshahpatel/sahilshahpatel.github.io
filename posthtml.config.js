@@ -1,8 +1,18 @@
 const locals = {
     abroad: require("./src/data/abroad.json"),
-    jobs: require("./src/data/jobs.json"),
+    jobs: require("./src/data/jobs.js"),
     projects: require("./src/data/projects.json"),
     featured: require("./src/data/featured.js"),
+
+    // Default values for all settings for all components
+    settings: {
+        long: false,
+    }
+}
+
+const posthtmlExpressionsOptions = {
+    removeScriptLocals: true,
+    locals: locals,
 }
 
 module.exports = {
@@ -15,12 +25,10 @@ module.exports = {
             root: "./src/views",
             attributeAsLocals: true,
             locals: locals,
+            expressions: posthtmlExpressionsOptions,
         },
 
-        "posthtml-expressions": {
-            removeScriptLocals: true,
-            locals: locals,
-        },
+        "posthtml-expressions": posthtmlExpressionsOptions,
 
         "posthtml-markdownit": {},
 
