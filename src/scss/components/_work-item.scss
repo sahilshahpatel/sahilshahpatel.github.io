@@ -1,27 +1,15 @@
 @use "../global/variables" as *;
 
 .work-item {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr auto;
-
-    row-gap: map-get($sizes, 100);
-}
-
-.work-item .work-logo {
-    grid-area: 1 / 2;
-
-    img {
-        height: 0;
+    .work-logo {
         flex-grow: 1;
-        align-self: flex-end;
+
+        img {
+            height: 0;
+            flex-grow: 1;
+
+            object-fit: contain;
+            object-position: bottom right;
+        }
     }
-}
-
-.work-item .work-heading {
-    grid-area: 1 / 1;
-}
-
-.work-item .work-description {
-    grid-area: 2 / 1 / 2 / 3;
 }

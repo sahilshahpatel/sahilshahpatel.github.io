@@ -67,6 +67,10 @@
     @include modifiers($sizes, "--flow-spacer");
 }
 
+.gap {
+    @include modifiers($sizes, "gap");
+}
+
 .w {
     &-25{ width: 25%; }
     &-50{ width: 50%; }
