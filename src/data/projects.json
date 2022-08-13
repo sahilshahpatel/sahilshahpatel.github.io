@@ -2,7 +2,7 @@
     "orbiteye": {
         "title": "OrbitEye",
         "category": "Data Visualization",
-        "img": "/images/projects/orbiteye.png",
+        "img": "/images/projects/orbiteye.jpg",
         "imgPos": "25% 25%",
         "links": {
             "demo": "https://bone008.github.io/orbiteye",
@@ -14,7 +14,7 @@
     "mm27": {
         "title": "MechMania 27",
         "category": "Mech Mania",
-        "img": "/images/projects/mm27.png",
+        "img": "/images/projects/mm27.jpg",
         "links": {
             "github": "https://github.com/MechMania-27/Visualizer"
         },
@@ -25,7 +25,7 @@
         "title": "WebGL Fluid Simulation",
         "category": "Computer Graphics",
         "img": "/images/projects/fluidSim.jpg",
-        "gif": "/images/projects/fluidSim.gif",
+        "gif": "/images/projects/fluidSim.webp",
         "links": {
             "demo": "/fluid-sim",
             "github": "https://github.com/sahilshahpatel/fluid-sim"
@@ -37,7 +37,7 @@
         "title": "WebGL Path Tracer",
         "category": "Computer Graphics",
         "img": "/images/projects/rayTracer.jpg",
-        "gif": "/images/projects/rayTracer.gif",
+        "gif": "/images/projects/rayTracer.webp",
         "links": {
             "demo": "/cs418/gpu",
             "github": "https://github.com/sahilshahpatel/cs418"
@@ -48,7 +48,7 @@
     "391OS": {
         "title": "391OS Custom Kernel",
         "category": "Academic Project",
-        "img": "/images/projects/391OS.png",
+        "img": "/images/projects/391OS.jpg",
         "imgPos": "center 25%",
         "links": {
             "demo": "/391OS-Public"
@@ -69,7 +69,7 @@
     "ece385": {
         "title": "Lurking in the Dark",
         "category": "Academic Project",
-        "img": "/images/projects/LurkingInTheDark.png",
+        "img": "/images/projects/LurkingInTheDark.jpg",
         "links": {
             "github": "https://github.com/sahilshahpatel/ece-385-final-project"
         },
@@ -89,7 +89,7 @@
     "mm25": {
         "title": "MechMania 25",
         "category": "Mech Mania",
-        "img": "/images/projects/MM25.png",
+        "img": "/images/projects/MM25.jpg",
         "links": {
             "github": "https://github.com/HoelzelJon/mm25_game_engine"
         },
