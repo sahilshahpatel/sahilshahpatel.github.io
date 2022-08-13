@@ -10,6 +10,12 @@
 
 .work-item .work-logo {
     grid-area: 1 / 2;
+
+    img {
+        height: 0;
+        flex-grow: 1;
+        align-self: flex-end;
+    }
 }
 
 .work-item .work-heading {

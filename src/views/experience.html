@@ -13,9 +13,9 @@
         <h1 class="section-title">Work Experience</h1>
       </div>
 
-      <div>
+      <div class="flow flow-700">
         <each loop="item, slug in jobs">
-          <div id="{{ slug }}" class="container m-400">
+          <div id="{{ slug }}" class="container">
             <module href="/components/work-item.html" slug="{{ slug }}" long="true"></module>
           </div>
         </each>
