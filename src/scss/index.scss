@@ -2,47 +2,51 @@
 
 /* Hero section */
 section.hero {
-    display: grid;
-    grid-auto-rows: auto;
-    row-gap: map-get($sizes, 600);
+    display: flex;
+    flex-direction: column;
+    gap: map-get($sizes, 400);
 }
 
 section.hero h1 {
     margin-bottom: map-get($sizes, 600);
-    font-size: map-get($font-sizes, 1000);
+    font-size: map-get($font-sizes, 900);
     line-height: 110%;
     font-weight: map-get($font-weights, "bold");
 }
 
-@media (max-width: $mobile-breakpoint) {
+section.hero img {
+    width: 75%;
+    margin-inline: auto;
+}
+
+// For devices > xs
+@media (min-width: $xs-breakpoint) {
     section.hero h1 {
         font-size: map-get($font-sizes, 900) + 0.5rem;
     }
-}
 
-@media (max-width: $xs-breakpoint) {
-    section.hero h1 {
-        font-size: map-get($font-sizes, 900);
+    section.hero img {
+        width: 50%;
     }
 }
 
-section.hero img {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
+// For devices > mobile
 @media (min-width: $mobile-breakpoint) {
-    section.hero{
-        grid-template-columns: 2fr 1fr;
+    section.hero h1 {
+        font-size: map-get($font-sizes, 1000);
     }
-    
-    section.hero .hero-text-container {
-        padding-right: map-get($sizes, 400);
+
+    section.hero {
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     section.hero img {
-        width: 100%;
         margin: 0;
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center;
     }
 }
