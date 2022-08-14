@@ -4,8 +4,13 @@
     min-height: min(60vh, 600px);
 }
 
-.single-img {
+.single-img,
+.img-grid {
     margin-top: map-get($sizes, 400);
+    margin-bottom: map-get($sizes, 600);
+}
+
+.single-img {
     max-height: 75vh;
     margin-inline: auto;
 }
@@ -13,9 +18,6 @@
 .img-grid {
     display: flex;
     flex-wrap: wrap;
-
-    margin-top: map-get($sizes, 400);
-    margin-bottom: map-get($sizes, 600);
 
     .column {
         flex-direction: column;

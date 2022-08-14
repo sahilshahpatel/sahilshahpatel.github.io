@@ -20,6 +20,12 @@ section.hero h1 {
     }
 }
 
+@media (max-width: $xs-breakpoint) {
+    section.hero h1 {
+        font-size: map-get($font-sizes, 900);
+    }
+}
+
 section.hero img {
     width: 50%;
     margin-left: auto;
