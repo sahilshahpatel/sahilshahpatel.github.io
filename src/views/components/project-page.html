@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ projects[slug].title }} | Sahil Patel</title>
+    <module href="/components/head.html"></module>
+    <link rel="stylesheet" href="/project-page.css">
+  </head>
+
+  <body>
+    <module href="/components/primary-header.html"></module>
+
+    <main>
+      <div class="project-banner | bg-img-overlay" style="--bg-img-url: url({{ projects[slug].img }}); {{projects[slug].gif ? '--bg-gif-url: url(' + projects[slug].gif + ');' : ''}} {{projects[slug].imgPos ? '--bg-position: ' + projects[slug].imgPos + ';' : ''}}">
+        <div class="overlay p-400 text-center">
+          <h1>
+            <div class="heading-spread text-gradient-accent">{{ projects[slug].category }}</div>
+            <div class="fs-900 fw-bold">{{ projects[slug].title }}</div>
+          </h1>
+          <div>
+            <module href="/components/project-link-icons.html" slug="{{ slug }}"></module>
+          </div>
+        </div>
+      </div>
+
+      <div class="markdown container pt-400">
+        <content></content>
+      </div>
+
+      <div class="text-center mt-200">
+        <a class="see-more-link subtitle" data-point-left href="/projects#{{ slug }}">
+          <i class="bi-arrow-left"></i>
+          <span>Back to all projects</span>
+        </a>
+      </div>
+    </main>
+    
+    <module href="/components/primary-footer.html"></module>
+
+    <script src="/bundle.js" defer async></script>
+  </body>
+</html>

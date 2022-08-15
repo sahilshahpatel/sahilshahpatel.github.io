@@ -1,0 +1,220 @@
+@use 'global/variables' as *;
+
+/* ======== General styles ======== */
+*,
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+body > main {
+    flex-grow: 1;
+}
+
+
+/* ======== Attribute classes ======== */
+.visually-hidden:not(:focus):not(:active) {
+    /* From https://www.a11yproject.com/posts/how-to-hide-content/ */
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;    
+}
+
+// Presets for markdown rendering
+.markdown {
+    h1, h2, h3, h4, h5, h6 {
+       margin-top: 1.5em; 
+       font-weight: map-get($font-weights, "bold");
+    }
+    
+    p {
+        margin-top: 1em;
+    }
+
+    ol, ul {
+        padding-inline-start: 2.5em;
+    }
+
+    h1 {
+        font-size: map-get($font-sizes, 700);
+    }
+
+    h2 {
+        font-size: map-get($font-sizes, 600);
+    }
+
+    h3, h4, h5, h6 {
+        font-size: map-get($font-sizes, 500);
+    }
+}
+
+.text-gradient-accent {
+    color: transparent !important;
+    background-image: $gradient-accent;
+    background-clip: text;
+    display: inline;
+}
+
+.text-gradient-primary {
+    color: transparent !important;
+    background-image: $gradient-primary;
+    background-clip: text;
+    display: inline;
+}
+
+img.cover {
+    object-fit: cover;
+}
+
+.fill {
+    height: 100%;
+    width: 100%;
+}
+
+.center-inline {
+    margin-inline: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-full-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* ======== Universal components ======== */
+.container {   
+    width: min(1000px, 100% - #{map-get($sizes, 400)} * 2);
+    margin-inline: auto;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-inline: max((100% - 1000px) / 2, #{map-get($sizes, 400)});
+}
+
+
+:where(.flow > :not(:first-child)) {
+    margin-top: var(--flow-spacer, 1em);
+}
+
+:where(.inline-flow > :not(:first-child)) {
+    margin-left: var(--flow-spacer, 1em);
+}
+
+
+/* Flow style main sections */
+:where(main > section:not(:first-child)) {
+    margin-top: map-get($sizes, 1000);
+}
+
+
+.see-more-link {
+    display: inline-flex;
+    text-decoration: none;
+
+    &:not([data-point-left]) i[class^="bi-arrow"]{
+        margin-left: map-get($sizes, 100);
+    }
+    &[data-point-left] i[class^="bi-arrow"]{
+        margin-right: map-get($sizes, 100);
+    }
+
+    i[class^="bi-arrow"] {
+        transform: translateX(0px); /* Eliminates some small vertical shifting on Firefox */
+        transition: transform 200ms ease;
+    }
+
+
+    &:not([data-point-left]):hover i[class^="bi-arrow"]{
+        transform: translateX(map-get($sizes, 200));
+    }
+    &[data-point-left]:hover i[class^="bi-arrow"] {
+        transform: translateX(-1 * map-get($sizes, 200));
+    }
+}
+
+
+/* Text on Image Overlay */
+.bg-img-captioned {
+    --overlay: rgba(0, 0, 0, 0.8);
+    background-image: linear-gradient(to bottom, transparent, var(--overlay)),
+        var(--bg-img-url, linear-gradient(to bottom, $clr-primary-400, $clr-primary-400));
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: var(--bg-position, center);
+
+    color: $clr-text-light;
+}
+
+.bg-img-captioned[data-shadow="solid"] {
+    background-image: linear-gradient(to bottom, var(--overlay), var(--overlay)),
+        var(--bg-img-url, linear-gradient(to bottom, $clr-primary-400, $clr-primary-400));
+}
+
+
+.bg-img-overlay {
+    background-image: $vignette, var(--bg-gif-url, var(--bg-img-url));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: var(--bg-position, center);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: map-get($sizes, 400);
+
+    .overlay {
+        background-color: $clr-primary-100;
+        opacity: 0.95;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bg-img-overlay {
+        background-image: $vignette, var(--bg-img-url);
+    }
+}

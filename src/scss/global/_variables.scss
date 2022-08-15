@@ -1,0 +1,75 @@
+/* Color palette derived from https://color.adobe.com */
+$clr-primary-100: #FAFAFF;
+$clr-primary-200: #F2F2FF;
+$clr-primary-300: #E6E6FF;
+$clr-primary-400: #CCCCFF; /* Base primary */
+$clr-primary-500: #B8B8E6;
+$clr-primary-600: #9999BF;
+$clr-primary-800: #666680;
+$clr-primary-900: #333340;
+
+$clr-accent-100: #F2FFF7;
+$clr-accent-200: #E6FFEF;
+$clr-accent-300: #D6FFE6;
+$clr-accent-400: #BFFFD7;
+$clr-accent-500: #ACE6C2;
+$clr-accent-600: #8FBFA2;
+$clr-accent-800: #60806C;
+$clr-accent-900: #304036;
+
+$clr-important-400: #FFAAA6;
+
+$clr-text-dark: black;
+$clr-text-dark-medium: rgba(0, 0, 0, 0.7);
+$clr-text-light: white;
+$clr-text-light-medium: rgba(255, 255, 255, 0.7);
+
+$gradient-primary: linear-gradient(90deg, $clr-accent-400 0%, $clr-primary-400 100%);
+$gradient-accent: linear-gradient(108deg,#B16CEA 8%,#FF5E69 40%,#FF8A56 77%,#FFA84B 91%);
+
+$vignette: radial-gradient(transparent 45%, rgba(0, 0, 0, 0.3));
+
+$mobile-breakpoint: 750px;
+$xs-breakpoint: 400px;
+
+$sizes: (
+    100: 0.25rem,
+    200: 0.5rem,
+    300: 0.75rem,
+    400: 1rem,
+    500: 1.5rem,
+    600: 2rem,
+    700: 3rem,
+    800: 4rem,
+    900: 5rem,
+    1000: 8rem
+);
+
+$font-sizes: (
+    300: 0.8rem,
+    400: 1rem,
+    500: 1.25rem,
+    600: 1.5rem,
+    700: 1.75rem,
+    800: 2rem,
+    900: 3rem,
+    1000: 5rem
+);
+
+$font-weights: (
+    "light": 300,
+    "normal": 400,
+    "semi-bold": 500,
+    "bold": 700
+);
+
+/* https://boxshadows.com/presets */
+$box-shadow-light: 0px 4px 6px -1px rgba(0,0,0,0.1) , 0px 2px 4px -1px rgba(0,0,0,0.06);
+$box-shadow-float: 0px 20px 25px -5px rgba(0,0,0,0.1) , 0px 10px 10px -5px rgba(0,0,0,0.04);
+$box-shadow-float-high: 0px 25px 50px -12px rgba(0,0,0,0.25);
+
+$box-shadows: (
+    "light": $box-shadow-light,
+    "float": $box-shadow-float,
+    "float-high": $box-shadow-float-high,
+);

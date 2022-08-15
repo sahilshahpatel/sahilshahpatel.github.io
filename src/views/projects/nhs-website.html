@@ -1,0 +1,28 @@
+<script locals>module.exports = {slug: "nhs-website"}</script>
+<module href="/components/project-page.html" slug="{{ slug }}">
+    <markdown>
+        This project was my first real introduction to web development and what rocketed me towards my love of computer science.
+
+        ## The Setup
+        It all began during summer school. I had recently gotten in to my local NHS (National Honor Society) chapter, and they were beginning to offer volunteering opportunities. I had signed up for a few already, and was talking with some friends about which ones they were doing next. To graduate with NHS honors you had to complete 50 hours of community service. Naturally, at some point I wondered how many hours I had already completed. I went to try and find out a discovered that the task was going to be much harder than I imagined.
+
+        See, our school organized volunteering by created a Google Doc for each event. You could sign up and your name would be placed in the table alongside how many hours you were volunteering for. This made it easy to sign up for events and relatively easy to see which events you had signed up for. But it made it horrible to see how many hours you had volunteered for in total.
+
+        In talking with my friends we came upon a simple but fundamental idea: the organization of the data made certain questions easy to answer and others harder. It was easy to imaging other systems of storing data in which it would be easy to see how many hours you had but difficult to see which events those were a part of. We wanted something better, and after some searching, we found our answer in *SQL databases*.
+
+        ## The Development
+        We began to design a schema for a database that would work better. At this point we were just messing around during our lunch break, but as the project came together, we began to imaging creating a website that could handle all the paperwork behind the NHS. After talking with our faculty NHS leaders and our computer science teacher, we began the road of developing just that.
+
+        At the time, the "stack" we created was to use PHP and MySQL on an Apache server to perform queries and generate the webpage for each user. We created a site with user logins that could see their own status and sign up for events as well as admin accounts which could create new events and edit existing ones.
+
+        While the design of the site wasn't sleek by modern standards, we were pretty happy with it given that it was our first experience with CSS at all.
+
+        ## The Downfall
+        We felt we had just about finished by our second semester of senior year after about 6 months of development. We took our code to our technology office to ask about putting it online and were met with what was in hindsight reasonable caution. It turns out that schools have strict security policies, and hosting sensitive data on minors in a database designed by curiosity-driven teenagers was not a simple ask.
+
+        We were able to talk to the systems administrator for the whole district who gave us a security audit of our site. It was an amazing introduction to cybersecurity, and we worked hard to fix the problems that we could. Ultimately, though, the project was canceled because we were graduating and there was no one in the technology office who knew our stack well enough to maintain the project in the future.
+
+        ## The Upshot
+        While our NHS Website wasn't as big a success as we initially hoped, it was a major inspiration for both me and my friend Ben Wagrez's journeys in computer science. In fact, after that project he went on to major in cyber security. As for me, while my major was computer engineering and therefore much lower-level, this project sparked my love for web development which continued on the side. You can see that in this personal website right here which is hand-made as well as in many other of my projects which are hosted on the web including my computer graphics project for [Fluid Simulation](/projects/fluid-sim) and my data science project [OrbitEye](/projects/orbiteye).
+    </markdown>
+</module>

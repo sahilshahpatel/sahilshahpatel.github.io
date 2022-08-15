@@ -1,0 +1,21 @@
+<div class="travel-card bg-img-captioned container-fluid flex-column flex-end p-600" style="--bg-img-url: url({{ abroad[slug].img }}); {{ abroad[slug].imgPos ? '--bg-position: ' + abroad[slug].imgPos + ';' : ''}}">
+    <div class="container flex-between flex-wrap">
+        <div>
+            <h2 class="heading-spread text-gradient-accent">
+                {{ abroad[slug].where }}
+            </h2>
+            <h3 class="fw-bold">
+                {{ abroad[slug].what }}
+            </h3>
+            <p class="subtitle-light">
+                {{ abroad[slug].when }}
+            </p>
+        </div>
+        <div class="flex-column flex-end">
+            <a class="see-more-link subtitle-light" href="/abroad/{{ slug }}">
+                Read more
+                <i class="bi-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

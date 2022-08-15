@@ -1,0 +1,52 @@
+@use "global/variables" as *;
+
+/* Hero section */
+section.hero {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($sizes, 400);
+}
+
+section.hero h1 {
+    margin-bottom: map-get($sizes, 600);
+    font-size: map-get($font-sizes, 900);
+    line-height: 110%;
+    font-weight: map-get($font-weights, "bold");
+}
+
+section.hero img {
+    width: 75%;
+    margin-inline: auto;
+}
+
+// For devices > xs
+@media (min-width: $xs-breakpoint) {
+    section.hero h1 {
+        font-size: map-get($font-sizes, 900) + 0.5rem;
+    }
+
+    section.hero img {
+        width: 50%;
+    }
+}
+
+// For devices > mobile
+@media (min-width: $mobile-breakpoint) {
+    section.hero h1 {
+        font-size: map-get($font-sizes, 1000);
+    }
+
+    section.hero {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    section.hero img {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center;
+    }
+}

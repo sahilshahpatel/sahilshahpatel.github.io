@@ -1,0 +1,23 @@
+<script locals>module.exports = {slug: "ece385"}</script>
+<module href="/components/project-page.html" slug="{{ slug }}">
+    <markdown>
+        ECE 385 was our FPGA course where we learned about digital design principles as well as the practical skill of designing in SystemVerilog. For our final project we were allowed to propose any idea, and the professor would give it a difficulty rating out of 10 which would influence our final grade. Many student choose to create a video game in System Verilog, often re-creating arcade classics like Pac Man. Me and my partner decided to go a different route.
+
+        I was interested in exploring concepts that felt more "practical" to me. That combined with my budding interest in computer graphics and our courses previous introduction to using the Intel NIOS II processor on the FPGA led us to our idea. Instead of re-creating a single game in SystemVerilog we would design a system that would allow any arbitrary C++ code to display content on a VGA monitor through an abstracted API and hardware graphics accelerator. To show off our capability we decided to re-create the little-known GMTK game jam winner [Lurking in the Dark](https://realkotob.itch.io/lurking-in-the-dark) by kotob.
+
+        ## The Graphics Accelerator
+        We implemented a double frame buffer solution. This meant that one segment of memory would represent what was currently on screen and was non-writable. Another segment would represent what would be shone on screen next, and was freely writable. At a given command (typically after all content had finished being written to the writable segment) the two buffers would switch (via pointers) so that the newly written image would now be immutable and showing on screen. The previous screen buffer would be cleared to prepare for new writes.
+
+        There was quite a lot of work that went into this. For example, we actually began with a fixed frame rate solution, but discovered that our own game was too slow to keep up and resulted in blank frames appearing during large computation times. We also had to develop an abstraction layer for the drawing. We ended up setting a basic sprite size and requiring larger images to be drawn in pieces. There was a color palette to reduce the time spent reading and writing data, and a sprite sheet was loaded at startup to be read from.
+
+        All in all, this created a API from which any C++ game could be created.
+        
+        ## The Game: Lurking in the Dark
+        Creating the game itself was the second phase of our project. We redrew the pixelated sprites from the original game to fit our new resolution. We then created the structure of our codebase including structs/classes for the enemies, the levels, and the player character. We copied the first few levels from the original game itself before designing a couple ourselves for some extra fun.
+
+        The most complex part of the game logic was writing a path-finding for the enemies to use to chase the player character. Our BFS approach was the part of the game which was too slow for our fixed frame rate accelerator and prompted the switch to variable rate.
+        
+        ## Conclusion
+        Unfortunately, so far I haven't found a way to demo this project in the browser. However, you can view the source code [here]({{projects[slug].links.github}}). Please do not use our code to engage in academic dishonesty. Our project may serve as an inspiration for yours, but copying any code is not permitted without explicit citation and permission from your professor.
+    </markdown>
+</module>

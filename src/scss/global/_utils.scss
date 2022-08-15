@@ -1,0 +1,110 @@
+@use "variables" as *;
+
+// From https://gist.github.com/sarahdayan/4d2cc04a636e8039f10a889a0e29fbd9
+@mixin modifiers($map, $attribute, $prefix: '-', $separator: '-', $base: 'base') {
+    @each $key, $value in $map {
+        &#{if($key != $base, #{$prefix}#{$key}, '')} {
+            @if type-of($value) == 'map' {
+                @include modifiers($value, $attribute, $separator);
+            }
+            @else {
+                @if type-of($attribute) == "list" {
+                    @each $attr in $attribute {
+                        #{$attr}: $value !important;    
+                    }
+                }
+                @else {
+                    #{$attribute}: $value !important;
+                }
+            }
+        }
+    }
+}
+
+@mixin box-modifiers($map, $attribute) {
+    $borders: (
+        "t": "top",
+        "b": "bottom",
+        "y": ("top", "bottom"),
+        "l": "left",
+        "r": "right",
+        "x": ("left", "right"),
+        "base": ("top", "bottom", "left", "right")
+    );
+
+    @each $key, $value in $borders {
+        &#{if($key != "base", #{$key}, '')} {
+            $attributes: ();
+            @each $inner-value in $value {
+                $attributes: append($attributes, $attribute + "-" + unquote($inner-value));
+            }
+            @include modifiers($map, $attributes);
+        }
+    } 
+}
+
+.fs {
+    @include modifiers($font-sizes, "font-size");
+}
+
+.fw {
+    @include modifiers($font-weights, "font-weight");
+}
+
+.box-shadow {
+    @include modifiers($box-shadows, "box-shadow");
+}
+
+.p {
+    @include box-modifiers($sizes, "padding");
+}
+
+.m {
+    @include box-modifiers($sizes, "margin");
+}
+
+.flow {
+    @include modifiers($sizes, "--flow-spacer");
+}
+
+.gap {
+    @include modifiers($sizes, "gap");
+}
+
+.w {
+    &-25{ width: 25%; }
+    &-50{ width: 50%; }
+    &-75{ width: 75%; }
+    &-100{ width: 100%; }
+}
+
+
+/* Text Styles */
+.text-dark {
+    color: $clr-text-dark;
+}
+
+.text-light {
+    color: $clr-text-light;
+}
+
+.section-title {
+    font-size: map-get($font-sizes, 900);
+    font-weight: map-get($font-weights, "semi-bold");
+    text-align: center;
+    margin-bottom: map-get($sizes, 500);
+}
+
+.heading-spread {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: $clr-text-dark-medium !important;
+}
+
+.subtitle-light {
+    color: $clr-text-light-medium !important;
+}

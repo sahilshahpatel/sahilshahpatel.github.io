@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Experience | Sahil Patel</title>
+    <module href="/components/head.html"></module>
+  </head>
+
+  <body>
+    <module href="/components/primary-header.html"></module>
+
+    <main>
+      <div class="container">
+        <h1 class="section-title">Work Experience</h1>
+      </div>
+
+      <div class="flow flow-700">
+        <each loop="item, slug in jobs">
+          <div id="{{ slug }}" class="container">
+            <module href="/components/work-item.html" slug="{{ slug }}" long="true"></module>
+          </div>
+        </each>
+      </div>
+    </main>
+    
+    <module href="/components/primary-footer.html"></module>
+
+    <script src="/bundle.js" defer async></script>
+  </body>
+</html>

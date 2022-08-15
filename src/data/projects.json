@@ -1,0 +1,148 @@
+{
+    "orbiteye": {
+        "title": "OrbitEye",
+        "category": "Data Visualization",
+        "img": "/images/projects/orbiteye.jpg",
+        "imgPos": "25% 25%",
+        "links": {
+            "demo": "https://bone008.github.io/orbiteye",
+            "github": "https://github.com/bone008/orbiteye"
+        },
+        "description": "An educational visualization of orbital satellite data. Built in React with D3 and ThreeJS for a class project at KTH."
+    },
+    
+    "mm27": {
+        "title": "MechMania 27",
+        "category": "Mech Mania",
+        "img": "/images/projects/mm27.jpg",
+        "links": {
+            "github": "https://github.com/MechMania-27/Visualizer"
+        },
+        "description": "Visualizer built in the Godot game engine for MechMania 27, an AI hackathon."
+    },
+    
+    "fluid-sim": {
+        "title": "WebGL Fluid Simulation",
+        "category": "Computer Graphics",
+        "img": "/images/projects/fluidSim.jpg",
+        "gif": "/images/projects/fluidSim.webp",
+        "links": {
+            "demo": "/fluid-sim",
+            "github": "https://github.com/sahilshahpatel/fluid-sim"
+        },
+        "description": "A fluid simulation built with WebGL shaders. Accompanied by a written guide and intended as an introductory project for SIGGRAPH students."
+    },
+
+    "webgl-path-tracer": {
+        "title": "WebGL Path Tracer",
+        "category": "Computer Graphics",
+        "img": "/images/projects/rayTracer.jpg",
+        "gif": "/images/projects/rayTracer.webp",
+        "links": {
+            "demo": "/cs418/gpu",
+            "github": "https://github.com/sahilshahpatel/cs418"
+        },
+        "description": "A path tracer built with WebGL shaders. Created as part of a course project following Pete Shirley's <i>Ray Tracing in One Weekend</i>."
+    },
+
+    "391OS": {
+        "title": "391OS Custom Kernel",
+        "category": "Academic Project",
+        "img": "/images/projects/391OS.jpg",
+        "imgPos": "center 25%",
+        "links": {
+            "demo": "/391OS-Public"
+        },
+        "description": "A custom kernel written in C for UIUC's ECE 391 course. Supports multiple terminals and scheduling."
+    },
+
+    "mm26": {
+        "title": "MechMania 26",
+        "category": "Mech Mania",
+        "img": "/images/projects/mm26-home-map.jpg",
+        "links": {
+            "github": "https://github.com/jackducham/mm26-engine"
+        },
+        "description": "The game engine for MechMania 26, the first year with a continuous-style MMO game."
+    },
+
+    "ece385": {
+        "title": "Lurking in the Dark",
+        "category": "Academic Project",
+        "img": "/images/projects/LurkingInTheDark.jpg",
+        "links": {
+            "github": "https://github.com/sahilshahpatel/ece-385-final-project"
+        },
+        "description": "A SystemVerilog design for a basic graphics accelerator paired with a C++ recreation of the game <i>Lurking in the Dark</i> made to run on an FPGA."
+    },
+
+    "bahai-game": {
+        "title": "Interactive Fiction",
+        "category": "Academic Project",
+        "img": "/images/projects/BahaiGame.jpg",
+        "links": {
+            "demo": "/files/The%20Baha'i%20House%20of%20Worship%20Game/play.html"
+        },
+        "description": "A text-based video game that takes the player through the history of the founding of the Baha'i temple in Willmette, Illinois."
+    },
+
+    "mm25": {
+        "title": "MechMania 25",
+        "category": "Mech Mania",
+        "img": "/images/projects/MM25.jpg",
+        "links": {
+            "github": "https://github.com/HoelzelJon/mm25_game_engine"
+        },
+        "description": "A turn-based multi-character strategy battler built in Java, and my first Mech Mania game engine."
+    },
+
+    "nokia-robotics": {
+        "title": "Nokia Intern Robotics",
+        "category": "Arduino",
+        "img": "/images/projects/nokiaRobotics.jpg",
+        "links": {
+            "github": "https://github.com/sahilshahpatel/Nokia-Robotics-Intern-Challenge"
+        },
+        "description": "An expansion of the BOEBot kit made to clear challenges set out by the competition runners at Nokia."
+    },
+
+    "ece120-honors": {
+        "title": "ECE 120 Honors Project",
+        "category": "Arduino",
+        "img": "/images/projects/ece120Honors.jpg",
+        "links": {
+            "github": "https://github.com/sahilshahpatel/ECE120-Honors-Lab-Dual-Method-Security-System"
+        },
+        "description": "A breadboard circuit using an Arduino, a keypad, an RFID scanner, an LCD screen, and basic logic gates to create a simple security system."
+    },
+
+    "mm24": {
+        "title": "MechMania 24",
+        "category": "Mech Mania",
+        "img": "/images/projects/MM2018.jpg",
+        "links": {
+            "github": "https://github.com/sahilshahpatel/MechMania2018"
+        },
+        "description": "A simple bot built to compete in MechMania 24: Rock Paper Scissors. Uses manually set weights and biases to choose a strategy."
+    },
+
+    "nhs-website": {
+        "title": "NHS Website",
+        "category": "Web Development",
+        "img": "/images/projects/NHSWebsite.jpg",
+        "links": {
+            "github": "https://github.com/sahilshahpatel/LPNHS-Website"
+        },
+        "description": "A website built for my local NHS chapter. Uses an SQL database to keep track of volunteer hours and enable quick and easy sign ups."
+    },
+
+    "foodle": {
+        "title": "Foodle",
+        "category": "Web Development",
+        "img": "/images/projects/foodle.jpg",
+        "links": {
+            "github": "https://github.com/sahilshahpatel/HackRidge2018"
+        },
+        "description": "A website built for my first hackathon. Mimics collaborative filtering algorithms to find recommended recipes based on your history and friends."
+    }
+}
