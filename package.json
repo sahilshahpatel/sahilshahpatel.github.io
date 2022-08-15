@@ -19,6 +19,7 @@
     "build:images": "rm -rf dist/images && cp -r src/images dist/",
     "build:videos": "rm -rf dist/videos && cp -r src/videos dist/",
     "build:files": "rm -rf dist/files && cp -r src/files dist/",
+    "build:gh-pages": "cp CNAME dist/ && cp .nojekyll dist/",
     "build": "run-s build:*",
     "serve": "browser-sync start --server \"dist\" --files \"dist\" --extensions \"html\"",
     "watch:css": "onchange \"src/scss\" -- npm run build:css",
