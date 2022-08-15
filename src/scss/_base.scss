@@ -15,10 +15,6 @@ body > main {
     flex-grow: 1;
 }
 
-body > footer.primary-footer {
-    justify-self: flex-end;
-}
-
 
 /* ======== Attribute classes ======== */
 .visually-hidden:not(:focus):not(:active) {
@@ -61,14 +57,14 @@ body > footer.primary-footer {
 }
 
 .text-gradient-accent {
-    color: transparent;
+    color: transparent !important;
     background-image: $gradient-accent;
     background-clip: text;
     display: inline;
 }
 
 .text-gradient-primary {
-    color: transparent;
+    color: transparent !important;
     background-image: $gradient-primary;
     background-clip: text;
     display: inline;

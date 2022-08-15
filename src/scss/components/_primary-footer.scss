@@ -12,18 +12,27 @@
     
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
     a {
         text-decoration: none;
         color: inherit;
     }
 
-    nav {
+    .footer-links {
         display: grid;
-        row-gap: map-get($sizes, 100);
-        column-gap: map-get($sizes, 300);
-        grid-template-columns: repeat(2, 1fr);
+        row-gap: map-get($sizes, 200);
+        column-gap: map-get($sizes, 600);
+        grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: 1fr;
+    }
+}
+
+@media (max-width: $mobile-breakpoint) {
+    .primary-footer {
+        .footer-links {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }
