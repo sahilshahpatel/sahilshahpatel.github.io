@@ -39,8 +39,8 @@
         "img": "/images/projects/rayTracer.jpg",
         "gif": "/images/projects/rayTracer.webp",
         "links": {
-            "demo": "/cs418/gpu",
-            "github": "https://github.com/sahilshahpatel/cs418"
+            "demo": "/CS418/ray-tracer/gpu",
+            "github": "https://github.com/sahilshahpatel/CS418"
         },
         "description": "A path tracer built with WebGL shaders. Created as part of a course project following Pete Shirley's <i>Ray Tracing in One Weekend</i>."
     },
