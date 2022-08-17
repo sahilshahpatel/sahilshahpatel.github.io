@@ -1,6 +1,9 @@
 @use "../global/variables" as *;
 
 .primary-header {
+    // Reference for absolute mobile nav
+    position: relative;
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -45,9 +48,12 @@
     }
 
     .primary-nav.open {
-        flex-basis: 100%;
-
-        margin-top: map-get($sizes, 400);
+        // Absolute position mobile nav above other content
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(100% - map-get($sizes, 200));
+        margin-inline: auto;
 
         display: flex;
         flex-direction: column;
