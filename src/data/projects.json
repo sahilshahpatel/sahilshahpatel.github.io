@@ -10,6 +10,16 @@
         },
         "description": "An educational visualization of orbital satellite data. Built in React with D3 and ThreeJS for a class project at KTH."
     },
+
+    "ece411": {
+        "title": "RISC-V Pipelined Processor",
+        "category": "Academic Project",
+        "img": "/images/projects/ece411-diagram.jpg",
+        "links": {
+            "report": "/files/ECE%20411%20Report.pdf"
+        },
+        "description": "A SystemVerilog design for a pipelined RISC-V processor with L2 cache and wallace tree multiplication."
+    },
     
     "mm27": {
         "title": "MechMania 27",
@@ -71,7 +81,8 @@
         "category": "Academic Project",
         "img": "/images/projects/LurkingInTheDark.jpg",
         "links": {
-            "github": "https://github.com/sahilshahpatel/ece-385-final-project"
+            "github": "https://github.com/sahilshahpatel/ece-385-final-project",
+            "report": "/files/LurkingInTheDarkReport.pdf"
         },
         "description": "A SystemVerilog design for a basic graphics accelerator paired with a C++ recreation of the game <i>Lurking in the Dark</i> made to run on an FPGA."
     },
@@ -81,7 +92,8 @@
         "category": "Academic Project",
         "img": "/images/projects/BahaiGame.jpg",
         "links": {
-            "demo": "/files/The%20Baha'i%20House%20of%20Worship%20Game/play.html"
+            "demo": "/files/The%20Baha'i%20House%20of%20Worship%20Game/play.html",
+            "report": "/files/Baha'i%20House%20of%20Worship%20Report.pdf"
         },
         "description": "A text-based video game that takes the player through the history of the founding of the Baha'i temple in Willmette, Illinois."
     },
@@ -111,7 +123,8 @@
         "category": "Arduino",
         "img": "/images/projects/ece120Honors.jpg",
         "links": {
-            "github": "https://github.com/sahilshahpatel/ECE120-Honors-Lab-Dual-Method-Security-System"
+            "github": "https://github.com/sahilshahpatel/ECE120-Honors-Lab-Dual-Method-Security-System",
+            "report": "/files/ECE%20120%20Honors%20Lab%20Report.pdf"
         },
         "description": "A breadboard circuit using an Arduino, a keypad, an RFID scanner, an LCD screen, and basic logic gates to create a simple security system."
     },
