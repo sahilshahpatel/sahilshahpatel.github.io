@@ -124,14 +124,14 @@ img.cover {
 
 
 /* ======== Universal components ======== */
-.container {   
-    width: min(1000px, 100% - #{map-get($sizes, 400)} * 2);
+.container {
+    width: min(#{$container-max-width}, 100% - #{map-get($sizes, 400)} * 2);
     margin-inline: auto;
 }
 
 .container-fluid {
     width: 100%;
-    padding-inline: max((100% - 1000px) / 2, #{map-get($sizes, 400)});
+    padding-inline: max((100% - #{$container-max-width}) / 2, #{map-get($sizes, 400)});
 }
 
 
