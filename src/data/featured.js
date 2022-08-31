@@ -1,5 +1,5 @@
 module.exports = {
-    jobs: ["samsung-intern"],
+    jobs: ["samsung-vulkan"],
     abroad: ["kth", "imagininguate"],
     projects: ["fluid-sim", "webgl-path-tracer", "391OS"]
 };

@@ -1,4 +1,18 @@
 module.exports = {
+    "samsung-vulkan": {
+        company: "Samsung",
+        logo: "/images/logos/Samsung_Orig_Wordmark_BLUE_RGB.png",
+        position: "Engineer (Vulkan Drivers)",
+        timeframe: "August 2022 - Present",
+        summary: "Full time position at Samsung working on Vulkan drivers for the Xclipse GPU and future generations.",
+
+        description: `<markdown>
+        After my summer internship at Samsung SARC/ACL I decided to join full time after completing my degree. This time, however, I changed teams to work on Vulkan drivers. I did this because I wanted to try something new, and because Vulkan was something I had never tried but had some interest in after my computer graphics courses at UIUC.
+
+        This is my current position, so I will continue to update with details.
+        </markdown>`,
+    },
+
     "samsung-intern": {
         company: "Samsung",
         logo: "/images/logos/Samsung_Orig_Wordmark_BLUE_RGB.png",
