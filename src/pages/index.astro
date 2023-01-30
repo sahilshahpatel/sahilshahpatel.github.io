@@ -41,7 +41,7 @@ import ProjectCard from "../components/project-card.astro";
     <section id="experience" class="work-experience | container">
         <h1 class="section-title">Work Experience</h1>
 
-        <div class="flow">
+        <div class="flow observed slide-children-up">
             { jobs.map( job => <WorkItem job={ job } long={ false } /> ) }
 
             <div class="text-center">
@@ -74,11 +74,15 @@ import ProjectCard from "../components/project-card.astro";
             {
                 featured.projects.map( slug => {
                     const item = projects.find( item => getSlug(item.file) === slug);
-                    return <ProjectCard item={ item } />
+                    return (
+                        <div class="observed slide-up">
+                            <ProjectCard item={ item } />
+                        </div>
+                    );
                 })
             }
 
-            <div class="text-center">
+            <div class="text-center observed slide-up">
                 <a class="see-more-link subtitle" href="/projects">
                     <span>See all projects</span>
                     <i class="bi-arrow-right"></i>
