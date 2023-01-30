@@ -218,3 +218,35 @@ img.cover {
         background-image: $vignette, var(--bg-img-url);
     }
 }
+
+
+/* ======== Observed Presets ======== */
+@media (prefers-reduced-motion: no-preference){
+    .observed {
+        @for $i from 1 through 100 {
+            &:is(
+                .slide-children-up
+            ) :nth-child(#{$i}) {
+              transition-delay: #{($i - 1) * 250}ms;
+            }
+        }
+
+
+        &.slide-up,
+        &.slide-children-up > * {
+            transition:
+                    transform   750ms,
+                    opacity     750ms;
+        }
+
+        &.observed--hidden {
+            &.slide-up,
+            &.slide-children-up > * {
+                // Reset quickly on hidden
+                transition: none;
+                transform: translateY(map-get($sizes, 400));
+                opacity: 0;
+            }
+        }
+    }
+}
