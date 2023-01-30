@@ -1,0 +1,28 @@
+---
+import { AbroadData } from '../../data/types';
+import { getSlug, orderSort } from '../../util';
+
+import BasicPage from '../../layouts/basic-page.astro';
+
+import TravelCard from '../../components/travel-card.astro';
+
+const abroad = orderSort(await Astro.glob<AbroadData>('../../data/abroad/*.mdx'));
+---
+
+<BasicPage>
+    <title slot="title">Abroad | Sahil Patel</title>
+
+    <div class="container">
+        <h1 class="section-title">Travel Abroad</h1>
+    </div>
+
+    <div>
+        {
+            abroad.map( item => 
+                <div id={ getSlug(item.file) } class="container my-400">
+                    <TravelCard item={ item } />
+                </div>
+            )
+        }
+    </div>
+</BasicPage>

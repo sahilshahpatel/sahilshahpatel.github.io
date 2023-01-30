@@ -1,0 +1,46 @@
+---
+import { ProjectData } from '../../data/types';
+import { getSlug } from '../../util';
+
+export async function getStaticPaths() {
+    const projects = await Astro.glob<ProjectData>('../../data/projects/*.mdx');
+    return projects.map(mdx => ({
+        params: { slug: getSlug(mdx.file) },
+        props: { item: mdx }
+    }));
+}
+
+const { slug } = Astro.params;
+const { item } = Astro.props;
+
+import '../../scss/project-page.scss';
+import BasicPage from '../../layouts/basic-page.astro';
+import ProjectLinkIcons from '../../components/project-link-icons.astro';
+---
+
+<BasicPage>
+    <title slot="title">{ item.frontmatter.title } | Sahil Patel</title>
+    
+    <div class="project-banner | bg-img-overlay" style={`--bg-img-url: url(${ item.frontmatter.img }); ${ item.frontmatter.gif ? '--bg-gif-url: url(' + item.frontmatter.gif + ');' : ''} ${item.frontmatter.imgPos ? '--bg-position: ' + item.frontmatter.imgPos + ';' : ''}`}>
+        <div class="overlay p-400 text-center">
+            <h1>
+                <div class="heading-spread text-gradient-accent">{ item.frontmatter.category }</div>
+                <div class="fs-900 fw-bold">{ item.frontmatter.title }</div>
+            </h1>
+            <div>
+                <ProjectLinkIcons links={ item.frontmatter.links } />
+            </div>
+        </div>
+    </div>
+
+    <div class="markdown container pt-400">
+        <item.Content />
+    </div>
+
+    <div class="text-center mt-200">
+        <a class="see-more-link subtitle" data-point-left href={`/projects#${ slug }`}>
+            <i class="bi-arrow-left"></i>
+            <span>Back to all projects</span>
+        </a>
+    </div>
+</BasicPage>

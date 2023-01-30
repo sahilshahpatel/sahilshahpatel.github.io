@@ -1,0 +1,38 @@
+---
+import { ProjectData } from "../data/types";
+import { getSlug } from "../util";
+
+import ProjectLinkIcons from "./project-link-icons.astro";
+
+const { item } = Astro.props;
+const {
+    order,
+    title,
+    category,
+    img,
+    imgPos,
+    gif,
+    links,
+    description
+} = item.frontmatter as ProjectData;
+const slug = getSlug(item.file);
+---
+
+<div id={ slug } class="project-card | bg-img-overlay" style={`--bg-img-url: url(${ img }); ${ gif ? '--bg-gif-url: url(' + gif + ');' : ''} ${imgPos ? '--bg-position: ' + imgPos + ';' : ''}`}>
+    <div class="overlay w-100 flow p-400">
+        <div>
+            <p class="heading-spread text-gradient-accent">{ category }</p>
+            <h2 class="fw-bold">{ title }</h2>
+        </div>
+        
+        <div set:html={ description }></div>
+
+        <div class="project-links">
+            <a class="see-more-link subtitle" href={`/projects/${ slug }`}>
+                <span>Read more</span>
+                <i class="bi-arrow-right"></i>
+            </a>
+            <ProjectLinkIcons links={ links } />
+        </div>
+    </div>
+</div>

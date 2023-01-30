@@ -1,0 +1,22 @@
+---
+order: 10
+title: "WebGL Path Tracer"
+category: "Computer Graphics"
+img: "/images/projects/rayTracer.jpg"
+gif: "/images/projects/rayTracer.webp"
+links: {
+    demo: "/CS418/ray-tracer/gpu",
+    github: "https://github.com/sahilshahpatel/CS418"
+}
+description: "A path tracer built with WebGL shaders. Created as part of a course project following Pete Shirley's <i>Ray Tracing in One Weekend</i>."
+---
+
+Of the two main methods of rendering, ray tracing is the easier to understand fundamentally. Since rasterization is both more foreign and (at least for now) more common, my introductory course in computer graphics focused on that method. To encourage some self-learning about ray tracing, however, our professor gave extra credit to students who followed Pete Shirley's *Ray Tracing in One Weekend* book to build their own path tracer.
+
+At the time I was a big fan of web-based projects because of how easily they can be shown off. Still, basic path tracers are typically written to provide their output all at the end rather than by converging on an output. So I began the project by writing in JavaScript and rendering to an HTML5 canvas.
+
+But in the course of my research I stumbled upon [a WebGL path tracer online](https://www.madebyevan.com/webgl-path-tracing/). I loved how you could see the convergence happening in real time and interact with the objects in the scene. That combined with the nuisance that was working with JavaScript (single thread, browser timeouts, lack of vector operations) led me to start over, this time in GLSL.
+
+The end result is an interactive path tracer which converges live in the browser. It supports triangle, plane, and sphere primitives and Lambertian, metallic, and dielectric materials. The renderer uses a custom-formatted WebGL texture to organize the scene into a BVH (bounding volume hierarchy) and send it down to the GLSL renderer, allowing it to render traditional meshes which are decomposed into triangle primitives.
+
+You can view the demo <a href={frontmatter.links.demo}>here</a>. The source repository with both the original JavaScript and the new GLSL renderers is public <a href={frontmatter.links.github}>here</a>.

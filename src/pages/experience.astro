@@ -1,0 +1,22 @@
+---
+import { JobData } from '../data/types';
+import { orderSort } from '../util';
+
+import BasicPage from '../layouts/basic-page.astro';
+
+import WorkItem from '../components/work-item.astro';
+
+
+const jobs = orderSort(await Astro.glob<JobData>('../data/jobs/*.mdx'));
+---
+
+<BasicPage>
+    <title slot="title">Experience | Sahil Patel</title>
+    <div class="container">
+        <h1 class="section-title">Work Experience</h1>
+
+        <div class="flow flow-700">
+            { jobs.map(job => <WorkItem job={job} long={true}  />) }
+        </div>
+    </div>
+</BasicPage>

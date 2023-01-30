@@ -1,0 +1,29 @@
+---
+import { JobData } from "../data/types";
+
+const { job, long } = Astro.props;
+const { company, position, timeframe, logo, summary } = job.frontmatter as JobData;
+---
+<div class="work-item">
+    <div class="flex-between gap-400">
+        <div class="work-heading">
+            <h2 class="heading-spread text-gradient-accent">
+                { company }
+            </h2>
+            <h3 class="fw-bold">
+                { position }
+            </h3>
+            <span class="subtitle">
+                { timeframe }
+            </span>
+        </div>
+
+        <div class="work-logo | flex-column flex-end">
+            <img src={ logo } alt="" loading="lazy" />
+        </div>
+    </div>
+
+    <div class="work-description | flow markdown">
+        { long ? <job.Content /> : summary }
+    </div>
+</div>
