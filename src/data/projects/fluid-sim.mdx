@@ -1,0 +1,24 @@
+---
+order: 11
+title: "WebGL Fluid Simulation"
+category: "Computer Graphics"
+img: "/images/projects/fluidSim.jpg"
+gif: "/images/projects/fluidSim.webp"
+links: {
+    demo: "/fluid-sim",
+    github: "https://github.com/sahilshahpatel/fluid-sim"
+}
+description: "A fluid simulation built with WebGL shaders. Accompanied by a written guide and intended as an introductory project for SIGGRAPH students."
+---
+
+During the summer of 2021, our UIUC SIGGRAPH team was excited to rebuild our presence on campus. Our membership had fallen because of a lot of graduations two years back followed by a full year of online extracurriculars. To encourage new members to join SIGGRAPH and learn a little bit about computer graphics, we decided to try and build out **guided projects**. 
+
+Of course, building something like that takes a lot of effort, so we knew we had to choose something we ourselves were interested in. The inspiration finally came when I found [this YouTube video](https://www.youtube.com/watch?v=qsYE1wMEMPA) about the basics of fluid simulation.
+
+The video focused on the math, but the original sources of Jos Stam's [research paper](https://www.autodesk.com/research/publications/real-time-fluid-dynamics) and NVIDIA's [*GPU Gems* chapter](https://developer.download.nvidia.com/books/HTML/gpugems/gpugems_ch38.html) provided more insight into the actual code.
+
+There was one problem: UIUC's introductory computer graphics class has enough prerequisites that most people don't take it until their third year. On top of that, the class uses WebGL rather than OpenGL to allow students to easily work on any machine. We decided to take a similar approach to best prepare new students for our computer graphics courses. That meant converting the CUDA approach from NVIDIA to a more basic GLSL form using frame buffers to manipulate data.
+
+I took the lead on this project, and over the course of the summer I developed both the codebase and guide. I started by creating the whole program from scratch. After it was complete, I had the hindsight to understand what I could improve organizationally about the codebase, so I began a re-write, this time writing the guide alongside the code.
+
+The end result is a demo available <a href={frontmatter.links.demo}>here</a> and a guide available [here](https://github.com/sahilshahpatel/fluid-sim/wiki). During project proposals each semester at SIGGRAPH, this fluid simulation will always be an option for new members who want a guided start or more experienced members who are interested in adding advanced features.

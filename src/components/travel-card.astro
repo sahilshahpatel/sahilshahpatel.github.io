@@ -1,0 +1,37 @@
+---
+import { AbroadData } from "../data/types";
+import { getSlug } from "../util";
+
+const { item } = Astro.props;
+const {
+    order,
+    what,
+    where,
+    when,
+    img,
+    imgPos,
+} = item.frontmatter as AbroadData;
+const slug = getSlug(item.file);
+---
+
+<div class="travel-card bg-img-captioned container-fluid flex-column flex-end p-600" style={`--bg-img-url: url(${ img }); ${ imgPos ? '--bg-position: ' + imgPos + ';' : ''}`}>
+    <div class="container flex-between flex-wrap">
+        <div>
+            <h2 class="heading-spread text-gradient-accent">
+                { where }
+            </h2>
+            <h3 class="fw-bold">
+                { what }
+            </h3>
+            <p class="subtitle-light">
+                { when }
+            </p>
+        </div>
+        <div class="flex-column flex-end">
+            <a class="see-more-link subtitle-light" href={`/abroad/${ slug }`}>
+                Read more
+                <i class="bi-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
