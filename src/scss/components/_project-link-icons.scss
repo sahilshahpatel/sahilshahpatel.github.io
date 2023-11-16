@@ -2,9 +2,9 @@
 
 .project-link-icons a {
     transition: color 200ms ease;
-    color: $clr-text-dark-medium;
+    color: var(--clr-text-default-medium);
 }
 
 .project-link-icons a:hover {
-    color: $clr-text-dark;
+    color: var(--clr-text-default);
 }

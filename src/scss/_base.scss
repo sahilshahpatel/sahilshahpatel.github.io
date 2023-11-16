@@ -9,10 +9,33 @@ body {
 body {
     display: flex;
     flex-direction: column;
+
+    color: var(--clr-text-default);
 }
 
 body > main {
     flex-grow: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: $clr-primary-1000;
+    }
+
+    // Default to dimming images in dark mode
+    img {
+        filter: brightness(.8) contrast(1.2);
+    }
+
+    /* Specific image fixes */
+    // Samsung logo
+    img[src="/images/logos/Samsung_Orig_Wordmark_BLUE_RGB.png"] {
+        filter: brightness(1.3) contrast(1.2) saturate(0.6);
+    }
+}
+
+:root {
+    color-scheme: light dark;
 }
 
 
@@ -25,16 +48,16 @@ body > main {
     overflow: hidden;
     position: absolute;
     white-space: nowrap;
-    width: 1px;    
+    width: 1px;
 }
 
 // Presets for markdown rendering
 .markdown {
     h1, h2, h3, h4, h5, h6 {
-       margin-top: 1.5em; 
+       margin-top: 1.5em;
        font-weight: map-get($font-weights, "bold");
     }
-    
+
     p {
         margin-top: 1em;
     }
@@ -186,7 +209,8 @@ img.cover {
     background-size: cover;
     background-position: var(--bg-position, center);
 
-    color: $clr-text-light;
+    // Since image is always darkened, for dark theme
+    @include force-dark-theme();
 }
 
 .bg-img-captioned[data-shadow="solid"] {
@@ -210,6 +234,12 @@ img.cover {
     .overlay {
         background-color: $clr-primary-100;
         opacity: 0.95;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .bg-img-overlay .overlay {
+        background-color: $clr-primary-900;
     }
 }
 

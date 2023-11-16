@@ -81,11 +81,11 @@
 
 /* Text Styles */
 .text-dark {
-    color: $clr-text-dark;
+    color: var(--clr-text-default);
 }
 
 .text-light {
-    color: $clr-text-light;
+    color: var(--clr-text-inverse);
 }
 
 .section-title {
@@ -101,10 +101,11 @@
     font-weight: 700;
 }
 
+
 .subtitle {
-    color: $clr-text-dark-medium !important;
+    color: var(--clr-text-default-medium) !important;
 }
 
-.subtitle-light {
-    color: $clr-text-light-medium !important;
+.subtitle-inverse {
+    color: var(--clr-text-inverse-medium) !important;
 }

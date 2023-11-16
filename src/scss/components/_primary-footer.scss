@@ -1,15 +1,16 @@
 @use "../global/variables" as *;
 
 .primary-footer {
+    // Always rendered dark
     background-color: $clr-primary-900;
-    color: white;
+    @include force-dark-theme();
 
     width: 100%;
     padding-inline: map-get($sizes, 500);
     padding-block: map-get($sizes, 400);
 
     margin-top: map-get($sizes, 600);
-    
+
     display: flex;
     flex-direction: row;
     justify-content: space-around;

@@ -7,6 +7,7 @@ $clr-primary-500: #B8B8E6;
 $clr-primary-600: #9999BF;
 $clr-primary-800: #666680;
 $clr-primary-900: #333340;
+$clr-primary-1000: #202025;
 
 $clr-accent-100: #F2FFF7;
 $clr-accent-200: #E6FFEF;
@@ -19,10 +20,49 @@ $clr-accent-900: #304036;
 
 $clr-important-400: #FFAAA6;
 
-$clr-text-dark: black;
-$clr-text-dark-medium: rgba(0, 0, 0, 0.7);
-$clr-text-light: white;
-$clr-text-light-medium: rgba(255, 255, 255, 0.7);
+// Text colors are off-white/black with medium versions at 0.7 ~= B3 opacity
+$clr-text-dark: #121212;
+$clr-text-dark-medium: #{$clr-text-dark}B3;
+$clr-text-light: #E6E6E6;
+$clr-text-light-medium: #{$clr-text-light}B3;
+
+@mixin set-light-theme {
+    --clr-text-default: #{$clr-text-dark};
+    --clr-text-default-medium: #{$clr-text-dark-medium};
+    --clr-text-inverse: #{$clr-text-light};
+    --clr-text-inverse-medium: #{$clr-text-light-medium};
+    color: var(--clr-text-default);
+}
+
+@mixin set-dark-theme {
+    --clr-text-default: #{$clr-text-light};
+    --clr-text-default-medium: #{$clr-text-light-medium};
+    --clr-text-inverse: #{$clr-text-dark};
+    --clr-text-inverse-medium: #{$clr-text-dark-medium};
+    color: var(--clr-text-default);
+}
+
+// For specific components which are always light theme
+@mixin force-light-theme {
+    @include set-light-theme();
+    color-scheme: light;
+}
+
+// For specific components which are always dark theme
+@mixin force-dark-theme {
+    @include set-dark-theme();
+    color-scheme: dark;
+}
+
+:root {
+    @include set-light-theme();
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        @include set-dark-theme();
+    }
+}
 
 $gradient-primary: linear-gradient(90deg, $clr-accent-400 0%, $clr-primary-400 100%);
 $gradient-accent: linear-gradient(108deg,#B16CEA 8%,#FF5E69 40%,#FF8A56 77%,#FFA84B 91%);

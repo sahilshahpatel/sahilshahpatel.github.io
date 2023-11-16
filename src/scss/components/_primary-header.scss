@@ -30,14 +30,14 @@
 }
 
 .primary-nav a {
-    color: $clr-text-dark;
+    color: var(--clr-text-default);
     text-decoration: none;
 
     transition: color 200ms ease;
 }
 
 .primary-nav a:hover {
-    color: $clr-text-dark-medium;
+    color: var(--clr-text-default-medium);
 }
 
 .mobile-nav-toggle {
