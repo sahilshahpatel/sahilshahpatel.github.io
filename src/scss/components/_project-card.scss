@@ -5,14 +5,14 @@
     padding: min(7%, map-get($sizes, 800));
 
     min-height: 350px;
-    
+
     h2 {
         font-size: map-get($font-sizes, 600);
     }
-    
+
     .project-links {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: center;
     }
 }

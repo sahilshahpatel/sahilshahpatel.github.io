@@ -11,7 +11,7 @@
 
     width: min(#{$container-max-width} + 500px, 100%);
     margin-inline: auto;
-    
+
     padding-inline: map-get($sizes, 500);
     padding-block: map-get($sizes, 400);
 }
@@ -69,13 +69,13 @@
 
         box-shadow: $box-shadow-light;
 
-        background-color: $clr-primary-100;
+        background-color: var(--clr-primary-200);
     }
 
     .mobile-nav-toggle {
         display: flex;
         align-items: center;
-    
+
         cursor: pointer;
     }
 }

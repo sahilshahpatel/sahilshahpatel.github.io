@@ -19,7 +19,8 @@ body > main {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: $clr-primary-1000;
+        // Only on dark mode because we want white (not purple
+        background-color: var(--clr-primary-100);
     }
 
     // Default to dimming images in dark mode
@@ -82,13 +83,6 @@ body > main {
 .text-gradient-accent {
     color: transparent !important;
     background-image: $gradient-accent;
-    background-clip: text;
-    display: inline;
-}
-
-.text-gradient-primary {
-    color: transparent !important;
-    background-image: $gradient-primary;
     background-clip: text;
     display: inline;
 }
@@ -203,7 +197,7 @@ img.cover {
 .bg-img-captioned {
     --overlay: rgba(0, 0, 0, 0.8);
     background-image: linear-gradient(to bottom, transparent, var(--overlay)),
-        var(--bg-img-url, linear-gradient(to bottom, $clr-primary-400, $clr-primary-400));
+        var(--bg-img-url, linear-gradient(to bottom, var(--clr-primary-400), var(--clr-primary-400)));
 
     background-repeat: no-repeat;
     background-size: cover;
@@ -215,7 +209,7 @@ img.cover {
 
 .bg-img-captioned[data-shadow="solid"] {
     background-image: linear-gradient(to bottom, var(--overlay), var(--overlay)),
-        var(--bg-img-url, linear-gradient(to bottom, $clr-primary-400, $clr-primary-400));
+        var(--bg-img-url, linear-gradient(to bottom, var(--clr-primary-400), var(--clr-primary-400)));
 }
 
 
@@ -232,14 +226,8 @@ img.cover {
     padding: map-get($sizes, 400);
 
     .overlay {
-        background-color: $clr-primary-100;
+        background-color: var(--clr-primary-100);
         opacity: 0.95;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    .bg-img-overlay .overlay {
-        background-color: $clr-primary-900;
     }
 }
 

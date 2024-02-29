@@ -1,12 +1,13 @@
 /* Color palette derived from https://color.adobe.com */
-$clr-primary-100: #FAFAFF;
-$clr-primary-200: #F2F2FF;
-$clr-primary-300: #E6E6FF;
-$clr-primary-400: #CCCCFF; /* Base primary */
-$clr-primary-500: #B8B8E6;
-$clr-primary-600: #9999BF;
-$clr-primary-800: #666680;
-$clr-primary-900: #333340;
+$clr-primary-100:  #FAFAFF;
+$clr-primary-200:  #F2F2FF;
+$clr-primary-300:  #E6E6FF;
+$clr-primary-400:  #CCCCFF; /* Base primary */
+$clr-primary-500:  #B8B8E6;
+$clr-primary-600:  #9999bf;
+$clr-primary-700:  #8383A4;
+$clr-primary-800:  #666680;
+$clr-primary-900:  #333340;
 $clr-primary-1000: #202025;
 
 $clr-accent-100: #F2FFF7;
@@ -15,6 +16,7 @@ $clr-accent-300: #D6FFE6;
 $clr-accent-400: #BFFFD7;
 $clr-accent-500: #ACE6C2;
 $clr-accent-600: #8FBFA2;
+$clr-accent-700: #7AA28A;
 $clr-accent-800: #60806C;
 $clr-accent-900: #304036;
 
@@ -31,6 +33,28 @@ $clr-text-light-medium: #{$clr-text-light}B3;
     --clr-text-default-medium: #{$clr-text-dark-medium};
     --clr-text-inverse: #{$clr-text-light};
     --clr-text-inverse-medium: #{$clr-text-light-medium};
+
+    --clr-primary-100:  #{$clr-primary-100};
+    --clr-primary-200:  #{$clr-primary-200};
+    --clr-primary-300:  #{$clr-primary-300};
+    --clr-primary-400:  #{$clr-primary-400};
+    --clr-primary-500:  #{$clr-primary-500};
+    --clr-primary-600:  #{$clr-primary-600};
+    --clr-primary-700:  #{$clr-primary-700};
+    --clr-primary-800:  #{$clr-primary-800};
+    --clr-primary-900:  #{$clr-primary-900};
+    --clr-primary-1000: #{$clr-primary-1000};
+
+    --clr-accent-100: #{$clr-accent-100};
+    --clr-accent-200: #{$clr-accent-200};
+    --clr-accent-300: #{$clr-accent-300};
+    --clr-accent-400: #{$clr-accent-400};
+    --clr-accent-500: #{$clr-accent-500};
+    --clr-accent-600: #{$clr-accent-600};
+    --clr-accent-700: #{$clr-accent-700};
+    --clr-accent-800: #{$clr-accent-800};
+    --clr-accent-900: #{$clr-accent-900};
+
     color: var(--clr-text-default);
 }
 
@@ -39,6 +63,28 @@ $clr-text-light-medium: #{$clr-text-light}B3;
     --clr-text-default-medium: #{$clr-text-light-medium};
     --clr-text-inverse: #{$clr-text-dark};
     --clr-text-inverse-medium: #{$clr-text-dark-medium};
+
+    --clr-primary-100:  #{$clr-primary-1000};
+    --clr-primary-200:  #{$clr-primary-900};
+    --clr-primary-300:  #{$clr-primary-800};
+    --clr-primary-400:  #{$clr-primary-700};
+    --clr-primary-500:  #{$clr-primary-600};
+    --clr-primary-600:  #{$clr-primary-500};
+    --clr-primary-700:  #{$clr-primary-400};
+    --clr-primary-800:  #{$clr-primary-300};
+    --clr-primary-900:  #{$clr-primary-200};
+    --clr-primary-1000: #{$clr-primary-100};
+
+    --clr-accent-100: #{$clr-accent-900};
+    --clr-accent-200: #{$clr-accent-800};
+    --clr-accent-300: #{$clr-accent-700};
+    --clr-accent-400: #{$clr-accent-600};
+    --clr-accent-500: #{$clr-accent-500};
+    --clr-accent-600: #{$clr-accent-400};
+    --clr-accent-700: #{$clr-accent-300};
+    --clr-accent-800: #{$clr-accent-200};
+    --clr-accent-900: #{$clr-accent-100};
+
     color: var(--clr-text-default);
 }
 
@@ -64,7 +110,6 @@ $clr-text-light-medium: #{$clr-text-light}B3;
     }
 }
 
-$gradient-primary: linear-gradient(90deg, $clr-accent-400 0%, $clr-primary-400 100%);
 $gradient-accent: linear-gradient(108deg,#B16CEA 8%,#FF5E69 40%,#FF8A56 77%,#FFA84B 91%);
 
 $vignette: radial-gradient(transparent 45%, rgba(0, 0, 0, 0.3));
