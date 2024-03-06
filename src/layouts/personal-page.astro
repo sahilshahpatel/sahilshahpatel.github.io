@@ -1,0 +1,19 @@
+---
+import BasicPage from './basic-page.astro'
+import Dialog from '../components/dialog.astro';
+---
+<BasicPage>
+    <!-- Forward on title slot -->
+    <slot name="title" slot="title"></slot>
+
+    <!-- Main content slot -->
+    <slot />
+
+    <Dialog modal openOnReferrer={{hostname: Astro.url.hostname, pathname: "/personal"}} invertOpenOn>
+        <p slot="title">You have left my professional site...</p>
+        <p slot="body">
+            ...and entered my personal one! The information here is <i>not relevant to a professional setting</i>, and is mainly intended for myself.
+            Here you'll find my irrelevant opinions on books, movies, TV, and more.
+        </p>
+    </Dialog>
+</BasicPage>
