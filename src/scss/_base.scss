@@ -9,8 +9,6 @@ body {
 body {
     display: flex;
     flex-direction: column;
-
-    color: var(--clr-text-default);
 }
 
 body > main {
@@ -41,6 +39,10 @@ body > main {
 
 
 /* ======== Attribute classes ======== */
+.reset-style {
+    all: unset;
+}
+
 .visually-hidden:not(:focus):not(:active) {
     /* From https://www.a11yproject.com/posts/how-to-hide-content/ */
     clip: rect(0 0 0 0);
