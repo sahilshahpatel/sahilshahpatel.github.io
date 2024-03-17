@@ -29,10 +29,17 @@ import '../../../scss/review-page.scss';
     <title slot="title">{item.frontmatter.title} Review | Sahil Patel</title>
 
     <div class="container">
-        <ReviewCard item={item.frontmatter} classList="center-inline"></ReviewCard>
+        <ReviewCard item={item} classList="center-inline"></ReviewCard>
 
         <div class="markdown pt-400">
             <item.Content />
+        </div>
+
+        <div class="text-center mt-200">
+            <a class="see-more-link subtitle" data-point-left href={`/personal/reviews#${ slug }`}>
+                <i class="bi-arrow-left"></i>
+                <span>Back to all reviews</span>
+            </a>
         </div>
     </div>
 </PersonalPage>

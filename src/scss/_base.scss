@@ -196,6 +196,22 @@ img.cover {
 
 
 /* ======== Text on Image Overlay ======== */
+.grid-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    gap: map-get($sizes, 400);
+    justify-items: center;
+}
+
+@media (min-width: map-get($screen-sizes, sm)) {
+    .grid-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* ======== Text on Image Overlay ======== */
 .bg-img-captioned {
     --overlay: rgba(0, 0, 0, 0.8);
     background-image: linear-gradient(to bottom, transparent, var(--overlay)),

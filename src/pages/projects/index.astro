@@ -5,7 +5,6 @@ import { ProjectData } from "../../types";
 const projects = orderSort(await Astro.glob<ProjectData>('../../data/projects/*.mdx'));
 
 import ProfessionalPage from "../../layouts/professional-page.astro";
-import '../../scss/projects.scss';
 import ProjectCard from "../../components/project-card.astro";
 ---
 
@@ -14,7 +13,7 @@ import ProjectCard from "../../components/project-card.astro";
 
     <section class="container">
         <h1 class="section-title">Projects</h1>
-        <div class="projects-grid">
+        <div class="grid-list">
             { projects.map( project => <ProjectCard item={ project }/>) }
         </div>
     </section>
