@@ -1,5 +1,11 @@
 ---
+import { MDXInstance } from "astro";
+import ReviewCard from "../../../components/review-card.astro";
 import PersonalPage from "../../../layouts/personal-page.astro"
+import { ReviewData } from "../../../types";
+import { getSlug, dateSort } from "../../../util";
+
+const reviews = dateSort(await Astro.glob<ReviewData>("../../../data/reviews/*.mdx")) as MDXInstance<ReviewData>[];
 ---
 <PersonalPage>
     <title slot="title">Reviews | Sahil Patel</title>
@@ -39,5 +45,26 @@ import PersonalPage from "../../../layouts/personal-page.astro"
                 highly, but I believe they deserve that rating because of how I felt at the time.
             </p>
         </div>
+        <section class="mt-600">
+            <h2 class="section-title">All Reviews</h2>
+            <div class="grid-list">
+                {
+                    reviews.map( item => {
+                        const slug = getSlug(item.file);
+                        return (
+                            <div id={slug} class="w-100">
+                                <ReviewCard item={ item } classList="w-100"/>
+                                <div class="text-center mt-200">
+                                    <a class="see-more-link subtitle" href={`/personal/reviews/${ slug }`}>
+                                        <span>Read full review</span>
+                                        <i class="bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        );
+                    })
+                }
+            </div>
+        </section>
     </div>
 </PersonalPage>

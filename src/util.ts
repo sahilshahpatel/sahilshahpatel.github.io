@@ -15,6 +15,10 @@ export function orderSort(list: MDXInstance<Ordered>[]){
     return list.sort((a, b) => b.frontmatter.order - a.frontmatter.order)
 }
 
+interface Dated { date: Date; }
+export function dateSort(list: MDXInstance<Dated>[]) {
+    return list.sort((a, b) => (new Date(a.frontmatter.date) - new Date(b.frontmatter.date)))
+}
 
 
 /***********************************/

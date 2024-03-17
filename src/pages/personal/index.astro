@@ -1,9 +1,53 @@
 ---
+import { MDXInstance } from "astro";
+import { ReviewData } from "../../types";
+import { getSlug } from "../../util";
 import PersonalPage from "../../layouts/personal-page.astro";
+import ReviewCard from "../../components/review-card.astro";
+
+import featured from "../../data/featured";
+const reviews = await Astro.glob<ReviewData>("../../data/reviews/*.mdx") as MDXInstance<ReviewData>[];
+
+import "../../scss/index.scss";
 ---
 <PersonalPage>
-    <title slot="title">Personal | Sahil Patel</title>
-    <div class="container">
-        <p>This is the personal landing page. I'll put some content here soon...</p>
-    </div>
+    <title slot="title">Sahil Patel</title>
+
+    <section id="about" class="hero | container">
+        <div class="hero-text-container">
+            <h1>Welcome to my corner of the internet</h1>
+            <p class="fs-400">
+                Hi, I'm Sahil! While I do also work in tech, I find that tech-as-a-hobby can be a lot of fun.
+                My main enduring project to that end is this website where I've fashioned my own little
+                corner of the internet. In this personal section, you'll find whatever I find interesting!
+                Right now I plan to include reviews of book, movies, and more, as well lists of links I don't
+                want to forget, and other random things that I find fun.
+            </p>
+        </div>
+        <div>
+            <img src="/images/profiles/sahil-park.jpg" alt="" />
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Featured Reviews</h2>
+        <div class="grid-list">
+            {
+                featured.reviews.map( slug => {
+                    const item = reviews.find( item => getSlug(item.file) === slug);
+                    return (
+                        <div class="w-100">
+                            <ReviewCard item={ item } classList="w-100"/>
+                            <div class="text-center mt-200">
+                                <a class="see-more-link subtitle" href={`/personal/reviews/${ slug }`}>
+                                    <span>Read full review</span>
+                                    <i class="bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    );
+                })
+            }
+        </div>
+    </section>
 </PersonalPage>
