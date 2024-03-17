@@ -20,7 +20,7 @@ section.hero img {
 }
 
 // For devices > xs
-@media (min-width: $xs-breakpoint) {
+@media (min-width: map-get($screen-sizes, xs)) {
     section.hero h1 {
         font-size: map-get($font-sizes, 900) + 0.5rem;
     }
@@ -30,8 +30,8 @@ section.hero img {
     }
 }
 
-// For devices > mobile
-@media (min-width: $mobile-breakpoint) {
+// For devices > sm
+@media (min-width: map-get($screen-sizes, sm)) {
     section.hero h1 {
         font-size: map-get($font-sizes, 1000);
     }

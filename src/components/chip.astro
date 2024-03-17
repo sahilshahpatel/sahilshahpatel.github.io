@@ -1,0 +1,16 @@
+---
+interface Props {
+    classList?: string // extra classes
+}
+
+const props = Astro.props;
+---
+<style>
+    .chip {
+        border-radius: 10px;
+    }
+</style>
+
+<span class={`chip px-200 py-100 ${props.classList || ""}`}>
+    <slot></slot>
+</span>

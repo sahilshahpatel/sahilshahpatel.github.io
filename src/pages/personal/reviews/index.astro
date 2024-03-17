@@ -1,0 +1,43 @@
+---
+import PersonalPage from "../../../layouts/personal-page.astro"
+---
+<PersonalPage>
+    <title slot="title">Reviews | Sahil Patel</title>
+
+    <div class="container flow">
+        <div class="markdown">
+            <h1>Review System</h1>
+            <p>
+                The reviews within this page and its children all follow a similar system. To give some context for those
+                reviews, here I'll explain my system and why I use it. The TLDR is that I use a tier list system rather
+                than a star system. I rank things from S down to F (&#177 allowed) and allowing asterisks
+                (most commonly for nostalgia).
+            </p>
+
+            <h2>The Reasoning</h2>
+            <p>
+                I started by using a 5 star system, mostly by coincidence and also because goodreads uses that
+                by default. I prefer this over a 10 star system because I don't think you often need such granularity.
+                My main problem with star systems in general, though, is that they have a tendency to feel objective
+                (e.g. goodreads' rating aggregate) and therefore it feels bad to rate things anywhere remotely low.
+                For example, I believe in being stingy with 5-star ratings, because my few most favorite things should
+                be able to stand above. But giving a 4-star rating lowers the average for most good books on goodreads,
+                and I hate to do that to something I liked but that just wasn't legendary.
+            </p>
+            <p>
+                By contrast, a tier system allows you to rate things closer to how you perceive them. There isn't a
+                single objective metric by which you judge things. They are good or bad for different reasons and
+                distilling that into a number obscures that truth. In a tier system, a S feels amazing, an A feels great,
+                and a B feels alright, allowing you to rate truthfully without feeling like you are shafting something.
+            </p>
+            <p>
+                I allow for pluses and minuses for subtle distinctions within a category. For example, two games might
+                both be decent, earning a B, but if they are generally very similar but I like one better than the other,
+                it will earn a B+ instead. Asterisks are also allowed because my own scale will vary over time. For now,
+                the only use of asterisks is for nostalgia-based ratings. In particular, there are many books which I read
+                as a kid which have a special place in my heart. If I were to read them again, I might not rate them so
+                highly, but I believe they deserve that rating because of how I felt at the time.
+            </p>
+        </div>
+    </div>
+</PersonalPage>

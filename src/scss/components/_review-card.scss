@@ -1,0 +1,55 @@
+@use "../global/variables" as *;
+
+.review-card {
+    width: fit-content;
+    max-width: 100%;
+
+    display: flex;
+    gap: map-get($sizes, 400);
+
+    background-color: var(--clr-primary-200);
+
+    &[data-tier="S"] { --tier-clr: #{$clr-tier-s}; }
+    &[data-tier="A"] { --tier-clr: #{$clr-tier-a}; }
+    &[data-tier="B"] { --tier-clr: #{$clr-tier-b}; }
+    &[data-tier="C"] { --tier-clr: #{$clr-tier-c}; }
+    &[data-tier="D"] { --tier-clr: #{$clr-tier-d}; }
+    &[data-tier="F"] { --tier-clr: #{$clr-tier-f}; }
+
+    border: 3px solid var(--tier-clr);
+
+    h1 {
+        font-size: map-get($font-sizes, 700);
+    }
+
+    .review-thumbnail {
+        object-fit: contain;
+        object-position: top;
+    }
+
+    .review-tier-container {
+        font-size: map-get($font-sizes, 500);
+        font-style: italic;
+        text-decoration: underline solid var(--tier-clr) 2px;
+    }
+
+    .review-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: map-get($sizes, 100);
+
+        .chip {
+            background-color: var(--clr-primary-400);
+        }
+    }
+}
+
+@media (max-width: map-get($screen-sizes, xs)) {
+    .review-card {
+        flex-direction: column;
+    }
+
+    .review-thumbnail {
+        margin-inline: auto;
+    }
+}

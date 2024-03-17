@@ -1,0 +1,16 @@
+---
+import { LinkData } from '../../types';
+
+interface Props {
+    homeHref: string
+    links: LinkData[]
+}
+
+const props = Astro.props as Props;
+---
+<footer class="primary-footer">
+    <a href={props.homeHref} class="text-gradient-accent fs-800 fw-bold mr-400 mb-400">Sahil Patel</a>
+    <div class="footer-links">
+        { props.links.map(link => <div><a href={link.href}>{link.text}</a></div>) }
+    </div>
+</footer>

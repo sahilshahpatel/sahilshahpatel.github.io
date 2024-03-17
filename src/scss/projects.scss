@@ -7,7 +7,7 @@
     gap: map-get($sizes, 400);
 }
 
-@media (min-width: $mobile-breakpoint) {
+@media (min-width: map-get($screen-sizes, sm)) {
     .projects-grid {
         grid-template-columns: 1fr 1fr;
     }

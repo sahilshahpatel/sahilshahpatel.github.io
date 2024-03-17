@@ -1,15 +1,15 @@
 ---
-import { AbroadData } from '../../data/types';
+import { AbroadData } from '../../types';
 import { getSlug, orderSort } from '../../util';
 
-import BasicPage from '../../layouts/basic-page.astro';
+import ProfessionalPage from '../../layouts/professional-page.astro';
 
 import TravelCard from '../../components/travel-card.astro';
 
 const abroad = orderSort(await Astro.glob<AbroadData>('../../data/abroad/*.mdx'));
 ---
 
-<BasicPage>
+<ProfessionalPage>
     <title slot="title">Abroad | Sahil Patel</title>
 
     <div class="container">
@@ -18,11 +18,11 @@ const abroad = orderSort(await Astro.glob<AbroadData>('../../data/abroad/*.mdx')
 
     <div>
         {
-            abroad.map( item => 
+            abroad.map( item =>
                 <div id={ getSlug(item.file) } class="container my-400">
                     <TravelCard item={ item } />
                 </div>
             )
         }
     </div>
-</BasicPage>
+</ProfessionalPage>

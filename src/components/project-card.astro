@@ -1,5 +1,5 @@
 ---
-import { ProjectData } from "../data/types";
+import { ProjectData } from "../types";
 import { getSlug } from "../util";
 
 import ProjectLinkIcons from "./project-link-icons.astro";
@@ -24,7 +24,7 @@ const slug = getSlug(item.file);
             <p class="heading-spread text-gradient-accent">{ category }</p>
             <h2 class="fw-bold">{ title }</h2>
         </div>
-        
+
         <div set:html={ description }></div>
 
         <div class="project-links">
