@@ -22,6 +22,13 @@ $clr-accent-900: #304036;
 
 $clr-important-400: #FFAAA6;
 
+$clr-tier-s: #3ea9f0;
+$clr-tier-a: #3EF071;
+$clr-tier-b: #F0D138;
+$clr-tier-c: #F0A52D;
+$clr-tier-d: #F0681F;
+$clr-tier-f: #F03E3E;
+
 // Text colors are off-white/black with medium versions at 0.7 ~= B3 opacity
 $clr-text-dark: #121212;
 $clr-text-dark-medium: #{$clr-text-dark}B3;
@@ -55,6 +62,8 @@ $clr-text-light-medium: #{$clr-text-light}B3;
     --clr-accent-800: #{$clr-accent-800};
     --clr-accent-900: #{$clr-accent-900};
 
+    --clr-box-shadow: black;
+
     color: var(--clr-text-default);
 }
 
@@ -85,6 +94,8 @@ $clr-text-light-medium: #{$clr-text-light}B3;
     --clr-accent-800: #{$clr-accent-200};
     --clr-accent-900: #{$clr-accent-100};
 
+    --clr-box-shadow: white;
+
     color: var(--clr-text-default);
 }
 
@@ -114,10 +125,15 @@ $gradient-accent: linear-gradient(108deg,#B16CEA 8%,#FF5E69 40%,#FF8A56 77%,#FFA
 
 $vignette: radial-gradient(transparent 45%, rgba(0, 0, 0, 0.3));
 
-$mobile-breakpoint: 750px;
-$xs-breakpoint: 400px;
-
 $container-max-width: 1000px;
+
+$screen-sizes: (
+    xs: 576px,
+    sm: 768px,
+    md: 992px,
+    lg: 1200px,
+    xl: 1400px,
+);
 
 $sizes: (
     100: 0.25rem,
@@ -151,9 +167,9 @@ $font-weights: (
 );
 
 /* https://boxshadows.com/presets */
-$box-shadow-light: 0px 4px 6px -1px rgba(0,0,0,0.1) , 0px 2px 4px -1px rgba(0,0,0,0.06);
-$box-shadow-float: 0px 20px 25px -5px rgba(0,0,0,0.1) , 0px 10px 10px -5px rgba(0,0,0,0.04);
-$box-shadow-float-high: 0px 25px 50px -12px rgba(0,0,0,0.25);
+$box-shadow-light: 0px 4px 6px -1px color-mix(in srgb, var(--clr-box-shadow, black) 10%, transparent), 0px 2px 4px -1px color-mix(in srgb, var(--clr-box-shadow, black) 6%, transparent);
+$box-shadow-float: 0px 20px 25px -5px color-mix(in srgb, var(--clr-box-shadow, black) 10%, transparent) , 0px 10px 10px -5px color-mix(in srgb, var(--clr-box-shadow, black) 4%, transparent);
+$box-shadow-float-high: 0px 25px 50px -12px color-mix(in srgb, var(--clr-box-shadow, black) 25%, transparent);
 
 $box-shadows: (
     "light": $box-shadow-light,

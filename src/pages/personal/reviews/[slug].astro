@@ -1,0 +1,38 @@
+---
+import { MDXInstance } from 'astro';
+import { ReviewData } from '../../../types';
+import { getSlug } from '../../../util';
+
+
+export interface Props {
+    item: MDXInstance<ReviewData>
+}
+
+export async function getStaticPaths() {
+    const reviews = await Astro.glob<ReviewData>('../../../data/reviews/*.mdx') as MDXInstance<ReviewData>[];
+    return reviews.map(mdx => ({
+        params: { slug: getSlug(mdx.file) },
+        props:  { item: mdx }
+    }));
+}
+
+const { slug } = Astro.params;
+const { item } = Astro.props;
+
+import PersonalPage from '../../../layouts/personal-page.astro';
+import ReviewCard from '../../../components/review-card.astro';
+
+import '../../../scss/review-page.scss';
+---
+
+<PersonalPage>
+    <title slot="title">{item.frontmatter.title} Review | Sahil Patel</title>
+
+    <div class="container">
+        <ReviewCard item={item.frontmatter} classList="center-inline"></ReviewCard>
+
+        <div class="markdown pt-400">
+            <item.Content />
+        </div>
+    </div>
+</PersonalPage>

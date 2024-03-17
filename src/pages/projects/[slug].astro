@@ -1,5 +1,5 @@
 ---
-import { ProjectData } from '../../data/types';
+import { ProjectData } from '../../types';
 import { getSlug } from '../../util';
 
 export async function getStaticPaths() {
@@ -14,13 +14,13 @@ const { slug } = Astro.params;
 const { item } = Astro.props;
 
 import '../../scss/project-page.scss';
-import BasicPage from '../../layouts/basic-page.astro';
+import ProfessionalPage from '../../layouts/professional-page.astro';
 import ProjectLinkIcons from '../../components/project-link-icons.astro';
 ---
 
-<BasicPage>
+<ProfessionalPage>
     <title slot="title">{ item.frontmatter.title } | Sahil Patel</title>
-    
+
     <div class="project-banner | bg-img-overlay" style={`--bg-img-url: url(${ item.frontmatter.img }); ${ item.frontmatter.gif ? '--bg-gif-url: url(' + item.frontmatter.gif + ');' : ''} ${item.frontmatter.imgPos ? '--bg-position: ' + item.frontmatter.imgPos + ';' : ''}`}>
         <div class="overlay p-400 text-center">
             <h1>
@@ -43,4 +43,4 @@ import ProjectLinkIcons from '../../components/project-link-icons.astro';
             <span>Back to all projects</span>
         </a>
     </div>
-</BasicPage>
+</ProfessionalPage>

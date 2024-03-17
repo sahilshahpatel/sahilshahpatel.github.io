@@ -1,15 +1,15 @@
 ---
 import { orderSort } from "../../util";
-import { ProjectData } from "../../data/types";
+import { ProjectData } from "../../types";
 
 const projects = orderSort(await Astro.glob<ProjectData>('../../data/projects/*.mdx'));
 
-import BasicPage from "../../layouts/basic-page.astro";
+import ProfessionalPage from "../../layouts/professional-page.astro";
 import '../../scss/projects.scss';
 import ProjectCard from "../../components/project-card.astro";
 ---
 
-<BasicPage>
+<ProfessionalPage>
     <title slot="title">Sahil Patel</title>
 
     <section class="container">
@@ -18,4 +18,4 @@ import ProjectCard from "../../components/project-card.astro";
             { projects.map( project => <ProjectCard item={ project }/>) }
         </div>
     </section>
-</BasicPage>
+</ProfessionalPage>

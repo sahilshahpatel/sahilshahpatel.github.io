@@ -1,8 +1,8 @@
 ---
-import { JobData } from '../data/types';
+import { JobData } from '../types';
 import { orderSort } from '../util';
 
-import BasicPage from '../layouts/basic-page.astro';
+import ProfessionalPage from '../layouts/professional-page.astro';
 
 import WorkItem from '../components/work-item.astro';
 
@@ -10,7 +10,7 @@ import WorkItem from '../components/work-item.astro';
 const jobs = orderSort(await Astro.glob<JobData>('../data/jobs/*.mdx'));
 ---
 
-<BasicPage>
+<ProfessionalPage>
     <title slot="title">Experience | Sahil Patel</title>
     <div class="container">
         <h1 class="section-title">Work Experience</h1>
@@ -19,4 +19,4 @@ const jobs = orderSort(await Astro.glob<JobData>('../data/jobs/*.mdx'));
             { jobs.map(job => <WorkItem job={job} long={true}  />) }
         </div>
     </div>
-</BasicPage>
+</ProfessionalPage>

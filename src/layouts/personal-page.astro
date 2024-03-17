@@ -1,10 +1,15 @@
 ---
-import BasicPage from './basic-page.astro'
+import BasePage from './base-page.astro';
+import PersonalHeader from '../components/headers/personal-header.astro';
+import PersonalFooter from '../components/footers/personal-footer.astro';
 import Dialog from '../components/dialog.astro';
 ---
-<BasicPage>
+<BasePage>
     <!-- Forward on title slot -->
     <slot name="title" slot="title"></slot>
+
+    <PersonalHeader slot="header"></PersonalHeader>
+    <PersonalFooter slot="footer"></PersonalFooter>
 
     <!-- Main content slot -->
     <slot />
@@ -16,4 +21,5 @@ import Dialog from '../components/dialog.astro';
             Here you'll find my irrelevant opinions on books, movies, TV, and more.
         </p>
     </Dialog>
-</BasicPage>
+
+</BasePage>

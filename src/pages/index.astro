@@ -11,7 +11,7 @@ const abroad = orderSort(await Astro.glob('../data/abroad/*.mdx'));
 const projects = orderSort(await Astro.glob('../data/projects/*.mdx'));
 
 // Layout
-import BasicPage from "../layouts/basic-page.astro";
+import ProfessionalPage from "../layouts/professional-page.astro";
 
 // Components
 import WorkItem from "../components/work-item.astro";
@@ -19,7 +19,7 @@ import TravelCard from "../components/travel-card.astro";
 import ProjectCard from "../components/project-card.astro";
 ---
 
-<BasicPage>
+<ProfessionalPage>
     <title slot="title">Sahil Patel</title>
 
     <section id="about" class="hero | container">
@@ -90,4 +90,4 @@ import ProjectCard from "../components/project-card.astro";
             </div>
         </div>
     </section>
-</BasicPage>
+</ProfessionalPage>

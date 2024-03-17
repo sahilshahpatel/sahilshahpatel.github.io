@@ -1,0 +1,36 @@
+---
+import { ReviewData } from '../types'
+import { getReviewItemThumbnail } from '../util'
+import Chip from './chip.astro'
+
+export interface Props {
+    item: ReviewData,
+    classList?: string,  // Extra classes if desired
+}
+
+const { item, classList } = Astro.props as Props;
+
+const thumbnail = await getReviewItemThumbnail(item);
+---
+
+<div class={`review-card box-shadow-float p-400 ${classList || ""}`} data-tier={item.tier} >
+    <img class="review-thumbnail" src={thumbnail} />
+    <div class="flow">
+        <div>
+            <h1>{item.title}</h1>
+            { item.author ? <h2 class="subtitle">By {item.author}</h2> : null }
+        </div>
+
+        <div class="review-tier-container" data-tier={item.tier} title={item.tierAsterisk ? `Asterisk for ${item.tierAsterisk}` : null}>
+            <span class="review-tier">{item.tier}{item.tierModifier}</span> Tier{item.tierAsterisk ? "*" : null}
+        </div>
+
+        <div>
+            <div class="mb-100">Tags:</div>
+            <div class="review-tags">
+                <!-- TODO: Link these tags to a search page -->
+                {item.tags.map(tag => <Chip>{tag}</Chip>)}
+            </div>
+        </div>
+    </div>
+</div>

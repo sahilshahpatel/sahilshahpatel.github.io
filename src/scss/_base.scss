@@ -195,7 +195,7 @@ img.cover {
 }
 
 
-/* Text on Image Overlay */
+/* ======== Text on Image Overlay ======== */
 .bg-img-captioned {
     --overlay: rgba(0, 0, 0, 0.8);
     background-image: linear-gradient(to bottom, transparent, var(--overlay)),

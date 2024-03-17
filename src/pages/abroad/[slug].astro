@@ -1,5 +1,5 @@
 ---
-import { AbroadData } from '../../data/types';
+import { AbroadData } from '../../types';
 import { getSlug } from '../../util';
 
 export async function getStaticPaths() {
@@ -12,12 +12,12 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const { item } = Astro.props;
-    
+
 import '../../scss/abroad-page.scss';
-import BasicPage from '../../layouts/basic-page.astro';
+import ProfessionalPage from '../../layouts/professional-page.astro';
 ---
 
-<BasicPage>
+<ProfessionalPage>
     <title slot="title">{ item.frontmatter.what } | Sahil Patel</title>
 
     <div class="abroad-banner | bg-img-overlay" style={`--bg-img-url: url(${ item.frontmatter.img }); ${ item.frontmatter.imgPos ? '--bg-position: ' + item.frontmatter.imgPos + ';' : ''}`}>
@@ -39,4 +39,4 @@ import BasicPage from '../../layouts/basic-page.astro';
             <span>Back to all travel</span>
         </a>
     </div>
-</BasicPage>
+</ProfessionalPage>

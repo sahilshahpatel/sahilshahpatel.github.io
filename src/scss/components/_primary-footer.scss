@@ -30,7 +30,7 @@
     }
 }
 
-@media (max-width: $mobile-breakpoint) {
+@media (max-width: map-get($screen-sizes, sm)) {
     .primary-footer {
         .footer-links {
             grid-template-columns: repeat(2, 1fr);

@@ -1,0 +1,37 @@
+---
+import { LinkData } from '../../types';
+
+interface Props {
+    homeHref: string,
+    links: LinkData[],
+}
+
+const props = Astro.props as Props;
+---
+<script>
+    const navToggle = document.querySelector('.mobile-nav-toggle')!;
+    const navOpen = document.querySelector('.mobile-nav-open')!;
+    const navClose = document.querySelector('.mobile-nav-close')!;
+    const primaryNav = document.querySelector('.primary-nav')!;
+
+    // Toggle navigation on click
+    navToggle.addEventListener('click', () => {
+        primaryNav.classList.toggle('open');
+
+        navOpen.classList.toggle('visually-hidden');
+        navClose.classList.toggle('visually-hidden');
+    });
+</script>
+
+<header class="primary-header">
+    <div class="primary-logo">
+        <a href={props.homeHref} class="text-gradient-accent fs-800 fw-bold">Sahil Patel</a>
+    </div>
+    <div class="mobile-nav-toggle fs-600">
+        <i class="mobile-nav-open | bi-list"></i>
+        <i class="mobile-nav-close | bi-x-lg visually-hidden"></i>
+    </div>
+    <nav id="primary-nav" class="primary-nav">
+        { props.links.map(link => <div><a href={link.href}>{link.text}</a></div>) }
+    </nav>
+</header>

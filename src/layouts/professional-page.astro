@@ -1,0 +1,15 @@
+---
+import BasePage from './base-page.astro';
+import ProfessionalHeader from '../components/headers/professional-header.astro';
+import ProfessionalFooter from '../components/footers/professional-footer.astro';
+---
+<BasePage>
+    <!-- Forward on title slot -->
+    <slot name="title" slot="title"></slot>
+
+    <ProfessionalHeader slot="header"></ProfessionalHeader>
+    <ProfessionalFooter slot="footer"></ProfessionalFooter>
+
+    <!-- Main content slot -->
+    <slot />
+</BasePage>
