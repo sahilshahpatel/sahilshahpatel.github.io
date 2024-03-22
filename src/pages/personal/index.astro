@@ -35,17 +35,7 @@ import "../../scss/index.scss";
             {
                 featured.reviews.map( slug => {
                     const item = reviews.find( item => getSlug(item.file) === slug);
-                    return (
-                        <div class="w-100">
-                            <ReviewCard item={ item } classList="w-100"/>
-                            <div class="text-center mt-200">
-                                <a class="see-more-link subtitle" href={`/personal/reviews/${ slug }`}>
-                                    <span>Read full review</span>
-                                    <i class="bi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    );
+                    return <ReviewCard item={ item } classList="w-100" asLink />
                 })
             }
         </div>

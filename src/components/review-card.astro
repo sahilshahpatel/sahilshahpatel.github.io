@@ -1,38 +1,47 @@
 ---
 import { MDXInstance } from 'astro';
 import { ReviewData } from '../types'
-import { getReviewItemThumbnail } from '../util'
+import { getReviewItemThumbnail, getSlug } from '../util'
 import Chip from './chip.astro'
 
 export interface Props {
     item: MDXInstance<ReviewData>,
+    asLink?: boolean,
     classList?: string,  // Extra classes if desired
+    id?: string
 }
 
-const { item, classList } = Astro.props as Props;
+const { item, asLink, classList, id } = Astro.props as Props;
 const data = item.frontmatter;
+const slug = getSlug(item.file);
+
+const WrapperElement = asLink ? 'a' : Fragment;
+const innerClassList = asLink ? null : classList;
+const innerId        = asLink ? null : id;
 
 const thumbnail = await getReviewItemThumbnail(item.frontmatter);
 ---
 
-<div class={`review-card box-shadow-float p-400 ${classList || ""}`} data-tier={data.tier} >
-    <img class="review-thumbnail" src={thumbnail} />
-    <div class="flow">
-        <div>
-            <h1>{data.title}</h1>
-            { data.author ? <h2 class="subtitle">By {data.author}</h2> : null }
-        </div>
+<WrapperElement id={id} href={asLink ? `/personal/reviews/${slug}` : null} class={classList}>
+    <div id={innerId} class={`review-card box-shadow-float p-400 ${innerClassList || ""}`} data-tier={data.tier} >
+        <img class="review-thumbnail" src={thumbnail} loading="lazy"/>
+        <div class="flow">
+            <div>
+                <h1>{data.title}</h1>
+                { data.author ? <h2 class="subtitle">By {data.author}</h2> : null }
+            </div>
 
-        <div class="review-tier-container" data-tier={data.tier} title={data.tierAsterisk ? `Asterisk for ${data.tierAsterisk}` : null}>
-            <span class="review-tier">{data.tier}{data.tierModifier}</span> Tier{data.tierAsterisk ? "*" : null}
-        </div>
+            <div class="review-tier-container" data-tier={data.tier} title={data.tierAsterisk ? `Asterisk for ${data.tierAsterisk}` : null}>
+                <span class="review-tier">{data.tier}{data.tierModifier}</span> Tier{data.tierAsterisk ? "*" : null}
+            </div>
 
-        <div>
-            <div class="mb-100">Tags:</div>
-            <div class="review-tags">
-                <!-- TODO: Link these tags to a search page -->
-                {data.tags.map(tag => <Chip>{tag}</Chip>)}
+            <div>
+                <div class="mb-100">Tags:</div>
+                <div class="review-tags">
+                    {/* TODO: Link these tags to a search page */}
+                    {data.tags.map(tag => <Chip>{tag}</Chip>)}
+                </div>
             </div>
         </div>
     </div>
-</div>
+</WrapperElement>
