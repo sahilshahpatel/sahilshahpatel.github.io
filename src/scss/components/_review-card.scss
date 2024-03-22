@@ -1,9 +1,13 @@
 @use "../global/variables" as *;
 
-.review-card {
-    width: fit-content;
-    max-width: 100%;
+a:has(.review-card) {
+    &, &:hover, &:active, &:visited {
+        text-decoration: none;
+        color: inherit;
+    }
+}
 
+.review-card {
     display: flex;
     gap: map-get($sizes, 400);
 

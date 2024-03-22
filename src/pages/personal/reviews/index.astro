@@ -51,17 +51,7 @@ const reviews = dateSort(await Astro.glob<ReviewData>("../../../data/reviews/*.m
                 {
                     reviews.map( item => {
                         const slug = getSlug(item.file);
-                        return (
-                            <div id={slug} class="w-100">
-                                <ReviewCard item={ item } classList="w-100"/>
-                                <div class="text-center mt-200">
-                                    <a class="see-more-link subtitle" href={`/personal/reviews/${ slug }`}>
-                                        <span>Read full review</span>
-                                        <i class="bi-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        );
+                        return <ReviewCard id={slug} item={ item } classList="w-100" asLink />
                     })
                 }
             </div>
