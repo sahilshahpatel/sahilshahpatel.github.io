@@ -26,10 +26,14 @@ export function dateSort(list: MDXInstance<Dated>[]) {
 /***********************************/
 
 export async function getReviewItemThumbnail(item: ReviewData): Promise<string> {
-    // TODO: This function should check which type of media this is and call the
-    // correct helper
-    if (item.isbn == undefined) return "";
-    return getImgFromIsbn(item.isbn);
+    // TODO: Implement functions for all cases
+    switch (item.type){
+        case "book":        return getImgFromIsbn(item.isbn);
+        case "video game":  return getImgFromSteamAppId(item.steamAppId);
+        default:
+            console.log(`WARNING: Unable to get thumbnail for media type ${item.type} (for ${item.title})`)
+            return "";
+    }
 }
 
 async function getImgFromIsbn(isbn: string): Promise<string> {
@@ -45,4 +49,9 @@ async function getImgFromIsbn(isbn: string): Promise<string> {
     }
 
     return response.items[0].volumeInfo.imageLinks.thumbnail;
+}
+
+function getImgFromSteamAppId(id: string): string {
+    // TODO: This is a hack which may not work for all games
+    return `https://steamcdn-a.akamaihd.net/steam/apps/${id}/library_600x900_2x.jpg`
 }

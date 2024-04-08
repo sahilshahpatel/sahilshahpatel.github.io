@@ -5,13 +5,14 @@ import { getReviewItemThumbnail, getSlug } from '../util'
 import Chip from './chip.astro'
 
 export interface Props {
-    item: MDXInstance<ReviewData>,
-    asLink?: boolean,
-    classList?: string,  // Extra classes if desired
+    item: MDXInstance<ReviewData>
+    asLink?: boolean
+    fillParent?: boolean
+    classList?: string       // extra classes if desired
     id?: string
 }
 
-const { item, asLink, classList, id } = Astro.props as Props;
+const { item, asLink, fillParent, classList, id } = Astro.props as Props;
 const data = item.frontmatter;
 const slug = getSlug(item.file);
 
@@ -22,8 +23,8 @@ const innerId        = asLink ? null : id;
 const thumbnail = await getReviewItemThumbnail(item.frontmatter);
 ---
 
-<WrapperElement id={id} href={asLink ? `/personal/reviews/${slug}` : null} class={classList}>
-    <div id={innerId} class={`review-card box-shadow-float p-400 ${innerClassList || ""}`} data-tier={data.tier} >
+<WrapperElement id={id} href={asLink ? `/personal/reviews/${slug}` : null} class={ `${classList || ""}${fillParent ? "w-100 h-100" : ""}`}>
+    <div id={innerId} class={`review-card box-shadow-float p-400 ${innerClassList || ""} ${fillParent ? "w-100 h-100" : "" }`} data-tier={data.tier} >
         <img class="review-thumbnail" src={thumbnail} loading="lazy"/>
         <div class="flow">
             <div>
