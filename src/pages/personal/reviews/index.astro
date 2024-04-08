@@ -51,7 +51,7 @@ const reviews = dateSort(await Astro.glob<ReviewData>("../../../data/reviews/*.m
                 {
                     reviews.map( item => {
                         const slug = getSlug(item.file);
-                        return <ReviewCard id={slug} item={ item } classList="w-100" asLink />
+                        return <ReviewCard id={ slug } item={ item } fillParent asLink />
                     })
                 }
             </div>
