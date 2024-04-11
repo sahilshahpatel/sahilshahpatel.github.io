@@ -1,44 +1,47 @@
 ---
-import { ProjectData } from '../../types';
-import { getSlug } from '../../util';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+
+import ProfessionalPage from '../../layouts/professional-page.astro';
+import ProjectLinkIcons from '../../components/project-link-icons.astro';
+import '../../scss/project-page.scss';
 
 export async function getStaticPaths() {
-    const projects = await Astro.glob<ProjectData>('../../data/projects/*.mdx');
-    return projects.map(mdx => ({
-        params: { slug: getSlug(mdx.file) },
-        props: { item: mdx }
+    const projects = await getCollection("projects");
+    return projects.map(item => ({
+        params: { slug: item.slug },
+        props:  { item: item }
     }));
 }
 
-const { slug } = Astro.params;
+interface Props {
+    item: CollectionEntry<"projects">
+}
 const { item } = Astro.props;
-
-import '../../scss/project-page.scss';
-import ProfessionalPage from '../../layouts/professional-page.astro';
-import ProjectLinkIcons from '../../components/project-link-icons.astro';
+const { Content } = await item.render();
 ---
 
 <ProfessionalPage>
-    <title slot="title">{ item.frontmatter.title } | Sahil Patel</title>
+    <title slot="title">{ item.data.title } | Sahil Patel</title>
 
-    <div class="project-banner | bg-img-overlay" style={`--bg-img-url: url(${ item.frontmatter.img }); ${ item.frontmatter.gif ? '--bg-gif-url: url(' + item.frontmatter.gif + ');' : ''} ${item.frontmatter.imgPos ? '--bg-position: ' + item.frontmatter.imgPos + ';' : ''}`}>
+    <div class="project-banner | bg-img-overlay" style={`--bg-img-url: url(${ item.data.img }); ${ item.data.gif ? '--bg-gif-url: url(' + item.data.gif + ');' : ''} ${item.data.imgPos ? '--bg-position: ' + item.data.imgPos + ';' : ''}`}>
         <div class="overlay p-400 text-center">
             <h1>
-                <div class="heading-spread text-gradient-accent">{ item.frontmatter.category }</div>
-                <div class="fs-900 fw-bold">{ item.frontmatter.title }</div>
+                <div class="heading-spread text-gradient-accent">{ item.data.category }</div>
+                <div class="fs-900 fw-bold">{ item.data.title }</div>
             </h1>
             <div>
-                <ProjectLinkIcons links={ item.frontmatter.links } />
+                <ProjectLinkIcons links={ item.data.links } />
             </div>
         </div>
     </div>
 
     <div class="markdown container pt-400">
-        <item.Content />
+        <Content />
     </div>
 
     <div class="text-center mt-200">
-        <a class="see-more-link subtitle" data-point-left href={`/projects#${ slug }`}>
+        <a class="see-more-link subtitle" data-point-left href={`/projects#${ item.slug }`}>
             <i class="bi-arrow-left"></i>
             <span>Back to all projects</span>
         </a>

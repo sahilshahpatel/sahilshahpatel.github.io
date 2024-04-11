@@ -1,12 +1,13 @@
 ---
-import { AbroadData } from '../../types';
-import { getSlug, orderSort } from '../../util';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { orderSort } from '../../util';
 
 import ProfessionalPage from '../../layouts/professional-page.astro';
-
 import TravelCard from '../../components/travel-card.astro';
 
-const abroad = orderSort(await Astro.glob<AbroadData>('../../data/abroad/*.mdx'));
+const abroadCollection = await getCollection('abroad');
+const abroad = orderSort<CollectionEntry<"abroad">>(abroadCollection);
 ---
 
 <ProfessionalPage>
@@ -19,7 +20,7 @@ const abroad = orderSort(await Astro.glob<AbroadData>('../../data/abroad/*.mdx')
     <div>
         {
             abroad.map( item =>
-                <div id={ getSlug(item.file) } class="container my-400">
+                <div id={ item.slug } class="container my-400">
                     <TravelCard item={ item } />
                 </div>
             )

@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@astrojs/image": "^0.12.0",
-    "@astrojs/mdx": "^0.12.0",
-    "astro": "^1.6.12",
-    "autoprefixer": "^10.4.13"
+    "@astrojs/mdx": "^2.2.4",
+    "astro": "^4.5.18",
+    "autoprefixer": "^10.4.19"
   },
   "scripts": {
     "dev": "astro dev",
@@ -27,6 +26,6 @@
   },
   "homepage": "https://sahilshahpatel.com",
   "devDependencies": {
-    "sass": "^1.56.1"
+    "sass": "^1.74.1"
   }
 }

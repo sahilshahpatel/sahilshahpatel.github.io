@@ -1,8 +1,8 @@
 ---
+import { getCollection } from "astro:content";
 import { orderSort } from "../../util";
-import { ProjectData } from "../../types";
 
-const projects = orderSort(await Astro.glob<ProjectData>('../../data/projects/*.mdx'));
+const projects = orderSort(await getCollection("projects"));
 
 import ProfessionalPage from "../../layouts/professional-page.astro";
 import ProjectCard from "../../components/project-card.astro";

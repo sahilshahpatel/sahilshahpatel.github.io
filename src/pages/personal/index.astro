@@ -1,14 +1,16 @@
 ---
-import { MDXInstance } from "astro";
-import { ReviewData } from "../../types";
-import { getSlug } from "../../util";
+import { getCollection } from "astro:content";
+import featured from "../../featured";
+
 import PersonalPage from "../../layouts/personal-page.astro";
 import ReviewCard from "../../components/review-card.astro";
 
-import featured from "../../data/featured";
-const reviews = await Astro.glob<ReviewData>("../../data/reviews/*.mdx") as MDXInstance<ReviewData>[];
-
 import "../../scss/index.scss";
+
+const reviews = await getCollection("reviews", item => featured.reviews.includes(item.slug));
+
+// Check that featured items were parsed correctly
+if (reviews.length != featured.reviews.length) throw Error("Featured reviews incorrectly parsed! Check featured.ts");
 ---
 <PersonalPage>
     <title slot="title">Sahil Patel</title>
@@ -33,8 +35,7 @@ import "../../scss/index.scss";
         <h2 class="section-title">Featured Reviews</h2>
         <div class="grid-list">
             {
-                featured.reviews.map( slug => {
-                    const item = reviews.find( item => getSlug(item.file) === slug);
+                reviews.map( item => {
                     return <ReviewCard item={ item } classList="w-100" asLink />
                 })
             }

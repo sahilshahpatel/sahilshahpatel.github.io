@@ -1,9 +1,14 @@
 ---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+    links: CollectionEntry<"projects">["data"]["links"]
+}
 const { links } = Astro.props;
 ---
 
 <div class="project-link-icons | inline-flow flow-200 fs-500">
-    { links.demo ? <a href={ links.demo } title="View demo"><i class="bi-display"></i></a> : null }
-    { links.report ? <a href={ links.report } title="View report"><i class="bi-file-earmark-text"></i></a> : null }
-    { links.github ? <a href={ links.github } title="View source"><i class="bi-github"></i></a> : null }
+    { links?.demo   ? <a href={ links?.demo } title="View demo"><i class="bi-display"></i></a> : null }
+    { links?.report ? <a href={ links?.report } title="View report"><i class="bi-file-earmark-text"></i></a> : null }
+    { links?.github ? <a href={ links?.github } title="View source"><i class="bi-github"></i></a> : null }
 </div>

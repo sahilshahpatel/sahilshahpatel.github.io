@@ -1,23 +1,17 @@
-import { MDXInstance } from "astro";
-import { ReviewData } from "./types";
+import type { CollectionEntry } from 'astro:content';
 
-export function getFilename(filepath: string): string {
-    return filepath.split('\\').pop().split('/').pop();
+interface OrderedCollectionItem {
+    data: { order: number }
+};
+export function orderSort<T extends OrderedCollectionItem>(list: T[]) {
+    return list.sort((a, b) => b.data.order - a.data.order)
 }
 
-export function getSlug(filepath: string): string {
-    const name = getFilename(filepath);
-    return name.substring(0, name.indexOf('.'));
+interface DatedCollectionItem {
+    data: { date: Date }
 }
-
-interface Ordered { order: number; }
-export function orderSort(list: MDXInstance<Ordered>[]){
-    return list.sort((a, b) => b.frontmatter.order - a.frontmatter.order)
-}
-
-interface Dated { date: Date; }
-export function dateSort(list: MDXInstance<Dated>[]) {
-    return list.sort((a, b) => (new Date(a.frontmatter.date) - new Date(b.frontmatter.date)))
+export function dateSort<T extends DatedCollectionItem>(list: T[]) {
+    return list.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
 }
 
 
@@ -25,7 +19,7 @@ export function dateSort(list: MDXInstance<Dated>[]) {
 /* Review item thumbnail functions */
 /***********************************/
 
-export async function getReviewItemThumbnail(item: ReviewData): Promise<string> {
+export async function getReviewItemThumbnail(item: CollectionEntry<"reviews">["data"]): Promise<string> {
     // TODO: Implement functions for all cases
     switch (item.type){
         case "book":        return getImgFromIsbn(item.isbn);
