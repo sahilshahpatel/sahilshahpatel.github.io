@@ -1,0 +1,56 @@
+---
+import { JSDOM } from "jsdom";
+
+interface Props {
+    href: string
+    title?: string
+    description?: string
+}
+
+const props = Astro.props;
+
+// Fetch the link to preview
+const jsdom = new JSDOM(await (await fetch(props.href)).text());
+const doc = jsdom.window.document;
+
+const getOgElement = field => doc.querySelector(`meta[property='og:${field}'`) as HTMLMetaElement;
+// Parse open graph elements
+const og = {
+    title: props.title || getOgElement("title")?.content || doc.querySelector("title")!.textContent,
+    description: props.description || getOgElement("description")?.content || null,
+    img  : getOgElement("image")?.content || null, // TODO: add placeholder image here
+}
+
+if (!og.title) throw Error("Link preview was not supplied a title and no opengraph title was found!");
+if (!og.description) throw Error("Link preview was not supplied a description and no opengraph description was found!");
+---
+<div class="link-preview box-shadow-float">
+    <div class="p-400">
+        <a class="og-title" href={props.href}>{og.title}</a>
+        <p class="og-description subtitle mt-200">{og.description}</p>
+    </div>
+    <div>
+        <img class="og-image center-inline" src={og.img} />
+    </div>
+</div>
+
+
+{/* Component Styles */}
+<style lang="scss">
+    @use "../scss/global/_variables.scss" as *;
+
+    .link-preview {
+        background-color: var(--clr-primary-200);
+    }
+
+    .og-title {
+        font-weight: map-get($font-weights, "medium");
+        font-size: map-get($font-sizes, 600);
+    }
+
+    .og-image {
+        object-fit: contain;
+        max-height: 300px;
+        aspect-ratio: 16/9;
+    }
+</style>

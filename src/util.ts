@@ -16,6 +16,10 @@ const assetsManifest = {
     "jobs": {
         folder: "/src/assets/images/logos",
         images: import.meta.glob<{default: ImageMetadata }>("/src/assets/images/logos/*.{jpg,jpeg,png,gif,webp}"),
+    },
+    "collections": {
+        folder: "/src/assets/images/collections",
+        images: import.meta.glob<{default: ImageMetadata }>("/src/assets/images/collections/*.{jpg,jpeg,png,gif,webp}"),
     }
 }
 

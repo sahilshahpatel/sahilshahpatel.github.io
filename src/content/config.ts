@@ -45,6 +45,25 @@ const projectsCollection = defineCollection({
     })
 });
 
+const collectionsCollection = defineCollection({
+    type: "content",
+    schema: z.object({
+        title:       z.string(),
+        description: z.string(),
+        thumbnail:   z.object({
+                        src: z.string(),
+                        alt: z.string(),
+                        pos: z.string().optional(),
+        }),
+        links:       z.array(
+            z.object({
+                href:        z.string(),
+                description: z.string().optional(),
+            })
+        ),
+    })
+})
+
 const REVIEW_TYPES = [
     "book",
     "movie",
@@ -89,8 +108,9 @@ const reviewsCollection = defineCollection({
 
 
 export const collections = {
-    "abroad":   abroadCollection,
-    "jobs":     jobsCollection,
-    "projects": projectsCollection,
-    "reviews":  reviewsCollection,
+    "abroad":      abroadCollection,
+    "jobs":        jobsCollection,
+    "projects":    projectsCollection,
+    "collections": collectionsCollection,
+    "reviews":     reviewsCollection,
 }

@@ -58,3 +58,12 @@ export interface ReviewData {
     author?: string
     series?: string
 }
+
+export interface CollectionData {
+    title: string
+    description: string
+    links: {
+        href: string
+        description?: string
+    }[]
+}

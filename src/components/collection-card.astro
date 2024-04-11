@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getImage } from "../util";
+
+interface Props {
+    item: CollectionEntry<"collections">
+}
+const { item } = Astro.props;
+
+const bgImg = await getImage("collections", item.data.thumbnail.src);
+---
+<style define:vars={{
+    "bg-img-url": `url(${bgImg.src})`,
+    "bg-position": item.data.thumbnail.pos ? item.data.thumbnail.pos : null
+}} />
+<div id={ item.slug } class="collection-card box-shadow-float | bg-img-overlay">
+    <div class="overlay w-100 flow p-400">
+        <div>
+            <h2 class="fw-bold fs-600">{ item.data.title }</h2>
+        </div>
+
+        <div set:html={ item.data.description }></div>
+
+        <a class="see-more-link subtitle" href={`/personal/collections/${ item.slug }`}>
+            <span>See full collection</span>
+            <i class="bi-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+<style lang="scss">
+    @use "/src/scss/global/_variables.scss" as *;
+    .collection-card {
+        padding: min(7%, map-get($sizes, 800));
+        min-height: 350px;
+    }
+</style>

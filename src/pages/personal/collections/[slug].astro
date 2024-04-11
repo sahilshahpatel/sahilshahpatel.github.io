@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from 'astro:content';
+
+import PersonalPage from "@layouts/personal-page.astro";
+import LinkPreview from "@components/link-preview.astro";
+
+
+export interface Props {
+    item: CollectionEntry<"collections">
+}
+
+
+export async function getStaticPaths() {
+    const collections = await getCollection("collections")
+    return collections.map(item => ({
+        params: { slug: item.slug },
+        props:  { item: item }
+    }));
+}
+
+const { item } = Astro.props;
+const { Content } = await item.render();
+---
+
+<PersonalPage>
+    <title slot="title">{item.data.title} Collection | Sahil Patel</title>
+    <div class="container">
+        <h1 class="section-title">{item.data.title}</h1>
+        <p class="subtitle text-center">{item.data.description}</p>
+
+        <div class="markdown">
+            <Content />
+        </div>
+
+        <div class="grid-list mt-700">
+            {item.data.links.map(link => <LinkPreview href={link.href} description={link.description} />)}
+        </div>
+
+        <div class="text-center mt-400">
+            <a class="see-more-link subtitle" data-point-left href={`/personal/collections#${ item.slug }`}>
+                <i class="bi-arrow-left"></i>
+                <span>Back to all collections</span>
+            </a>
+        </div>
+    </div>
+</PersonalPage>

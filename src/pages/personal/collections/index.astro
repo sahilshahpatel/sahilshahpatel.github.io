@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import PersonalPage from "@layouts/personal-page.astro"
+import CollectionCard from "@components/collection-card.astro";
+
+const collections = await getCollection("collections");
+---
+<PersonalPage>
+    <title slot="title">Collections | Sahil Patel</title>
+
+    <div class="container">
+        <div>
+            <h1 class="section-title">Collections</h1>
+            <p>
+                Collections are where I store lists of all kinds. Interesting links, favorite restaurants, places I want to visit. Any of those could qualify as a collection. Below are all my current collections.
+            </p>
+        </div>
+        <div class="grid-list mt-600">
+            {
+                collections.map(collection => {
+                    return <CollectionCard item={collection}/>;
+                })
+            }
+        </div>
+    </div>
+</PersonalPage>

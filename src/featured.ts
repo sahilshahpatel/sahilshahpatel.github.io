@@ -4,4 +4,5 @@ export default {
 
     // Personal
     reviews: ["june-farrow", "outer-wilds"],
+    collections: ["graphics"]
 };
