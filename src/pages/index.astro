@@ -1,22 +1,22 @@
 ---
-import { getSlug, orderSort } from '../util';
+import { getCollection } from 'astro:content';
+import { orderSort } from '../util';
+import featured from "../featured";
 
-// Local CSS
-import "../scss/index.scss";
-
-// Data
-import featured from "../data/featured";
-const jobs = orderSort(await Astro.glob('../data/jobs/*.mdx')).slice(0, 1);
-const abroad = orderSort(await Astro.glob('../data/abroad/*.mdx'));
-const projects = orderSort(await Astro.glob('../data/projects/*.mdx'));
-
-// Layout
 import ProfessionalPage from "../layouts/professional-page.astro";
-
-// Components
 import WorkItem from "../components/work-item.astro";
 import TravelCard from "../components/travel-card.astro";
 import ProjectCard from "../components/project-card.astro";
+
+import "../scss/index.scss";
+
+const jobs     = orderSort(await getCollection("jobs")).slice(0, 1);
+const abroad   = orderSort(await getCollection("abroad",   item => featured.abroad.includes(item.slug)));
+const projects = orderSort(await getCollection("projects", item => featured.projects.includes(item.slug)));
+
+// Double check that featured items were pulled correctly
+if (abroad.length   != featured.abroad.length)   throw Error("Featured abroad items misinterpreted. Check featured.ts");
+if (projects.length != featured.projects.length) throw Error("Featured projects misinterpreted. Check featured.ts");
 ---
 
 <ProfessionalPage>
@@ -60,8 +60,7 @@ import ProjectCard from "../components/project-card.astro";
 
         <div>
             {
-                featured.abroad.map( slug => {
-                    const item = abroad.find( item => getSlug(item.file) === slug);
+                abroad.map( item => {
                     return <TravelCard item={ item } />
                 })
             }
@@ -72,8 +71,7 @@ import ProjectCard from "../components/project-card.astro";
         <h1 class="section-title">Projects</h1>
         <div class="flow">
             {
-                featured.projects.map( slug => {
-                    const item = projects.find( item => getSlug(item.file) === slug);
+                projects.map( item => {
                     return (
                         <div class="observed slide-up">
                             <ProjectCard item={ item } />

@@ -1,29 +1,33 @@
 ---
-import { JobData } from "../types";
+import type { CollectionEntry } from "astro:content";
 
+interface Props {
+    job: CollectionEntry<"jobs">
+    long: boolean
+}
 const { job, long } = Astro.props;
-const { company, position, timeframe, logo, summary } = job.frontmatter as JobData;
+const { Content } = await job.render();
 ---
 <div class="work-item">
     <div class="flex-between gap-400">
         <div class="work-heading">
             <h2 class="heading-spread text-gradient-accent">
-                { company }
+                { job.data.company }
             </h2>
             <h3 class="fw-bold">
-                { position }
+                { job.data.position }
             </h3>
             <span class="subtitle">
-                { timeframe }
+                { job.data.timeframe }
             </span>
         </div>
 
         <div class="work-logo | flex-column flex-end">
-            <img src={ logo } alt="" loading="lazy" />
+            <img src={ job.data.logo } alt="" loading="lazy" />
         </div>
     </div>
 
     <div class="work-description | flow markdown">
-        { long ? <job.Content /> : summary }
+        { long ? <Content /> : job.data.summary }
     </div>
 </div>

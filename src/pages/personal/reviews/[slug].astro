@@ -1,42 +1,41 @@
 ---
-import { MDXInstance } from 'astro';
-import { ReviewData } from '../../../types';
-import { getSlug } from '../../../util';
-
-
-export interface Props {
-    item: MDXInstance<ReviewData>
-}
-
-export async function getStaticPaths() {
-    const reviews = await Astro.glob<ReviewData>('../../../data/reviews/*.mdx') as MDXInstance<ReviewData>[];
-    return reviews.map(mdx => ({
-        params: { slug: getSlug(mdx.file) },
-        props:  { item: mdx }
-    }));
-}
-
-const { slug } = Astro.params;
-const { item } = Astro.props;
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 
 import PersonalPage from '../../../layouts/personal-page.astro';
 import ReviewCard from '../../../components/review-card.astro';
 
 import '../../../scss/review-page.scss';
+
+
+export interface Props {
+    item: CollectionEntry<"reviews">
+}
+
+export async function getStaticPaths() {
+    const reviews = await getCollection("reviews")
+    return reviews.map(item => ({
+        params: { slug: item.slug },
+        props:  { item: item }
+    }));
+}
+
+const { item } = Astro.props;
+const { Content } = await item.render();
 ---
 
 <PersonalPage>
-    <title slot="title">{item.frontmatter.title} Review | Sahil Patel</title>
+    <title slot="title">{item.data.title} Review | Sahil Patel</title>
 
     <div class="container">
         <ReviewCard item={item} classList="center-inline w-fit-content" />
 
         <div class="markdown pt-400">
-            <item.Content />
+            <Content />
         </div>
 
         <div class="text-center mt-200">
-            <a class="see-more-link subtitle" data-point-left href={`/personal/reviews#${ slug }`}>
+            <a class="see-more-link subtitle" data-point-left href={`/personal/reviews#${ item.slug }`}>
                 <i class="bi-arrow-left"></i>
                 <span>Back to all reviews</span>
             </a>

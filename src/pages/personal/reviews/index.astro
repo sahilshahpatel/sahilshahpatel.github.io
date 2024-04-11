@@ -1,11 +1,11 @@
 ---
-import { MDXInstance } from "astro";
+import { getCollection } from "astro:content";
+import { dateSort } from "../../../util";
+
 import ReviewCard from "../../../components/review-card.astro";
 import PersonalPage from "../../../layouts/personal-page.astro"
-import { ReviewData } from "../../../types";
-import { getSlug, dateSort } from "../../../util";
 
-const reviews = dateSort(await Astro.glob<ReviewData>("../../../data/reviews/*.mdx")) as MDXInstance<ReviewData>[];
+const reviews = dateSort(await getCollection("reviews"));
 ---
 <PersonalPage>
     <title slot="title">Reviews | Sahil Patel</title>
@@ -50,8 +50,7 @@ const reviews = dateSort(await Astro.glob<ReviewData>("../../../data/reviews/*.m
             <div class="grid-list">
                 {
                     reviews.map( item => {
-                        const slug = getSlug(item.file);
-                        return <ReviewCard id={ slug } item={ item } fillParent asLink />
+                        return <ReviewCard id={ item.slug } item={ item } fillParent asLink />
                     })
                 }
             </div>

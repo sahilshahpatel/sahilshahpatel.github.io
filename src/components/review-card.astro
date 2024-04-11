@@ -1,11 +1,10 @@
 ---
-import { MDXInstance } from 'astro';
-import { ReviewData } from '../types'
-import { getReviewItemThumbnail, getSlug } from '../util'
+import type { CollectionEntry } from 'astro:content'
+import { getReviewItemThumbnail } from '../util'
 import Chip from './chip.astro'
 
 export interface Props {
-    item: MDXInstance<ReviewData>
+    item: CollectionEntry<"reviews">
     asLink?: boolean
     fillParent?: boolean
     classList?: string       // extra classes if desired
@@ -13,14 +12,14 @@ export interface Props {
 }
 
 const { item, asLink, fillParent, classList, id } = Astro.props as Props;
-const data = item.frontmatter;
-const slug = getSlug(item.file);
+const data = item.data;
+const slug = item.slug;
 
 const WrapperElement = asLink ? 'a' : Fragment;
 const innerClassList = asLink ? null : classList;
 const innerId        = asLink ? null : id;
 
-const thumbnail = await getReviewItemThumbnail(item.frontmatter);
+const thumbnail = await getReviewItemThumbnail(data);
 ---
 
 <WrapperElement id={id} href={asLink ? `/personal/reviews/${slug}` : null} class={ `${classList || ""}${fillParent ? "w-100 h-100" : ""}`}>

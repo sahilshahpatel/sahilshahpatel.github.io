@@ -1,34 +1,27 @@
 ---
-import { AbroadData } from "../types";
-import { getSlug } from "../util";
+import type { CollectionEntry } from "astro:content";
 
+interface Props {
+    item: CollectionEntry<"abroad">
+}
 const { item } = Astro.props;
-const {
-    order,
-    what,
-    where,
-    when,
-    img,
-    imgPos,
-} = item.frontmatter as AbroadData;
-const slug = getSlug(item.file);
 ---
 
-<div class="travel-card bg-img-captioned container-fluid flex-column flex-end p-600" style={`--bg-img-url: url(${ img }); ${ imgPos ? '--bg-position: ' + imgPos + ';' : ''}`}>
+<div class="travel-card bg-img-captioned container-fluid flex-column flex-end p-600" style={`--bg-img-url: url(${ item.data.img }); ${ item.data.imgPos ? '--bg-position: ' + item.data.imgPos + ';' : ''}`}>
     <div class="container flex-between flex-wrap observed slide-up">
         <div>
             <h2 class="heading-spread text-gradient-accent">
-                { where }
+                { item.data.where }
             </h2>
             <h3 class="fw-bold">
-                { what }
+                { item.data.what }
             </h3>
             <p class="subtitle">
-                { when }
+                { item.data.when }
             </p>
         </div>
         <div class="flex-column flex-end">
-            <a class="see-more-link subtitle" href={`/abroad/${ slug }`}>
+            <a class="see-more-link subtitle" href={`/abroad/${ item.slug }`}>
                 Read more
                 <i class="bi-arrow-right"></i>
             </a>

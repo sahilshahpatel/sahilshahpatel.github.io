@@ -1,40 +1,44 @@
 ---
-import { AbroadData } from '../../types';
-import { getSlug } from '../../util';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
-    const abroad = await Astro.glob<AbroadData>('../../data/abroad/*.mdx');
-    return abroad.map(mdx => ({
-        params: { slug: getSlug(mdx.file) },
-        props: { item: mdx }
+    const abroad = await getCollection('abroad');
+    return abroad.map(item => ({
+        params: { slug: item.slug },
+        props:  { item: item }
     }));
 }
 
-const { slug } = Astro.params;
+interface Props {
+    item: CollectionEntry<'abroad'>,
+}
+
 const { item } = Astro.props;
+const { Content } = await item.render();
 
 import '../../scss/abroad-page.scss';
 import ProfessionalPage from '../../layouts/professional-page.astro';
 ---
 
 <ProfessionalPage>
-    <title slot="title">{ item.frontmatter.what } | Sahil Patel</title>
+    <title slot="title">{ item.data.what } | Sahil Patel</title>
 
-    <div class="abroad-banner | bg-img-overlay" style={`--bg-img-url: url(${ item.frontmatter.img }); ${ item.frontmatter.imgPos ? '--bg-position: ' + item.frontmatter.imgPos + ';' : ''}`}>
+    <div class="abroad-banner | bg-img-overlay" style={`--bg-img-url: url(${ item.data.img }); ${ item.data.imgPos ? '--bg-position: ' + item.data.imgPos + ';' : ''}`}>
         <div class="overlay p-400 text-center">
             <h1>
-                <div class="heading-spread text-gradient-accent">{ item.frontmatter.where }</div>
-                <div class="fs-900 fw-bold">{ item.frontmatter.what }</div>
+                <div class="heading-spread text-gradient-accent">{ item.data.where }</div>
+                <div class="fs-900 fw-bold">{ item.data.what }</div>
             </h1>
         </div>
     </div>
 
     <div class="markdown container pt-400">
-        <item.Content />
+        <Content />
     </div>
 
     <div class="text-center mt-200">
-        <a class="see-more-link subtitle" data-point-left href={`/abroad#${ slug }`}>
+        <a class="see-more-link subtitle" data-point-left href={`/abroad#${ item.slug }`}>
             <i class="bi-arrow-left"></i>
             <span>Back to all travel</span>
         </a>
