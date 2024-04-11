@@ -8,11 +8,14 @@ import Image from "@components/image-wrapper.astro";
 
 import heroImg from "@images/profiles/sahil-park.jpg"
 import "../../scss/index.scss";
+import CollectionCard from "@components/collection-card.astro";
 
-const reviews = await getCollection("reviews", item => featured.reviews.includes(item.slug));
+const reviews     = await getCollection("reviews",     item => featured.reviews.includes(item.slug));
+const collections = await getCollection("collections", item => featured.collections.includes(item.slug));
 
 // Check that featured items were parsed correctly
-if (reviews.length != featured.reviews.length) throw Error("Featured reviews incorrectly parsed! Check featured.ts");
+if (reviews.length     != featured.reviews.length)     throw Error("Featured reviews incorrectly parsed! Check featured.ts");
+if (collections.length != featured.collections.length) throw Error("Featured collections incorrectly parsed! Check featured.ts");
 ---
 <PersonalPage>
     <title slot="title">Sahil Patel</title>
@@ -45,6 +48,23 @@ if (reviews.length != featured.reviews.length) throw Error("Featured reviews inc
         <div class="text-center mt-200">
             <a class="see-more-link subtitle" href="/personal/reviews">
                 <span>See all reviews</span>
+                <i class="bi-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Featured Collections</h2>
+        <div class="grid-list">
+            {
+                collections.map( item => {
+                    return <CollectionCard item={ item } />
+                })
+            }
+        </div>
+        <div class="text-center mt-200">
+            <a class="see-more-link subtitle" href="/personal/collections">
+                <span>See all collections</span>
                 <i class="bi-arrow-right"></i>
             </a>
         </div>
