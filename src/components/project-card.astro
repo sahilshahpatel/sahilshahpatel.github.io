@@ -1,14 +1,28 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import ProjectLinkIcons from "./project-link-icons.astro";
+import { projectImageFolder, allProjectImages } from "../util";
 
 interface Props {
     item: CollectionEntry<"projects">
 }
 const { item } = Astro.props;
----
 
-<div id={ item.slug } class="project-card | bg-img-overlay" style={`--bg-img-url: url(${ item.data.img }); ${ item.data.gif ? '--bg-gif-url: url(' + item.data.gif + ');' : ''} ${item.data.imgPos ? '--bg-position: ' + item.data.imgPos + ';' : ''}`}>
+function getImg(basename: string) {
+    const path = `${projectImageFolder}/${basename}`;
+    const img = allProjectImages[path];
+    if (!img) throw Error(`Could not find image at ${path}`);
+    return img();
+}
+const bgImg = await getImg(item.data.img);
+const bgGif = item.data.gif ? await getImg(item.data.gif) : null;
+---
+<style define:vars={{
+    "bg-img-url": `url(${bgImg.default.src})`,
+    "bg-gif-url": bgGif ? `url(${bgGif.default.src})` : null,
+    "bg-position": item.data.imgPos ? item.data.imgPos : null
+}} />
+<div id={ item.slug } class="project-card | bg-img-overlay">
     <div class="overlay w-100 flow p-400">
         <div>
             <p class="heading-spread text-gradient-accent">{ item.data.category }</p>

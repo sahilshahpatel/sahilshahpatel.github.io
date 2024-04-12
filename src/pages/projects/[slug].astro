@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
+import { projectImageFolder, allProjectImages } from '../../util';
 
 import ProfessionalPage from '../../layouts/professional-page.astro';
 import ProjectLinkIcons from '../../components/project-link-icons.astro';
@@ -19,12 +20,32 @@ interface Props {
 }
 const { item } = Astro.props;
 const { Content } = await item.render();
+
+function getImg(basename: string) {
+    const path = `${projectImageFolder}/${basename}`;
+    const img = allProjectImages[path];
+    if (!img) throw Error(`Unable to find image at ${path}`);
+    return img();
+}
+
+const bannerImg = await getImg(item.data.img);
+const bannerGif = item.data.gif ? await getImg(item.data.gif) : null;
 ---
+<style define:vars={{
+    projectBannerBgImg:  `url(${bannerImg.default.src})`,
+    projectBannerBgGif:  bannerGif ? `url(${bannerGif.default.src})` : null,
+    projectBannerImgPos: item.data.imgPos || null,
+}}>
+.project-banner {
+    --bg-img-url: var(--projectBannerBgImg);
+    --bg-gif-url: var(--projectBannerBgGif);
+    --bg-position: var(--projectBannerImgPos);
+}
+</style>
 
 <ProfessionalPage>
     <title slot="title">{ item.data.title } | Sahil Patel</title>
-
-    <div class="project-banner | bg-img-overlay" style={`--bg-img-url: url(${ item.data.img }); ${ item.data.gif ? '--bg-gif-url: url(' + item.data.gif + ');' : ''} ${item.data.imgPos ? '--bg-position: ' + item.data.imgPos + ';' : ''}`}>
+    <div class="project-banner | bg-img-overlay">
         <div class="overlay p-400 text-center">
             <h1>
                 <div class="heading-spread text-gradient-accent">{ item.data.category }</div>

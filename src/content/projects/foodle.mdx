@@ -2,12 +2,15 @@
 order: 0
 title: "Foodle"
 category: "Web Development"
-img: "/images/projects/foodle.jpg"
+img: "foodle.jpg"
 links: {
-    "github": "https://github.com/sahilshahpatel/HackRidge2018"
+    github: "https://github.com/sahilshahpatel/HackRidge2018"
 }
 description: "A website built for my first hackathon. Mimics collaborative filtering algorithms to find recommended recipes based on your history and friends."
 ---
+import { Image } from "astro:assets"
+import hackridgeImg from "/src/assets/images/projects/hackridge.jpg"
+
 
 This project is the earliest one on this site, and it holds a special place in my heart because it was the result of my first hackathon: HackRidge 2018.
 
@@ -19,4 +22,4 @@ The result of our labor was a site that not only looked good (relatively at leas
 
 Ultimately, though, I look back fondly on this project not because of its substance but its circumstance. This hackathon really helped develop my love for programming. After all, you really can't spend 24 hours straight on a project without loving the work. Of course, we didn't really work the full time. We spent time playing game with each other and the other contestants, and indulged in the unique sense of community that emerges from collective sleep deprivation.
 
-<img class="mt-400 w-100" src="/images/projects/hackridge.jpg" loading="lazy" />
+<Image class="mt-400 w-100" widths={[300, 500, 750, 1000, hackridgeImg.width]} style="height: auto;" src={hackridgeImg} alt="My team and me with our first place medals at HackRidge 2018" loading="lazy"/>

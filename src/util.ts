@@ -1,5 +1,8 @@
 import type { CollectionEntry } from 'astro:content';
 
+export const projectImageFolder = "/src/assets/images/projects";
+export const allProjectImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/projects/*.{jpg,jpeg,png,gif,webp}");
+
 interface OrderedCollectionItem {
     data: { order: number }
 };
