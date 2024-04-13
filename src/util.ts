@@ -1,8 +1,33 @@
 import type { CollectionEntry } from 'astro:content';
+import type { ImageMetadata } from 'astro';
 
-export const projectImageFolder = "/src/assets/images/projects";
-export const allProjectImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/projects/*.{jpg,jpeg,png,gif,webp}");
+/***********************************/
+/* Astro Assets imports            */
+/***********************************/
+const assetsManifest = {
+    "projects": {
+        folder: "/src/assets/images/projects",
+        images: import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/projects/*.{jpg,jpeg,png,gif,webp}"),
+    },
+    "abroad": {
+        folder: "/src/assets/images/abroad",
+        images: import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/abroad/*.{jpg,jpeg,png,gif,webp}"),
+    }
+}
 
+export async function getImage(collection: keyof typeof assetsManifest, basename: string) {
+    const manifest = assetsManifest[collection];
+    const path = `${manifest.folder}/${basename}`;
+    const imgFunc = manifest.images[path];
+    if (!imgFunc) throw Error(`Unable to find image at ${path}`);
+    const img = await imgFunc();
+    return img.default;
+}
+
+
+/***********************************/
+/* Sorting functions               */
+/***********************************/
 interface OrderedCollectionItem {
     data: { order: number }
 };

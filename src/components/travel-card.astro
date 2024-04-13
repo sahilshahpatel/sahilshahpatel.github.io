@@ -1,13 +1,19 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { getImage } from "../util";
 
 interface Props {
     item: CollectionEntry<"abroad">
 }
 const { item } = Astro.props;
----
 
-<div class="travel-card bg-img-captioned container-fluid flex-column flex-end p-600" style={`--bg-img-url: url(${ item.data.img }); ${ item.data.imgPos ? '--bg-position: ' + item.data.imgPos + ';' : ''}`}>
+const bgImg = await getImage("abroad", item.data.img);
+---
+<style define:vars={{
+    "bg-img-url": `url(${bgImg.src})`,
+    "bg-position": item.data.imgPos,
+}} />
+<div class="travel-card bg-img-captioned container-fluid flex-column flex-end p-600">
     <div class="container flex-between flex-wrap observed slide-up">
         <div>
             <h2 class="heading-spread text-gradient-accent">

@@ -3,9 +3,15 @@ order: 0
 what: "ImagininGuate"
 where: "Antigua,Guatemala"
 when: "January 2019"
-img: "/images/abroad/guatemala-building.jpg"
+img: "guatemala-building.jpg"
 imgPos: "20% 55%"
 ---
+import Image from "../../components/image-wrapper.astro"
+
+import cementImg from "/src/assets/images/abroad/guatemala-cement.jpg"
+import buildGroupImg from "/src/assets/images/abroad/guatemala-build-group.jpg"
+import buildPeaceImg from "/src/assets/images/abroad/guatemala-build-peace.jpg"
+import buildProgressImg from "/src/assets/images/abroad/guatemala.jpg"
 
 ## My First Experience Abroad
 During my first semester at Illinois, I took an IEFX (Illinois Engineering First-Year Experience) class which culminated in a trip to Guatemala to build houses for families in need in partnership with [the Guatemala Project](https://www.theguatemalaproject.org/service-teams/). During the semester, we learned about engineering ethics and applied it to our own project by investigating Guatemalan culture and how it would impact our goals.
@@ -14,14 +20,14 @@ During my first semester at Illinois, I took an IEFX (Illinois Engineering First
 Over winter break, our class of 21 students and 2 teachers traveled to Antigua, Guatemala to meet with [Imagininguate](https://www.imagininguatemala.org/), sister organization of the Guatemala Project. We stayed with a host family which provided us with a better cultural context for the city as well as great practice with our Spanish! Over the two weeks that we were there, we switched between spending our day at the worksite and going on excursions throughout the city and surrounding area. After five work days, we had built a one-room home with a separate bathroom, outdoor stove, electricity, a window and a door.
 <div class="img-grid">
     <div class="column">
-        <img class="box-shadow-float-high" src="/images/abroad/guatemala-cement.jpg" alt="Mixing concrete outside the build site" loading="lazy" />
+        <Image class="box-shadow-float-high" src={cementImg} alt="Mixing concrete outside the build site" loading="lazy" />
     </div>
     <div class="column">
         <div class="row">
-            <img class="box-shadow-float-high" src="/images/abroad/guatemala-build-group.jpg" alt="Group photo of our build team" loading="lazy" />
+            <Image class="box-shadow-float-high" src={buildGroupImg} alt="Group photo of our build team" loading="lazy" />
         </div>
         <div class="row">
-            <img class="box-shadow-float-high" src="/images/abroad/guatemala-build-peace.jpg" alt="View from the build site" loading="lazy" />
+            <Image class="box-shadow-float-high" src={buildPeaceImg} alt="View from the build site" loading="lazy" />
         </div>
     </div>
 </div>
@@ -29,4 +35,4 @@ Over winter break, our class of 21 students and 2 teachers traveled to Antigua, 
 ## What I Learned
 The experience taught me a lot about cultural awareness, the value of service, and the power of teamwork. Going in, it felt like there was no way we could really make such a large difference in such a short time. In fact, we didn't know the first thing about building a house before we arrived in Guatemala! But by learning from the Imagininguate workers we were able to contribute meaningfully to the construction. At the end of our trip, we got to watch as the family saw their new house for the first time and give them our well-wishes. As a Spanish-speaker, I didn't need a translator and could to talk straight to them. To be able to communicate the happiness that I felt at that moment in a more personal way brought profound contentment to my heart, and I could see it was reflected in their's as well.
 
-<img class="single-img box-shadow-float-high" src="/images/abroad/guatemala.jpg" alt="Group photo in our partially built house" loading="lazy" />
+<Image class="single-img box-shadow-float-high" src={buildProgressImg} alt="Group photo in our partially built house" loading="lazy" />
