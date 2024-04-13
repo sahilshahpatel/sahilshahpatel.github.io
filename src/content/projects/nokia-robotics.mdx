@@ -8,7 +8,7 @@ links: {
 }
 description: "An expansion of the BOEBot kit made to clear challenges set out by the competition runners at Nokia."
 ---
-import { Image } from "astro:assets"
+import Image from "../../components/image-wrapper.astro"
 import nokiaRoboticsTeamImg from "/src/assets/images/projects/nokiaRoboticsTeam.jpg"
 
 During my Summer 2019 internship at Nokia, all the interns were invited to participate in a friendly robotics competition. Each team was given a BOEBot, an arduino starter kit including wheels and motors and an ultrasound sensor on a rotating neck. We were given three tasks which we would be judged on.
@@ -19,4 +19,4 @@ Each challenge required its own strategy, so our team began by ideating on possi
 
 Through this project I gained more experience working with Arduinos. The finite state machine skills I had developed in school served me well in translating our on-paper strategy into code for the BOEBot. In the end we did not finish first, but our bot performed well, and we were very proud of it!
 
-<Image class="mt-400 w-100" widths={[300, 500, 750, 1000, nokiaRoboticsTeamImg.width]} style="height: auto;" src={nokiaRoboticsTeamImg} alt="My robotics team receiving a participation certificate from Nokia" loading="lazy" />
+<Image class="mt-400 w-100" src={nokiaRoboticsTeamImg} alt="My robotics team receiving a participation certificate from Nokia" loading="lazy" />

@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
-import { projectImageFolder, allProjectImages } from '../../util';
+import { getImage } from '../../util';
 
 import ProfessionalPage from '../../layouts/professional-page.astro';
 import ProjectLinkIcons from '../../components/project-link-icons.astro';
@@ -21,19 +21,12 @@ interface Props {
 const { item } = Astro.props;
 const { Content } = await item.render();
 
-function getImg(basename: string) {
-    const path = `${projectImageFolder}/${basename}`;
-    const img = allProjectImages[path];
-    if (!img) throw Error(`Unable to find image at ${path}`);
-    return img();
-}
-
-const bannerImg = await getImg(item.data.img);
-const bannerGif = item.data.gif ? await getImg(item.data.gif) : null;
+const bannerImg = await getImage("projects", item.data.img);
+const bannerGif = item.data.gif ? await getImage("projects", item.data.gif) : null;
 ---
 <style define:vars={{
-    projectBannerBgImg:  `url(${bannerImg.default.src})`,
-    projectBannerBgGif:  bannerGif ? `url(${bannerGif.default.src})` : null,
+    projectBannerBgImg:  `url(${bannerImg.src})`,
+    projectBannerBgGif:  bannerGif ? `url(${bannerGif.src})` : null,
     projectBannerImgPos: item.data.imgPos || null,
 }}>
 .project-banner {

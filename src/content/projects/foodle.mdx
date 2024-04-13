@@ -8,7 +8,7 @@ links: {
 }
 description: "A website built for my first hackathon. Mimics collaborative filtering algorithms to find recommended recipes based on your history and friends."
 ---
-import { Image } from "astro:assets"
+import Image from "../../components/image-wrapper.astro"
 import hackridgeImg from "/src/assets/images/projects/hackridge.jpg"
 
 
@@ -22,4 +22,4 @@ The result of our labor was a site that not only looked good (relatively at leas
 
 Ultimately, though, I look back fondly on this project not because of its substance but its circumstance. This hackathon really helped develop my love for programming. After all, you really can't spend 24 hours straight on a project without loving the work. Of course, we didn't really work the full time. We spent time playing game with each other and the other contestants, and indulged in the unique sense of community that emerges from collective sleep deprivation.
 
-<Image class="mt-400 w-100" widths={[300, 500, 750, 1000, hackridgeImg.width]} style="height: auto;" src={hackridgeImg} alt="My team and me with our first place medals at HackRidge 2018" loading="lazy"/>
+<Image class="mt-400 w-100" src={hackridgeImg} alt="My team and me with our first place medals at HackRidge 2018" loading="lazy"/>

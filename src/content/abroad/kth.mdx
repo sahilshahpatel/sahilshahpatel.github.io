@@ -3,9 +3,27 @@ order: 1
 what: "KTH Royal Institute of Technology"
 where: "Stockholm, Sweden"
 when: "January 2022 - June 2022"
-img: "/images/abroad/stockholm-sunset.jpg"
+img: "stockholm-sunset.jpg"
 imgPos: "center"
 ---
+import Image from "../../components/image-wrapper.astro"
+
+import boardGameNightImg from "/src/assets/images/abroad/kth-board-game-night.jpg"
+import kirunaPlaneWindowImg from "/src/assets/images/abroad/kth-kiruna-plane-window.jpg"
+import kirunaAuroraImg from "/src/assets/images/abroad/kth-kiruna-aurora.jpg"
+import kirunaGroupImg from "/src/assets/images/abroad/kth-kiruna-group.jpg"
+
+import munichGroupImg from "/src/assets/images/abroad/kth-munich-group.jpg"
+import copenhagenGroupImg from "/src/assets/images/abroad/kth-copenhagen-group.jpg"
+import norwayGroupImg from "/src/assets/images/abroad/kth-norway-cabins-group-tall.jpg"
+
+import vicMigrationDemoImg from "/src/assets/images/abroad/kth-vic-migration-demo.jpg"
+import vicImg from "/src/assets/images/abroad/kth-vic-iss.jpg"
+import orbiteyeImg from "/src/assets/images/abroad/kth-orbiteye-presentation.jpg"
+
+import lucaImg from "/src/assets/images/abroad/kth-luca-and-me.jpg"
+import pascalImg from "/src/assets/images/abroad/kth-pascal-birthday.jpg"
+import lukasImg from "/src/assets/images/abroad/kth-lukas-teknikringen-welcome.jpg"
 
 ## The Decision to Study Abroad
 I had been wanting to study abroad since my freshman year &mdash; especially so after my trip to Guatemala. My original plan was to study abroad in my junior year, but that was halted because of the Covid-19 pandemic. I applied again for Fall 2021, but again it was canceled. So I finally had to make a decision: did I want to lose my final semester of college at home to gain that experience abroad?
@@ -21,7 +39,7 @@ I had a lot of warming up to do. Really, one of the reasons I wanted to study ab
 Truthfully, I was lucky. A lot of students from UIUC study abroad at KTH, and so I had a safe and immediate group of friends. But I also knew that I didn't want to be complacent. What would be the point of traveling abroad just to make friends with other Illinoisans?
 
 KTH's student union set up the most amazing welcome events lasting three weeks. Through those events I met most of my friends for the next five months. After the welcome events ended, weekly board game nights began, and that helped me meet even more.
-<img class="single-img box-shadow-float-high" src="/images/abroad/kth-board-game-night.jpg" alt="KTH board game night" loading="lazy" />
+<Image class="single-img box-shadow-float-high" src={boardGameNightImg} alt="KTH board game night" loading="lazy" />
 
 
 ## Travel
@@ -30,14 +48,14 @@ Before leaving, everyone asked me where I wanted to travel and went on about how
 My first trip was to Kiruna, in the north of Sweden to see the northern lights. Our UIUC group organized it with another group of German/Austrian friends. We stayed in a cabin 30 minutes outside Kiruna on the bank of a frozen river for two days and two nights. During the day we would spend time with winter activities like cross-country skiing, snow shoeing, and ice fishing. Both nights we were lucky enough to see the aurora!
 <div class="img-grid">
     <div class="column">
-        <img class="box-shadow-float-high" src="/images/abroad/kth-kiruna-plane-window.jpg" alt="Out a plane window" loading="lazy" />
+        <Image class="box-shadow-float-high" src={kirunaPlaneWindowImg} alt="Out a plane window" loading="lazy" />
     </div>
     <div class="column">
         <div class="row">
-            <img class="box-shadow-float-high" src="/images/abroad/kth-kiruna-aurora.jpg" alt="The aurora" loading="lazy" />
+            <Image class="box-shadow-float-high" src={kirunaAuroraImg} alt="The aurora" loading="lazy" />
         </div>
         <div class="row">
-            <img class="box-shadow-float-high" src="/images/abroad/kth-kiruna-group.jpg" alt="Our group in front of the cabins" loading="lazy" />
+            <Image class="box-shadow-float-high" src={kirunaGroupImg} alt="Our group in front of the cabins" loading="lazy" />
         </div>
     </div>
 </div>
@@ -47,14 +65,14 @@ Afterwards my UIUC friends visited me in Stockholm and we went together to Munic
 <div class="img-grid">
     <div class="column">
         <div class="row">
-            <img class="box-shadow-float-high" src="/images/abroad/kth-munich-group.jpg" alt="My friends and me in Munich" loading="lazy" />
+            <Image class="box-shadow-float-high" src={munichGroupImg} alt="My friends and me in Munich" loading="lazy" />
         </div>
         <div class="row">
-            <img class="box-shadow-float-high" src="/images/abroad/kth-copenhagen-group.jpg" alt="Group photo on top of a clock tower in Copenhagen" loading="lazy" />
+            <Image class="box-shadow-float-high" src={copenhagenGroupImg} alt="Group photo on top of a clock tower in Copenhagen" loading="lazy" />
         </div>
     </div>
     <div class="column">
-        <img class="box-shadow-float-high" src="/images/abroad/kth-norway-cabins-group-tall.jpg" alt="Group photo outside cabins on Luster Fjord in Norway" loading="lazy" />
+        <Image class="box-shadow-float-high" src={norwayGroupImg} alt="Group photo outside cabins on Luster Fjord in Norway" loading="lazy" />
     </div>
 </div>
 
@@ -63,14 +81,14 @@ I also had a lot of fun in my courses at KTH. My favorite had to be Information 
 <div class="img-grid">
     <div class="column">
         <div class="row">
-            <img class="box-shadow-float-high" src="/images/abroad/kth-vic-migration-demo.jpg" alt="Me user testing another project for Information Visualization" loading="lazy" />
+            <Image class="box-shadow-float-high" src={vicMigrationDemoImg} alt="Me user testing another project for Information Visualization" loading="lazy" />
         </div>
         <div class="row">
-            <img class="box-shadow-float-high" src="/images/abroad/kth-vic-iss.jpg" alt="The visualization studio (VIC) at KTH" loading="lazy" />
+            <Image class="box-shadow-float-high" src={vicImg} alt="The visualization studio (VIC) at KTH" loading="lazy" />
         </div>
     </div>
     <div class="column">
-        <img class="box-shadow-float-high" src="/images/abroad/kth-orbiteye-presentation.jpg" alt="Our final presentation for OrbitEye" loading="lazy" />
+        <Image class="box-shadow-float-high" src={orbiteyeImg} alt="Our final presentation for OrbitEye" loading="lazy" />
     </div>
 </div>
 
@@ -78,14 +96,14 @@ I also had a lot of fun in my courses at KTH. My favorite had to be Information 
 I had such an amazing time in Stockholm. I met so many new people from all over who were similar to me in many ways and also quite different. KTH's student union made it so easy to slot right in from the beginning and find my own community within the masses. Looking back on the time where I had to make that decision, as much as I lost &mdash; missing graduation, senior classes with my friends, activities and events on campus &mdash; I gained so much back for it, and I would do it a thousand times over again.
 <div class="img-grid">
     <div class="column">
-        <img class="box-shadow-float-high" src="/images/abroad/kth-luca-and-me.jpg" alt="My roommate and me outside KTH main campus" loading="lazy" />
+        <Image class="box-shadow-float-high" src={lucaImg} alt="My roommate and me outside KTH main campus" loading="lazy" />
     </div>
     <div class="column">
         <div class="row">
-            <img class="box-shadow-float-high" src="/images/abroad/kth-pascal-birthday.jpg" alt="Us celebrating Pascal's birthday" loading="lazy" />
+            <Image class="box-shadow-float-high" src={pascalImg} alt="Us celebrating Pascal's birthday" loading="lazy" />
         </div>
         <div class="row">
-            <img class="box-shadow-float-high" src="/images/abroad/kth-lukas-teknikringen-welcome.jpg" alt="A housewarming pizza party for Lukas" loading="lazy" />
+            <Image class="box-shadow-float-high" src={lukasImg} alt="A housewarming pizza party for Lukas" loading="lazy" />
         </div>
     </div>
 </div>
