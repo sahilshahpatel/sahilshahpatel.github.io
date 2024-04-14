@@ -4,7 +4,9 @@ import featured from "../../featured";
 
 import PersonalPage from "@layouts/personal-page.astro";
 import ReviewCard from "@components/review-card.astro";
+import Image from "@components/image-wrapper.astro";
 
+import heroImg from "@images/profiles/sahil-park.jpg"
 import "../../scss/index.scss";
 
 const reviews = await getCollection("reviews", item => featured.reviews.includes(item.slug));
@@ -27,7 +29,7 @@ if (reviews.length != featured.reviews.length) throw Error("Featured reviews inc
             </p>
         </div>
         <div>
-            <img src="/images/profiles/sahil-park.jpg" alt="" />
+            <Image src={heroImg} alt="A picture of me" />
         </div>
     </section>
 
