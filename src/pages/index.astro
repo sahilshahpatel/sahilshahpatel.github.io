@@ -7,7 +7,9 @@ import ProfessionalPage from "@layouts/professional-page.astro";
 import WorkItem from "@components/work-item.astro";
 import TravelCard from "@components/travel-card.astro";
 import ProjectCard from "@components/project-card.astro";
+import Image from "@components/image-wrapper.astro";
 
+import heroImg from "@images/profiles/sahil-park.jpg"
 import "../scss/index.scss";
 
 const jobs     = orderSort(await getCollection("jobs")).slice(0, 1);
@@ -34,7 +36,7 @@ if (projects.length != featured.projects.length) throw Error("Featured projects 
             </p>
         </div>
         <div>
-            <img src="/images/profiles/sahil-park.jpg" alt="" />
+            <Image src={heroImg} alt="A picture of me" />
         </div>
     </section>
 
