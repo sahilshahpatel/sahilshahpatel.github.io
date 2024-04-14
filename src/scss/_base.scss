@@ -17,7 +17,7 @@ body > main {
 
 @media (prefers-color-scheme: dark) {
     body {
-        // Only on dark mode because we want white (not purple
+        // Only on dark mode because we want gray (not pitch black)
         background-color: var(--clr-primary-100);
     }
 
@@ -28,7 +28,7 @@ body > main {
 
     /* Specific image fixes */
     // Samsung logo
-    img[src="/images/logos/Samsung_Orig_Wordmark_BLUE_RGB.png"] {
+    img[src*="Samsung_Orig_Wordmark_BLUE_RGB.png"] {
         filter: brightness(1.3) contrast(1.2) saturate(0.6);
     }
 }
