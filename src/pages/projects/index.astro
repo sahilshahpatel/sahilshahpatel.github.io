@@ -4,8 +4,8 @@ import { orderSort } from "../../util";
 
 const projects = orderSort(await getCollection("projects"));
 
-import ProfessionalPage from "../../layouts/professional-page.astro";
-import ProjectCard from "../../components/project-card.astro";
+import ProfessionalPage from "@layouts/professional-page.astro";
+import ProjectCard from "@components/project-card.astro";
 ---
 
 <ProfessionalPage>

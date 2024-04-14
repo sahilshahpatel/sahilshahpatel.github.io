@@ -3,8 +3,8 @@ import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import { getImage } from '../../util';
 
-import ProfessionalPage from '../../layouts/professional-page.astro';
-import ProjectLinkIcons from '../../components/project-link-icons.astro';
+import ProfessionalPage from '@layouts/professional-page.astro';
+import ProjectLinkIcons from '@components/project-link-icons.astro';
 import '../../scss/project-page.scss';
 
 export async function getStaticPaths() {
