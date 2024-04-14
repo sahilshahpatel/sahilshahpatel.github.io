@@ -12,6 +12,10 @@ const assetsManifest = {
     "abroad": {
         folder: "/src/assets/images/abroad",
         images: import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/abroad/*.{jpg,jpeg,png,gif,webp}"),
+    },
+    "jobs": {
+        folder: "/src/assets/images/logos",
+        images: import.meta.glob<{default: ImageMetadata }>("/src/assets/images/logos/*.{jpg,jpeg,png,gif,webp}"),
     }
 }
 
