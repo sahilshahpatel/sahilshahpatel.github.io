@@ -22,8 +22,8 @@ const innerId        = asLink ? null : id;
 const thumbnail = await getReviewItemThumbnail(data);
 ---
 
-<WrapperElement id={id} href={asLink ? `/personal/reviews/${slug}` : null} class={ `${classList || ""}${fillParent ? "w-100 h-100" : ""}`}>
-    <div id={innerId} class={`review-card box-shadow-float p-400 ${innerClassList || ""} ${fillParent ? "w-100 h-100" : "" }`} data-tier={data.tier} >
+<WrapperElement id={id} href={asLink ? `/personal/reviews/${slug}` : null} class={ `${classList || ""}${fillParent ? " w-100 h-100" : ""}`}>
+    <div id={innerId} class={`review-card box-shadow-float p-400 ${innerClassList || ""} ${fillParent ? " w-100 h-100" : "" }`} data-tier={data.tier} >
         <img class="review-thumbnail" src={thumbnail} loading="lazy"/>
         <div class="flow">
             <div>

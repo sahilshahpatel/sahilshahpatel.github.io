@@ -3,5 +3,5 @@ export default {
     projects: ["fluid-sim", "webgl-path-tracer", "391os"],
 
     // Personal
-    reviews: ["acotar"],
+    reviews: ["june-farrow", "outer-wilds"],
 };

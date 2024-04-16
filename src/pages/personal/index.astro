@@ -38,7 +38,7 @@ if (reviews.length != featured.reviews.length) throw Error("Featured reviews inc
         <div class="grid-list">
             {
                 reviews.map( item => {
-                    return <ReviewCard item={ item } classList="w-100" asLink />
+                    return <ReviewCard item={ item } fillParent asLink/>
                 })
             }
         </div>
