@@ -7,9 +7,7 @@ import PersonalPage from "@layouts/personal-page.astro"
 
 const reviews = dateSort(await getCollection("reviews"));
 ---
-<PersonalPage>
-    <title slot="title">Reviews | Sahil Patel</title>
-
+<PersonalPage title="Reviews | Sahil Patel">
     <div class="container flow">
         <div class="markdown">
             <h1>Review System</h1>

@@ -1,17 +1,17 @@
 ---
-import "../scss/main.scss";
+import "@styles/main.scss";
 
 interface Props {
-    title?: string,
+    title: string,
 }
 
-const props = Astro.props as Props;
+const props = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <slot name="title" />
+        <title>{props.title}</title>
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

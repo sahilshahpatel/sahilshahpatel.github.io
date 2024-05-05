@@ -24,9 +24,7 @@ const { item } = Astro.props;
 const { Content } = await item.render();
 ---
 
-<PersonalPage>
-    <title slot="title">{item.data.title} Review | Sahil Patel</title>
-
+<PersonalPage title={`${item.data.title} Review | Sahil Patel`}>
     <div class="container">
         <ReviewCard item={item} classList="center-inline w-fit-content" />
 

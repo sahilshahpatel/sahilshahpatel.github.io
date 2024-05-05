@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import featured from "../../featured";
+import featured from "@root/featured";
 
 import PersonalPage from "@layouts/personal-page.astro";
 import ReviewCard from "@components/page-specific/review-card.astro";
@@ -17,9 +17,7 @@ const collections = await getCollection("collections", item => featured.collecti
 if (reviews.length     != featured.reviews.length)     throw Error("Featured reviews incorrectly parsed! Check featured.ts");
 if (collections.length != featured.collections.length) throw Error("Featured collections incorrectly parsed! Check featured.ts");
 ---
-<PersonalPage>
-    <title slot="title">Sahil Patel</title>
-
+<PersonalPage title="Sahil Patel">
     <section id="about" class="hero | container">
         <div class="hero-text-container">
             <h1>Welcome to my corner of the internet</h1>

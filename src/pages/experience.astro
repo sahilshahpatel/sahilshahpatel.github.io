@@ -11,8 +11,7 @@ import WorkItem from '@components/page-specific/work-item.astro';
 const jobs = orderSort<CollectionEntry<"jobs">>(await getCollection("jobs"));
 ---
 
-<ProfessionalPage>
-    <title slot="title">Experience | Sahil Patel</title>
+<ProfessionalPage title="Experience | Sahil Patel">
     <div class="container">
         <h1 class="section-title">Work Experience</h1>
 

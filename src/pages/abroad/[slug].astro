@@ -4,7 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import { getImage } from '../../util';
 
 import ProfessionalPage from '@layouts/professional-page.astro';
-import '../../scss/abroad-page.scss';
+import '@styles/abroad-page.scss';
 
 
 export async function getStaticPaths() {
@@ -33,9 +33,7 @@ const bannerImg = await getImage("abroad", item.data.img);
         --bg-position: var(--bannerImgPos);
     }
 </style>
-<ProfessionalPage>
-    <title slot="title">{ item.data.what } | Sahil Patel</title>
-
+<ProfessionalPage title={`${item.data.what} | Sahil Patel`}>
     <div class="abroad-banner | bg-img-overlay">
         <div class="overlay p-400 text-center">
             <h1>
