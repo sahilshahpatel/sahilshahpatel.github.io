@@ -4,7 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import { orderSort } from '../../util';
 
 import ProfessionalPage from '@layouts/professional-page.astro';
-import TravelCard from '@components/travel-card.astro';
+import TravelCard from '@components/page-specific/travel-card.astro';
 
 const abroadCollection = await getCollection('abroad');
 const abroad = orderSort<CollectionEntry<"abroad">>(abroadCollection);

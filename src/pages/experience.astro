@@ -5,7 +5,7 @@ import { orderSort } from '../util';
 
 import ProfessionalPage from '@layouts/professional-page.astro';
 
-import WorkItem from '@components/work-item.astro';
+import WorkItem from '@components/page-specific/work-item.astro';
 
 
 const jobs = orderSort<CollectionEntry<"jobs">>(await getCollection("jobs"));

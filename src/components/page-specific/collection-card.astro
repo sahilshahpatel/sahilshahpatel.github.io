@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { getImage } from "../util";
+import { getImage } from "@root/util";
 
 interface Props {
     item: CollectionEntry<"collections">
@@ -29,7 +29,7 @@ const bgImg = await getImage("collections", item.data.thumbnail.src);
 </div>
 
 <style lang="scss">
-    @use "/src/scss/global/_variables.scss" as *;
+    @use "@styles/global/_variables.scss" as *;
     .collection-card {
         padding: min(7%, map-get($sizes, 800));
         min-height: 350px;
