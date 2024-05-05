@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { orderSort } from '../util';
-import featured from "../featured";
+import featured from "@root/featured";
 
 import ProfessionalPage from "@layouts/professional-page.astro";
 import WorkItem from "@components/page-specific/work-item.astro";
@@ -10,7 +10,7 @@ import ProjectCard from "@components/page-specific/project-card.astro";
 import Image from "@components/general/image-wrapper.astro";
 
 import heroImg from "@images/profiles/sahil-park.jpg"
-import "../scss/index.scss";
+import "@styles/index.scss";
 
 const jobs     = orderSort(await getCollection("jobs")).slice(0, 1);
 const abroad   = orderSort(await getCollection("abroad",   item => featured.abroad.includes(item.slug)));
@@ -21,9 +21,7 @@ if (abroad.length   != featured.abroad.length)   throw Error("Featured abroad it
 if (projects.length != featured.projects.length) throw Error("Featured projects misinterpreted. Check featured.ts");
 ---
 
-<ProfessionalPage>
-    <title slot="title">Sahil Patel</title>
-
+<ProfessionalPage title="Sahil Patel">
     <section id="about" class="hero | container">
         <div class="hero-text-container">
             <h1>A journey of discovery in computer engineering</h1>

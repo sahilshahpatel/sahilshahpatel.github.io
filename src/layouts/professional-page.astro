@@ -2,11 +2,13 @@
 import BasePage from '@layouts/base-page.astro';
 import ProfessionalHeader from '@components/headers/professional-header.astro';
 import ProfessionalFooter from '@components/footers/professional-footer.astro';
----
-<BasePage>
-    <!-- Forward on title slot -->
-    <slot name="title" slot="title"></slot>
 
+interface Props {
+    title: string,
+}
+const props = Astro.props;
+---
+<BasePage title={props.title}>
     <ProfessionalHeader slot="header"></ProfessionalHeader>
     <ProfessionalFooter slot="footer"></ProfessionalFooter>
 
