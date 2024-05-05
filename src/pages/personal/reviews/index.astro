@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import { dateSort } from "../../../util";
 
-import ReviewCard from "@components/review-card.astro";
+import ReviewCard from "@components/page-specific/review-card.astro";
 import PersonalPage from "@layouts/personal-page.astro"
 
 const reviews = dateSort(await getCollection("reviews"));

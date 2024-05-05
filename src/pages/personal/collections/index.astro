@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import PersonalPage from "@layouts/personal-page.astro"
-import CollectionCard from "@components/collection-card.astro";
+import CollectionCard from "@components/page-specific/collection-card.astro";
 
 const collections = await getCollection("collections");
 ---

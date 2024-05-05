@@ -3,9 +3,9 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 import PersonalPage from '@layouts/personal-page.astro';
-import ReviewCard from '@components/review-card.astro';
+import ReviewCard from '@components/page-specific/review-card.astro';
 
-import '../../../scss/review-page.scss';
+import '@styles/review-page.scss';
 
 
 export interface Props {
