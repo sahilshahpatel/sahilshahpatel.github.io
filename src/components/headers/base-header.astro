@@ -35,3 +35,87 @@ const props = Astro.props as Props;
         { props.links.map(link => <div><a href={link.href}>{link.text}</a></div>) }
     </nav>
 </header>
+
+<style lang="scss">
+    @use "@styles/global/variables" as *;
+
+    .primary-header {
+        // Reference for absolute mobile nav
+        position: relative;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        width: min(#{$container-max-width} + 500px, 100%);
+        margin-inline: auto;
+
+        padding-inline: map-get($sizes, 500);
+        padding-block: map-get($sizes, 400);
+    }
+
+    .primary-header .primary-logo {
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+
+    .primary-nav {
+        display: flex;
+        justify-content: space-evenly;
+        gap: map-get($sizes, 800);
+    }
+
+    .primary-nav a {
+        color: var(--clr-text-default);
+        text-decoration: none;
+
+        transition: color 200ms ease;
+    }
+
+    .primary-nav a:hover {
+        color: var(--clr-text-default-medium);
+    }
+
+    .mobile-nav-toggle {
+        display: none;
+    }
+
+    // On mobile...
+    @media (max-width: 700px) {
+        .primary-nav {
+            display: none;
+        }
+
+        .primary-nav.open {
+            // Absolute position mobile nav above other content
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: calc(100% - map-get($sizes, 200));
+            margin-inline: map-get($sizes, 400);
+            z-index: 1000;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding-top: map-get($sizes, 200);
+            padding-bottom: map-get($sizes, 200);
+            gap: map-get($sizes, 200);
+
+            box-shadow: $box-shadow-light;
+
+            background-color: var(--clr-primary-200);
+        }
+
+        .mobile-nav-toggle {
+            display: flex;
+            align-items: center;
+
+            cursor: pointer;
+        }
+    }
+</style>

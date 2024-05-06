@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import ProjectLinkIcons from "./project-link-icons.astro";
+import ProjectLinkIcons from "@components/page-specific/project-link-icons.astro";
+import ImageOverlay from "@components/general/image-overlay.astro"
 import { getImage } from "@root/util";
 
 interface Props {
@@ -11,13 +12,8 @@ const { item } = Astro.props;
 const bgImg = await getImage("projects", item.data.img);
 const bgGif = item.data.gif ? await getImage("projects", item.data.gif) : null;
 ---
-<style define:vars={{
-    "bg-img-url": `url(${bgImg.src})`,
-    "bg-gif-url": bgGif ? `url(${bgGif.src})` : null,
-    "bg-position": item.data.imgPos ? item.data.imgPos : null
-}} />
-<div id={ item.slug } class="project-card | bg-img-overlay">
-    <div class="overlay w-100 flow p-400">
+<ImageOverlay id={ item.slug } class="project-card" img={{meta: bgImg, alt: "", pos: item.data.imgPos}} gif={bgGif ? {meta: bgGif, alt: "", pos: item.data.imgPos} : undefined}>
+    <div class="flow p-400">
         <div>
             <p class="heading-spread text-gradient-accent">{ item.data.category }</p>
             <h2 class="fw-bold">{ item.data.title }</h2>
@@ -33,4 +29,23 @@ const bgGif = item.data.gif ? await getImage("projects", item.data.gif) : null;
             <ProjectLinkIcons links={ item.data.links } />
         </div>
     </div>
-</div>
+</ImageOverlay>
+
+<style lang="scss">
+    @use "@styles/global/variables" as *;
+
+    .project-card {
+        box-shadow: $box-shadow-float;
+        min-height: 350px;
+
+        h2 {
+            font-size: map-get($font-sizes, 600);
+        }
+
+        .project-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+</style>

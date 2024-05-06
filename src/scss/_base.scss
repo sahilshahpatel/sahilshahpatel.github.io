@@ -231,31 +231,6 @@ img.cover {
 }
 
 
-.bg-img-overlay {
-    background-image: $vignette, var(--bg-gif-url, var(--bg-img-url));
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: var(--bg-position, center);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: map-get($sizes, 400);
-
-    .overlay {
-        background-color: var(--clr-primary-100);
-        opacity: 0.95;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .bg-img-overlay {
-        background-image: $vignette, var(--bg-img-url);
-    }
-}
-
-
 /* ======== Observed Presets ======== */
 @media (prefers-reduced-motion: no-preference){
     .observed {
