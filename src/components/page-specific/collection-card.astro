@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { getImage } from "@root/util";
+import ImageOverlay from "@components/general/image-overlay.astro";
 
 interface Props {
     item: CollectionEntry<"collections">
@@ -13,7 +14,7 @@ const bgImg = await getImage("collections", item.data.thumbnail.src);
     "bg-img-url": `url(${bgImg.src})`,
     "bg-position": item.data.thumbnail.pos ? item.data.thumbnail.pos : null
 }} />
-<div id={ item.slug } class="collection-card box-shadow-float | bg-img-overlay">
+<ImageOverlay id={ item.slug } class="collection-card box-shadow-float" img={{meta: bgImg, alt: item.data.thumbnail.alt, pos: item.data.thumbnail.pos}}>
     <div class="overlay w-100 flow p-400">
         <div>
             <h2 class="fw-bold fs-600">{ item.data.title }</h2>
@@ -26,7 +27,7 @@ const bgImg = await getImage("collections", item.data.thumbnail.src);
             <i class="bi-arrow-right"></i>
         </a>
     </div>
-</div>
+</ImageOverlay>
 
 <style lang="scss">
     @use "@styles/global/_variables.scss" as *;

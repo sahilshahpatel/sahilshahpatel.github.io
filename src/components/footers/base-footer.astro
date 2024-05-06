@@ -14,3 +14,45 @@ const props = Astro.props as Props;
         { props.links.map(link => <div><a href={link.href}>{link.text}</a></div>) }
     </div>
 </footer>
+
+<style lang="scss">
+    @use "@styles/global/variables" as *;
+
+    .primary-footer {
+        // Always rendered dark
+        background-color: $clr-primary-900;
+        @include force-dark-theme();
+
+        width: 100%;
+        padding-inline: map-get($sizes, 500);
+        padding-block: map-get($sizes, 400);
+
+        margin-top: map-get($sizes, 600);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .footer-links {
+            display: grid;
+            row-gap: map-get($sizes, 200);
+            column-gap: map-get($sizes, 600);
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 1fr;
+        }
+    }
+
+    @media (max-width: map-get($screen-sizes, sm)) {
+        .primary-footer {
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+</style>

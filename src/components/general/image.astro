@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets"
+import { Image as AstroImage } from "astro:assets"
 
 interface Props {
     src: ImageMetadata,
@@ -14,7 +14,7 @@ const { src, alt, ...attrs } = Astro.props;
         height: auto;
     }
 </style>
-<Image
+<AstroImage
     src={src}
     alt={alt}
     widths={[100, 300, 500, 750, 1000, src.width]}

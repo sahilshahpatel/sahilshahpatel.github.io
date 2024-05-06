@@ -6,6 +6,7 @@ import { getImage } from '../../util';
 import ProfessionalPage from '@layouts/professional-page.astro';
 import ProjectLinkIcons from '@components/page-specific/project-link-icons.astro';
 import '@styles/project-page.scss';
+import ImageOverlay from '@root/components/general/image-overlay.astro';
 
 export async function getStaticPaths() {
     const projects = await getCollection("projects");
@@ -37,7 +38,7 @@ const bannerGif = item.data.gif ? await getImage("projects", item.data.gif) : nu
 </style>
 
 <ProfessionalPage title={`${item.data.title} | Sahil Patel`}>
-    <div class="project-banner | bg-img-overlay">
+    <ImageOverlay class="project-banner" img={{meta: bannerImg || bannerGif, alt: `${item.data.title} thumbnail`, pos: item.data.imgPos}}>
         <div class="overlay p-400 text-center">
             <h1>
                 <div class="heading-spread text-gradient-accent">{ item.data.category }</div>
@@ -47,7 +48,7 @@ const bannerGif = item.data.gif ? await getImage("projects", item.data.gif) : nu
                 <ProjectLinkIcons links={ item.data.links } />
             </div>
         </div>
-    </div>
+    </ImageOverlay>
 
     <div class="markdown container pt-400">
         <Content />
