@@ -58,8 +58,8 @@ export function dateSort<T extends DatedCollectionItem>(list: T[]) {
 export async function getReviewItemThumbnail(item: CollectionEntry<"reviews">["data"]): Promise<string> {
     // TODO: Implement functions for all cases
     switch (item.type){
-        case "book":        return getImgFromIsbn(item.isbn);
-        case "video game":  return getImgFromSteamAppId(item.steamAppId);
+        case "book":        return getImgFromIsbn(item.isbn!);
+        case "video game":  return getImgFromSteamAppId(item.steamAppId!);
         default:
             console.log(`WARNING: Unable to get thumbnail for media type ${item.type} (for ${item.title})`)
             return "";

@@ -81,6 +81,7 @@ const REVIEW_TAGS = [
     "space",
     "physics",
     "mystery",
+    "thriller"
 ] as const;
 
 const reviewsCollection = defineCollection({
