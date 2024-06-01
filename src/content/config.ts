@@ -73,11 +73,12 @@ const REVIEW_TYPES = [
 ] as const;
 
 const REVIEW_TAGS = [
+    "realistic fiction",
+    "literary fiction",
+    "nonfiction",
     "fantasy",
     "sci-fi",
-    "realistic fiction",
     "romance",
-    "nonfiction",
     "space",
     "physics",
     "mystery",
