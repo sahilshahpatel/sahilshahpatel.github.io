@@ -12,7 +12,7 @@ import ProjectCard from "@components/page-specific/project-card.astro";
     <section class="container">
         <h1 class="section-title">Projects</h1>
         <div class="grid-list">
-            { projects.map( project => <ProjectCard item={ project }/>) }
+            { projects.map( (project, idx) => <ProjectCard item={ project } loading={idx < 4 ? "eager" : "lazy"}/>) }
         </div>
     </section>
 </ProfessionalPage>

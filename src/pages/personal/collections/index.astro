@@ -15,8 +15,8 @@ const collections = await getCollection("collections");
         </div>
         <div class="grid-list mt-600">
             {
-                collections.map(collection => {
-                    return <CollectionCard item={collection}/>;
+                collections.map((collection, idx) => {
+                    return <CollectionCard item={collection} loading={idx < 4 ? "eager" : "lazy"}/>;
                 })
             }
         </div>

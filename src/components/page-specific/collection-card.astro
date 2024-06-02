@@ -4,18 +4,15 @@ import { getImage } from "@root/util";
 import ImageOverlay from "@components/general/image-overlay.astro";
 
 interface Props {
-    item: CollectionEntry<"collections">
+    item: CollectionEntry<"collections">,
+    loading?: "eager" | "lazy"
 }
-const { item } = Astro.props;
+const { item, loading } = Astro.props;
 
 const bgImg = await getImage("collections", item.data.thumbnail.src);
 ---
-<style define:vars={{
-    "bg-img-url": `url(${bgImg.src})`,
-    "bg-position": item.data.thumbnail.pos ? item.data.thumbnail.pos : null
-}} />
-<ImageOverlay id={ item.slug } class="collection-card box-shadow-float" img={{meta: bgImg, alt: item.data.thumbnail.alt, pos: item.data.thumbnail.pos}}>
-    <div class="overlay w-100 flow p-400">
+<ImageOverlay id={ item.slug } class="collection-card box-shadow-float" loading={loading} img={{meta: bgImg, alt: item.data.thumbnail.alt, pos: item.data.thumbnail.pos}}>
+    <div class="w-100 flow p-400">
         <div>
             <h2 class="fw-bold fs-600">{ item.data.title }</h2>
         </div>

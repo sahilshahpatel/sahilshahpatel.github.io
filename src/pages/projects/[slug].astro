@@ -25,21 +25,9 @@ const { Content } = await item.render();
 const bannerImg = await getImage("projects", item.data.img);
 const bannerGif = item.data.gif ? await getImage("projects", item.data.gif) : null;
 ---
-<style define:vars={{
-    projectBannerBgImg:  `url(${bannerImg.src})`,
-    projectBannerBgGif:  bannerGif ? `url(${bannerGif.src})` : null,
-    projectBannerImgPos: item.data.imgPos || null,
-}}>
-.project-banner {
-    --bg-img-url: var(--projectBannerBgImg);
-    --bg-gif-url: var(--projectBannerBgGif);
-    --bg-position: var(--projectBannerImgPos);
-}
-</style>
-
 <ProfessionalPage title={`${item.data.title} | Sahil Patel`}>
-    <ImageOverlay class="project-banner" img={{meta: bannerImg || bannerGif, alt: `${item.data.title} thumbnail`, pos: item.data.imgPos}}>
-        <div class="overlay p-400 text-center">
+    <ImageOverlay class="project-banner" img={{meta: bannerImg || bannerGif, alt: `${item.data.title} thumbnail`, pos: item.data.imgPos}} loading='eager'>
+        <div class="p-400 text-center">
             <h1>
                 <div class="heading-spread text-gradient-accent">{ item.data.category }</div>
                 <div class="fs-900 fw-bold">{ item.data.title }</div>

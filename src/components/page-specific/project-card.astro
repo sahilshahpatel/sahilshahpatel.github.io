@@ -5,14 +5,15 @@ import ImageOverlay from "@components/general/image-overlay.astro"
 import { getImage } from "@root/util";
 
 interface Props {
-    item: CollectionEntry<"projects">
+    item: CollectionEntry<"projects">,
+    loading?: "eager" | "lazy",
 }
-const { item } = Astro.props;
+const { item, loading } = Astro.props;
 
 const bgImg = await getImage("projects", item.data.img);
 const bgGif = item.data.gif ? await getImage("projects", item.data.gif) : null;
 ---
-<ImageOverlay id={ item.slug } class="project-card" img={{meta: bgImg, alt: "", pos: item.data.imgPos}} gif={bgGif ? {meta: bgGif, alt: "", pos: item.data.imgPos} : undefined}>
+<ImageOverlay id={ item.slug } class="project-card" loading={loading} img={{meta: bgImg, alt: "", pos: item.data.imgPos}} gif={bgGif ? {meta: bgGif, alt: "", pos: item.data.imgPos} : undefined}>
     <div class="flow p-400">
         <div>
             <p class="heading-spread text-gradient-accent">{ item.data.category }</p>
