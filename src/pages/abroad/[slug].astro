@@ -4,9 +4,9 @@ import type { CollectionEntry } from 'astro:content';
 import { getImage } from '../../util';
 
 import ProfessionalPage from '@layouts/professional-page.astro';
-import '@styles/abroad-page.scss';
 import ImageOverlay from '@root/components/general/image-overlay.astro';
 
+import '@styles/abroad-page.scss';
 
 export async function getStaticPaths() {
     const abroad = await getCollection('abroad');
@@ -26,7 +26,7 @@ const { Content } = await item.render();
 const bannerImg = await getImage("abroad", item.data.img);
 ---
 <ProfessionalPage title={`${item.data.what} | Sahil Patel`}>
-    <ImageOverlay class="abroad-banner" img={{meta: bannerImg, alt: `${item.data.where} thumbnail`, pos: item.data.imgPos}} loading='eager'>
+    <ImageOverlay class:list={["banner"]} img={{meta: bannerImg, alt: `${item.data.where} thumbnail`, pos: item.data.imgPos}} loading='eager'>
         <div class="p-400 text-center">
             <h1>
                 <div class="heading-spread text-gradient-accent">{ item.data.where }</div>

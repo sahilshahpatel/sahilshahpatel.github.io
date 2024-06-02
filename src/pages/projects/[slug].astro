@@ -5,7 +5,6 @@ import { getImage } from '../../util';
 
 import ProfessionalPage from '@layouts/professional-page.astro';
 import ProjectLinkIcons from '@components/page-specific/project-link-icons.astro';
-import '@styles/project-page.scss';
 import ImageOverlay from '@root/components/general/image-overlay.astro';
 
 export async function getStaticPaths() {
@@ -25,8 +24,17 @@ const { Content } = await item.render();
 const bannerImg = await getImage("projects", item.data.img);
 const bannerGif = item.data.gif ? await getImage("projects", item.data.gif) : null;
 ---
+<style lang="scss">
+    @use "@styles/global/variables" as *;
+
+    .project-link-icons {
+        display: flex;
+        justify-content: center;
+        gap: map-get($sizes, 200);
+    }
+</style>
 <ProfessionalPage title={`${item.data.title} | Sahil Patel`}>
-    <ImageOverlay class="project-banner" img={{meta: bannerImg || bannerGif, alt: `${item.data.title} thumbnail`, pos: item.data.imgPos}} loading='eager'>
+    <ImageOverlay class:list={["banner"]} img={{meta: bannerImg || bannerGif, alt: `${item.data.title} thumbnail`, pos: item.data.imgPos}} loading='eager'>
         <div class="p-400 text-center">
             <h1>
                 <div class="heading-spread text-gradient-accent">{ item.data.category }</div>
