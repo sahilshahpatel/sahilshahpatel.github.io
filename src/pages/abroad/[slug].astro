@@ -25,17 +25,8 @@ const { Content } = await item.render();
 
 const bannerImg = await getImage("abroad", item.data.img);
 ---
-<style define:vars={{
-    bannerImgUrl: `url(${bannerImg.src})`,
-    bannerImgPos: item.data.imgPos,
-}}>
-    .abroad-banner {
-        --bg-img-url: var(--bannerImgUrl);
-        --bg-position: var(--bannerImgPos);
-    }
-</style>
 <ProfessionalPage title={`${item.data.what} | Sahil Patel`}>
-    <ImageOverlay class="abroad-banner" img={{meta: bannerImg, alt: `${item.data.where} thumbnail`, pos: item.data.imgPos}}>
+    <ImageOverlay class="abroad-banner" img={{meta: bannerImg, alt: `${item.data.where} thumbnail`, pos: item.data.imgPos}} loading='eager'>
         <div class="p-400 text-center">
             <h1>
                 <div class="heading-spread text-gradient-accent">{ item.data.where }</div>

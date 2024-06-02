@@ -15,8 +15,9 @@ interface Props {
         alt:  string,
         pos?: string
     },
+    loading?: "eager" | "lazy",
 }
-const {id, class: className, img, gif, ...rest} = Astro.props;
+const {id, class: className, img, gif, loading, ...rest} = Astro.props;
 ---
 <style lang="scss" define:vars={{
     "bg-position": img.pos || gif?.pos,
@@ -65,8 +66,8 @@ const {id, class: className, img, gif, ...rest} = Astro.props;
 <div id={id} class:list={["image-overlay", className]} {...rest}>
     <div class="bg-image">
         { gif ?
-            <Image src={gif.meta} alt={gif.alt} />
-            : <Image src={img.meta} alt={img.alt} />
+              <Image src={gif.meta} alt={gif.alt} loading={loading}/>
+            : <Image src={img.meta} alt={img.alt} loading={loading}/>
         }
     </div>
 
