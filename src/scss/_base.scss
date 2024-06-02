@@ -195,7 +195,7 @@ img.cover {
 }
 
 
-/* ======== Text on Image Overlay ======== */
+/* ======== Basic Style Components ======== */
 .grid-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -208,6 +208,10 @@ img.cover {
     .grid-list {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+.banner {
+    min-height: min(60vh, 600px);
 }
 
 

@@ -1,9 +1,5 @@
 @use "global/variables" as *;
 
-.abroad-banner {
-    min-height: min(60vh, 600px);
-}
-
 .single-img,
 .img-grid {
     margin-top: map-get($sizes, 400);
