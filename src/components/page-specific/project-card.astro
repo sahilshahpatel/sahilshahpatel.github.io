@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import ProjectLinkIcons from "@components/page-specific/project-link-icons.astro";
 import ImageOverlay from "@components/general/image-overlay.astro"
 import { getImage } from "@root/util";
+import SeeMoreLink from "@components/general/see-more-link.astro";
 
 interface Props {
     item: CollectionEntry<"projects">,
@@ -23,10 +24,7 @@ const bgGif = item.data.gif ? await getImage("projects", item.data.gif) : null;
         <div set:html={ item.data.description }></div>
 
         <div class="project-links">
-            <a class="see-more-link subtitle" href={`/projects/${ item.slug }`}>
-                <span>Read more</span>
-                <i class="bi-arrow-right"></i>
-            </a>
+            <SeeMoreLink text="Read more" href={`/projects/${ item.slug }`} />
             <ProjectLinkIcons links={ item.data.links } />
         </div>
     </div>

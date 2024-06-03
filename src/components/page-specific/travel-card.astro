@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { getImage } from "@root/util";
+import SeeMoreLink from "@components/general/see-more-link.astro";
 
 interface Props {
     item: CollectionEntry<"abroad">
@@ -12,7 +13,11 @@ const bgImg = await getImage("abroad", item.data.img);
 <style define:vars={{
     "bg-img-url": `url(${bgImg.src})`,
     "bg-position": item.data.imgPos,
-}} />
+}}>
+    .travel-card {
+        min-height: 500px;
+    }
+</style>
 <div class="travel-card bg-img-captioned container-fluid flex-column flex-end p-600">
     <div class="container flex-between flex-wrap observed slide-up">
         <div>
@@ -27,10 +32,7 @@ const bgImg = await getImage("abroad", item.data.img);
             </p>
         </div>
         <div class="flex-column flex-end">
-            <a class="see-more-link subtitle" href={`/abroad/${ item.slug }`}>
-                Read more
-                <i class="bi-arrow-right"></i>
-            </a>
+            <SeeMoreLink text="Read more" href={`/abroad/${ item.slug }`} />
         </div>
     </div>
 </div>

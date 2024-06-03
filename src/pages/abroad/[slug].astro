@@ -5,6 +5,7 @@ import { getImage } from '../../util';
 
 import ProfessionalPage from '@layouts/professional-page.astro';
 import ImageOverlay from '@root/components/general/image-overlay.astro';
+import SeeMoreLink from "@components/general/see-more-link.astro";
 
 import '@styles/abroad-page.scss';
 
@@ -40,9 +41,6 @@ const bannerImg = await getImage("abroad", item.data.img);
     </div>
 
     <div class="text-center mt-200">
-        <a class="see-more-link subtitle" data-point-left href={`/abroad#${ item.slug }`}>
-            <i class="bi-arrow-left"></i>
-            <span>Back to all travel</span>
-        </a>
+        <SeeMoreLink pointLeft text="Back to all travel" href={`/abroad#${ item.slug }`} />
     </div>
 </ProfessionalPage>

@@ -4,9 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 
 import PersonalPage from '@layouts/personal-page.astro';
 import ReviewCard from '@components/page-specific/review-card.astro';
-
-import '@styles/review-page.scss';
-
+import SeeMoreLink from '@components/general/see-more-link.astro';
 
 export interface Props {
     item: CollectionEntry<"reviews">
@@ -23,6 +21,12 @@ export async function getStaticPaths() {
 const { item } = Astro.props;
 const { Content } = await item.render();
 ---
+<style>
+    .review-card {
+        /* Keep the review card a good size for a header */
+        min-width: 50%;
+    }
+</style>
 
 <PersonalPage title={`${item.data.title} Review | Sahil Patel`}>
     <div class="container">
@@ -33,10 +37,7 @@ const { Content } = await item.render();
         </div>
 
         <div class="text-center mt-200">
-            <a class="see-more-link subtitle" data-point-left href={`/personal/reviews#${ item.slug }`}>
-                <i class="bi-arrow-left"></i>
-                <span>Back to all reviews</span>
-            </a>
+            <SeeMoreLink pointLeft text="Back to all reviews" href={`/personal/reviews#${ item.slug }`} />
         </div>
     </div>
 </PersonalPage>

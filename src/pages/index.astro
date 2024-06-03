@@ -8,6 +8,7 @@ import WorkItem from "@components/page-specific/work-item.astro";
 import TravelCard from "@components/page-specific/travel-card.astro";
 import ProjectCard from "@components/page-specific/project-card.astro";
 import Image from "@components/general/image.astro";
+import SeeMoreLink from "@components/general/see-more-link.astro";
 
 import heroImg from "@images/profiles/sahil-park.jpg"
 import "@styles/index.scss";
@@ -45,10 +46,7 @@ if (projects.length != featured.projects.length) throw Error("Featured projects 
             { jobs.map( job => <WorkItem job={ job } long={ false } /> ) }
 
             <div class="text-center">
-                <a class="see-more-link subtitle" href="/experience">
-                    See full work history
-                    <i class="bi-arrow-right"></i>
-                </a>
+                <SeeMoreLink text="See full work history" href="/experience" />
             </div>
         </div>
     </section>
@@ -81,10 +79,7 @@ if (projects.length != featured.projects.length) throw Error("Featured projects 
             }
 
             <div class="text-center observed slide-up">
-                <a class="see-more-link subtitle" href="/projects">
-                    <span>See all projects</span>
-                    <i class="bi-arrow-right"></i>
-                </a>
+                <SeeMoreLink text="See all projects" href="/projects" />
             </div>
         </div>
     </section>

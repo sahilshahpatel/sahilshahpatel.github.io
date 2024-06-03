@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import { getImage } from "@root/util";
 import ImageOverlay from "@components/general/image-overlay.astro";
+import SeeMoreLink from "@components/general/see-more-link.astro";
 
 interface Props {
     item: CollectionEntry<"collections">,
@@ -19,10 +20,7 @@ const bgImg = await getImage("collections", item.data.thumbnail.src);
 
         <div set:html={ item.data.description }></div>
 
-        <a class="see-more-link subtitle" href={`/personal/collections/${ item.slug }`}>
-            <span>See full collection</span>
-            <i class="bi-arrow-right"></i>
-        </a>
+        <SeeMoreLink text="See full collection" href={`/personal/collections/${ item.slug }`}/>
     </div>
 </ImageOverlay>
 
