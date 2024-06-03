@@ -169,32 +169,6 @@ img.cover {
 }
 
 
-.see-more-link {
-    display: inline-flex;
-    text-decoration: none;
-
-    &:not([data-point-left]) i[class^="bi-arrow"]{
-        margin-left: map-get($sizes, 100);
-    }
-    &[data-point-left] i[class^="bi-arrow"]{
-        margin-right: map-get($sizes, 100);
-    }
-
-    i[class^="bi-arrow"] {
-        transform: translateX(0px); /* Eliminates some small vertical shifting on Firefox */
-        transition: transform 200ms ease;
-    }
-
-
-    &:not([data-point-left]):hover i[class^="bi-arrow"]{
-        transform: translateX(map-get($sizes, 200));
-    }
-    &[data-point-left]:hover i[class^="bi-arrow"] {
-        transform: translateX(-1 * map-get($sizes, 200));
-    }
-}
-
-
 /* ======== Basic Style Components ======== */
 .grid-list {
     display: grid;

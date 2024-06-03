@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 
 import PersonalPage from "@layouts/personal-page.astro";
 import LinkPreview from "@components/general/link-preview.astro";
+import SeeMoreLink from "@components/general/see-more-link.astro";
 
 
 export interface Props {
@@ -37,10 +38,7 @@ const { Content } = await item.render();
         </div>
 
         <div class="text-center mt-400">
-            <a class="see-more-link subtitle" data-point-left href={`/personal/collections#${ item.slug }`}>
-                <i class="bi-arrow-left"></i>
-                <span>Back to all collections</span>
-            </a>
+            <SeeMoreLink pointLeft text="Back to all collections" href={`/personal/collections#${ item.slug }`} />
         </div>
     </div>
 </PersonalPage>

@@ -5,7 +5,8 @@ import { getImage } from '../../util';
 
 import ProfessionalPage from '@layouts/professional-page.astro';
 import ProjectLinkIcons from '@components/page-specific/project-link-icons.astro';
-import ImageOverlay from '@root/components/general/image-overlay.astro';
+import ImageOverlay from '@components/general/image-overlay.astro';
+import SeeMoreLink from '@components/general/see-more-link.astro';
 
 export async function getStaticPaths() {
     const projects = await getCollection("projects");
@@ -51,9 +52,6 @@ const bannerGif = item.data.gif ? await getImage("projects", item.data.gif) : nu
     </div>
 
     <div class="text-center mt-200">
-        <a class="see-more-link subtitle" data-point-left href={`/projects#${ item.slug }`}>
-            <i class="bi-arrow-left"></i>
-            <span>Back to all projects</span>
-        </a>
+        <SeeMoreLink pointLeft text="Back to all projects" href={`/projects#${ item.slug }`} />
     </div>
 </ProfessionalPage>

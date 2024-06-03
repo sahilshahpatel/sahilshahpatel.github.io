@@ -1,0 +1,51 @@
+---
+export interface Props {
+    text: string,
+    href: string,
+    pointLeft?: boolean // defaults to pointing right
+}
+
+const {text, href, pointLeft} = Astro.props;
+---
+<style lang="scss">
+    @use "@styles/global/variables" as *;
+
+    .see-more-link {
+        display: inline-flex;
+        text-decoration: none;
+
+        i[class="bi-arrow-right"]{
+            margin-left: map-get($sizes, 100);
+        }
+        i[class="bi-arrow-left"]{
+            margin-right: map-get($sizes, 100);
+        }
+
+        i[class^="bi-arrow"] {
+            transform: translateX(0px); /* Eliminates some small vertical shifting on Firefox */
+            transition: transform 200ms ease;
+        }
+
+
+        &:hover i[class="bi-arrow-right"]{
+            transform: translateX(map-get($sizes, 200));
+        }
+        &:hover i[class="bi-arrow-left"] {
+            transform: translateX(-1 * map-get($sizes, 200));
+        }
+    }
+</style>
+
+<a class="see-more-link subtitle" href={href} >
+    {
+        pointLeft ?
+            <Fragment>
+                <i class={`bi-arrow-left`}></i>
+                <span>{text}</span>
+            </Fragment>
+          : <Fragment>
+                <span>{text}</span>
+                <i class={`bi-arrow-right`}></i>
+            </Fragment>
+    }
+</a>
