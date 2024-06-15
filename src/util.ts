@@ -61,5 +61,5 @@ interface DatedCollectionItem {
     data: { date: Date }
 }
 export function dateSort<T extends DatedCollectionItem>(list: T[]) {
-    return list.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+    return list.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 }
