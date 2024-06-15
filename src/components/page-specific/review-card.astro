@@ -1,7 +1,8 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { getReviewItemThumbnail } from '../../util'
+import { getImage } from '../../util'
 import Chip from '../general/chip.astro'
+import Image from '../general/image.astro'
 
 export interface Props {
     item: CollectionEntry<"reviews">
@@ -19,12 +20,12 @@ const WrapperElement = asLink ? 'a' : Fragment;
 const innerClassList = asLink ? null : classList;
 const innerId        = asLink ? null : id;
 
-const thumbnail = await getReviewItemThumbnail(data);
+const thumbnail = await getImage("reviews", item.slug, true);
 ---
 
 <WrapperElement id={id} href={asLink ? `/personal/reviews/${slug}` : null} class={ `${classList || ""}${fillParent ? " w-100 h-100" : ""}`}>
     <div id={innerId} class={`review-card box-shadow-float p-400 ${innerClassList || ""} ${fillParent ? " w-100 h-100" : "" }`} data-tier={data.tier} >
-        <img class="review-thumbnail" src={thumbnail} loading="lazy"/>
+        <Image class:list={["review-thumbnail"]} src={thumbnail} alt=`Thumbnail/cover for ${item.data.title}`/>
         <div class="flow">
             <div>
                 <h1>{data.title}</h1>
