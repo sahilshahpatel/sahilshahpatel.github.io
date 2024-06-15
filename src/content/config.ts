@@ -67,6 +67,7 @@ const collectionsCollection = defineCollection({
 const REVIEW_TYPES = [
     "book",
     "movie",
+    "tv",
     "video game",
     "board game",
     "short story"
@@ -83,7 +84,7 @@ const REVIEW_TAGS = [
     "physics",
     "mystery",
     "thriller",
-    "anime"
+    "animation"
 ] as const;
 
 const reviewsCollection = defineCollection({
