@@ -3,6 +3,6 @@ export default {
     projects: ["fluid-sim", "webgl-path-tracer", "391os"],
 
     // Personal
-    reviews: ["june-farrow", "outer-wilds"],
+    reviews: ["yellowface", "scavengers-reign"],
     collections: ["graphics"]
 };
