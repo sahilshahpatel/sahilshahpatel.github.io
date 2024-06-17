@@ -74,17 +74,25 @@ const REVIEW_TYPES = [
 ] as const;
 
 const REVIEW_TAGS = [
-    "realistic fiction",
-    "literary fiction",
-    "nonfiction",
+    // General
     "fantasy",
     "sci-fi",
     "romance",
-    "space",
-    "physics",
     "mystery",
     "thriller",
-    "animation"
+
+    // Book specific
+    "realistic fiction",
+    "literary fiction",
+    "nonfiction",
+
+    // Movie/TV specific
+    "animation",
+
+    // Video game specific
+    "space",
+    "physics",
+    "narrative",
 ] as const;
 
 const reviewsCollection = defineCollection({
@@ -105,8 +113,9 @@ const reviewsCollection = defineCollection({
         boardGameGeeksId: z.string().optional(),
 
         // Other metadata
-        author: z.string().optional(),
-        series: z.string().optional(),
+        author:    z.string().optional(),
+        developer: z.string().optional(),
+        series:    z.string().optional(),
     })
 })
 
