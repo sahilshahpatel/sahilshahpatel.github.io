@@ -80,6 +80,7 @@ const REVIEW_TAGS = [
     "romance",
     "mystery",
     "thriller",
+    "historical fiction",
 
     // Book specific
     "realistic fiction",
