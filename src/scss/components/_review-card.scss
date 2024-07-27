@@ -12,6 +12,7 @@ a:has(.review-card) {
     gap: map-get($sizes, 400);
 
     background-color: var(--clr-primary-200);
+    border: 3px solid var(--tier-clr);
 
     &[data-tier="S"] { --tier-clr: #{$clr-tier-s}; }
     &[data-tier="A"] { --tier-clr: #{$clr-tier-a}; }
@@ -20,7 +21,6 @@ a:has(.review-card) {
     &[data-tier="D"] { --tier-clr: #{$clr-tier-d}; }
     &[data-tier="F"] { --tier-clr: #{$clr-tier-f}; }
 
-    border: 3px solid var(--tier-clr);
 
     h1 {
         font-size: map-get($font-sizes, 700);
