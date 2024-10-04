@@ -74,7 +74,10 @@ const REVIEW_TYPES = [
 ] as const;
 
 const REVIEW_TAGS = [
-    // General
+    // General Categories
+    "indie game club",
+
+    // General Genres
     "fantasy",
     "sci-fi",
     "romance",
