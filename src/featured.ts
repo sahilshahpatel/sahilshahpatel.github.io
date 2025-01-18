@@ -3,6 +3,6 @@ export default {
     projects: ["fluid-sim", "webgl-path-tracer", "391os"],
 
     // Personal
-    reviews: ["watership-down", "scavengers-reign"],
+    reviews: ["wind-and-truth", "arcane-s2"],
     collections: ["graphics"]
 };
