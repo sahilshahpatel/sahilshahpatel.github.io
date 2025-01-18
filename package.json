@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@astrojs/mdx": "^2.2.4",
-    "astro": "^4.16.18",
+    "@astrojs/mdx": "^4.0.6",
+    "astro": "^5.1.7",
     "autoprefixer": "^10.4.19",
     "jsdom": "^24.0.0"
   },
@@ -27,7 +27,7 @@
   },
   "homepage": "https://sahilshahpatel.com",
   "devDependencies": {
-    "sass": "^1.74.1",
-    "@types/jsdom": "^21.1.6"
+    "@types/jsdom": "^21.1.6",
+    "sass": "^1.74.1"
   }
 }
