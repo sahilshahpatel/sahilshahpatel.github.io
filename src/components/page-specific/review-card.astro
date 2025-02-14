@@ -31,6 +31,7 @@ const thumbnail = await getImage("reviews", item.slug, true);
                 <h1>{data.title}</h1>
                 { data.author    ? <h2 class="subtitle">By {data.author}</h2> : null }
                 { data.developer ? <h2 class="subtitle">Developed by {data.developer}</h2> : null }
+                { data.director  ? <h2 class="subtitle">Directed by {data.director}</h2> : null }
             </div>
 
             <div class="review-tier-container" data-tier={data.tier} title={data.tierAsterisk ? `Asterisk for ${data.tierAsterisk}` : null}>

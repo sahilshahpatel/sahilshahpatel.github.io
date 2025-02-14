@@ -119,6 +119,7 @@ const reviewsCollection = defineCollection({
 
         // Other metadata
         author:    z.string().optional(),
+        director:  z.string().optional(),
         developer: z.string().optional(),
         series:    z.string().optional(),
     })
