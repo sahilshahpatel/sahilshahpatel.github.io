@@ -41,7 +41,7 @@ const thumbnail = await getImage("reviews", item.slug, true);
                 <div class="mb-100">Tags:</div>
                 <div class="review-tags">
                     {/* TODO: Link these tags to a search page */}
-                    {data.tags.map(tag => <Chip>{tag}</Chip>)}
+                    {data.tags.sort().map(tag => <Chip>{tag}</Chip>)}
                 </div>
             </div>
         </div>
