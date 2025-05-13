@@ -93,6 +93,7 @@ const REVIEW_TAGS = [
     "realistic fiction",
     "literary fiction",
     "nonfiction",
+    "memoir",
 
     // Movie/TV specific
     "animation",
