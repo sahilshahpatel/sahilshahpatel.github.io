@@ -117,7 +117,7 @@ const reviewsCollection = defineCollection({
 
         // Identifiers
         isbn:             z.string().optional(),
-        tmbdId:           z.string().optional(),
+        tmdbId:           z.string().optional(),
         steamAppId:       z.string().optional(),
         boardGameGeeksId: z.string().optional(),
 
@@ -127,6 +127,10 @@ const reviewsCollection = defineCollection({
         developer: z.string().optional(),
         series:    z.string().optional(),
     })
+    .refine(obj => {
+        return obj.isbn || obj.tmdbId || obj.steamAppId || obj.boardGameGeeksId
+    },
+    { message: "One id field must be defined"})
 })
 
 
