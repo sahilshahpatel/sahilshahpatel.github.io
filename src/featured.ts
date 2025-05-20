@@ -3,6 +3,6 @@ export default {
     projects: ["fluid-sim", "webgl-path-tracer", "391os"],
 
     // Personal
-    reviews: ["wind-and-truth", "arcane-s2"],
+    reviews: ["tai-pan", "andor"],
     collections: ["graphics"]
 };
