@@ -88,6 +88,8 @@ const REVIEW_TAGS = [
     "magical realism",
     "adventure",
     "action",
+    "dystopia",
+    "young adult",
 
     // Book specific
     "realistic fiction",
