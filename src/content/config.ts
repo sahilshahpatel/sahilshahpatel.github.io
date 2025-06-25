@@ -11,7 +11,7 @@ const abroadCollection = defineCollection({
         when:   z.string(),
         img:    z.string(),
         imgPos: z.string().optional(),
-    })
+    }).strict()
 });
 
 const jobsCollection = defineCollection({
@@ -23,7 +23,7 @@ const jobsCollection = defineCollection({
         position:  z.string(),
         timeframe: z.string(),
         summary:   z.string(),
-    })
+    }).strict()
 });
 
 const projectsCollection = defineCollection({
@@ -42,7 +42,7 @@ const projectsCollection = defineCollection({
             report: z.string().optional(),
             github: z.string().optional(),
         }).optional(),
-    })
+    }).strict()
 });
 
 const collectionsCollection = defineCollection({
@@ -61,7 +61,7 @@ const collectionsCollection = defineCollection({
                 description: z.string().optional(),
             })
         ),
-    })
+    }).strict()
 })
 
 const REVIEW_TYPES = [
@@ -90,6 +90,7 @@ const REVIEW_TAGS = [
     "action",
     "dystopia",
     "young adult",
+    "horror",
 
     // Book specific
     "realistic fiction",
@@ -115,7 +116,7 @@ const reviewsCollection = defineCollection({
         type:         z.enum(REVIEW_TYPES),
         tier:         z.enum(["S", "A", "B", "C", "D", "F"]),
         tierModifier: z.enum(["+", "-"]).optional(),
-        tierAsterisk: z.enum(["nostalgia"]).optional(),
+        tierAsterisk: z.enum(["nostalgia", "timeliness"]).optional(),
         tags:         z.array(z.enum(REVIEW_TAGS)),
 
         // Identifiers
@@ -130,6 +131,7 @@ const reviewsCollection = defineCollection({
         developer: z.string().optional(),
         series:    z.string().optional(),
     })
+    .strict()
     .refine(obj => {
         return obj.isbn || obj.tmdbId || obj.steamAppId || obj.boardGameGeeksId
     },
