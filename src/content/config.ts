@@ -70,7 +70,8 @@ const REVIEW_TYPES = [
     "tv",
     "video game",
     "board game",
-    "short story"
+    "short story",
+    "play"
 ] as const;
 
 const REVIEW_TAGS = [
@@ -124,16 +125,18 @@ const reviewsCollection = defineCollection({
         tmdbId:           z.string().optional(),
         steamAppId:       z.string().optional(),
         boardGameGeeksId: z.string().optional(),
+        ibdbId:           z.string().optional(),
 
         // Other metadata
         author:    z.string().optional(),
         director:  z.string().optional(),
         developer: z.string().optional(),
         series:    z.string().optional(),
+        theater:   z.string().optional(),
     })
     .strict()
     .refine(obj => {
-        return obj.isbn || obj.tmdbId || obj.steamAppId || obj.boardGameGeeksId
+        return obj.isbn || obj.tmdbId || obj.steamAppId || obj.boardGameGeeksId || obj.ibdbId
     },
     { message: "One id field must be defined"})
 })
