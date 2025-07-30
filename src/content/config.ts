@@ -92,6 +92,7 @@ const REVIEW_TAGS = [
     "dystopia",
     "young adult",
     "horror",
+    "absurdist",
 
     // Book specific
     "realistic fiction",
