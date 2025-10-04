@@ -95,6 +95,9 @@ const REVIEW_TAGS = [
     "absurdist",
     "superhero",
 
+    // General tags
+    "multiverse",
+
     // Book specific
     "realistic fiction",
     "literary fiction",
