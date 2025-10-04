@@ -97,6 +97,7 @@ const REVIEW_TAGS = [
 
     // General tags
     "multiverse",
+    "fae",
 
     // Book specific
     "realistic fiction",
