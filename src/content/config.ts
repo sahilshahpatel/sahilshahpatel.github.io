@@ -94,6 +94,7 @@ const REVIEW_TAGS = [
     "horror",
     "absurdist",
     "superhero",
+    "drama",
 
     // General tags
     "multiverse",
