@@ -1,9 +1,12 @@
-import { z, defineCollection } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
+import { glob } from 'astro/loaders';
 
 const orderSchema = z.number().nonnegative().int();
+const mdxPattern = '**/[^_]*.{md,mdx}'
 
 const abroadCollection = defineCollection({
-    type: "content",
+    loader: glob({ pattern: mdxPattern, base: "./src/content/abroad"}),
     schema: z.object({
         order:  orderSchema,
         what:   z.string(),
@@ -15,7 +18,7 @@ const abroadCollection = defineCollection({
 });
 
 const jobsCollection = defineCollection({
-    type: "content",
+    loader: glob({ pattern: mdxPattern, base: "./src/content/jobs"}),
     schema: z.object({
         order:     orderSchema,
         company:   z.string(),
@@ -27,7 +30,7 @@ const jobsCollection = defineCollection({
 });
 
 const projectsCollection = defineCollection({
-    type: "content",
+    loader: glob({ pattern: mdxPattern, base: "./src/content/projects"}),
     schema: z.object({
         order:       orderSchema,
         title:       z.string(),
@@ -46,7 +49,7 @@ const projectsCollection = defineCollection({
 });
 
 const collectionsCollection = defineCollection({
-    type: "content",
+    loader: glob({ pattern: mdxPattern, base: "./src/content/collections"}),
     schema: z.object({
         title:       z.string(),
         description: z.string(),
@@ -119,7 +122,7 @@ const REVIEW_TAGS = [
 ] as const;
 
 const reviewsCollection = defineCollection({
-    type: "content",
+    loader: glob({ pattern: mdxPattern, base: "./src/content/reviews"}),
     schema: z.object({
         title:        z.string(),
         date:         z.coerce.date(),

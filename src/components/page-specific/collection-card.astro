@@ -12,7 +12,7 @@ const { item, loading } = Astro.props;
 
 const bgImg = await getImage("collections", item.data.thumbnail.src);
 ---
-<ImageOverlay id={ item.slug } class="collection-card box-shadow-float" loading={loading} img={{meta: bgImg, alt: item.data.thumbnail.alt, pos: item.data.thumbnail.pos}}>
+<ImageOverlay id={ item.id } class="collection-card box-shadow-float" loading={loading} img={{meta: bgImg, alt: item.data.thumbnail.alt, pos: item.data.thumbnail.pos}}>
     <div class="w-100 flow p-400">
         <div>
             <h2 class="fw-bold fs-600">{ item.data.title }</h2>
@@ -20,12 +20,12 @@ const bgImg = await getImage("collections", item.data.thumbnail.src);
 
         <div set:html={ item.data.description }></div>
 
-        <SeeMoreLink text="See full collection" href={`/personal/collections/${ item.slug }`}/>
+        <SeeMoreLink text="See full collection" href={`/personal/collections/${ item.id }`}/>
     </div>
 </ImageOverlay>
 
 <style lang="scss">
-    @use "@styles/global/_variables.scss" as *;
+    @use "../../scss/global/variables" as *;
     .collection-card {
         padding: min(7%, map-get($sizes, 800));
         min-height: 350px;

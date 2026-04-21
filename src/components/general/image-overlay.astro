@@ -22,7 +22,7 @@ const {id, class: className, img, gif, loading, ...rest} = Astro.props;
 <style lang="scss" define:vars={{
     "bg-position": img.pos || gif?.pos,
 }}>
-    @use "@styles/global/variables" as *;
+    @use "../../scss/global/variables" as *;
 
     .image-overlay {
         position: relative;

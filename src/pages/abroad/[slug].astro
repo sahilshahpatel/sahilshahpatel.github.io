@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { getImage } from '../../util';
 
@@ -7,12 +7,12 @@ import ProfessionalPage from '@layouts/professional-page.astro';
 import ImageOverlay from '@root/components/general/image-overlay.astro';
 import SeeMoreLink from "@components/general/see-more-link.astro";
 
-import '@styles/abroad-page.scss';
+import '../../scss/abroad-page.scss';
 
 export async function getStaticPaths() {
     const abroad = await getCollection('abroad');
     return abroad.map(item => ({
-        params: { slug: item.slug },
+        params: { slug: item.id },
         props:  { item: item }
     }));
 }
@@ -22,7 +22,7 @@ interface Props {
 }
 
 const { item } = Astro.props;
-const { Content } = await item.render();
+const { Content } = await render(item);
 
 const bannerImg = await getImage("abroad", item.data.img);
 ---
@@ -41,6 +41,6 @@ const bannerImg = await getImage("abroad", item.data.img);
     </div>
 
     <div class="text-center mt-200">
-        <SeeMoreLink pointLeft text="Back to all travel" href={`/abroad#${ item.slug }`} />
+        <SeeMoreLink pointLeft text="Back to all travel" href={`/abroad#${ item.id }`} />
     </div>
 </ProfessionalPage>

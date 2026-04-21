@@ -2,13 +2,17 @@
     "extends": "astro/tsconfigs/base",
     "compilerOptions": {
         "strictNullChecks": true,
-        "baseUrl": ".",
+        "plugins": [
+            {
+                "name": "@astrojs/ts-plugin"
+            }
+        ],
         "paths": {
-            "@root/*": ["src/*"],
-            "@styles/*": ["src/scss/*"],
-            "@components/*": ["src/components/*"],
-            "@layouts/*":    ["src/layouts/*"],
-            "@images/*":     ["src/assets/images/*"],
+            "@root/*": ["./src/*"],
+            "@styles/*": ["./src/scss/*"],
+            "@components/*": ["./src/components/*"],
+            "@layouts/*":    ["./src/layouts/*"],
+            "@images/*":     ["./src/assets/images/*"],
         }
     }
 }

@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 import PersonalPage from '@layouts/personal-page.astro';
@@ -13,13 +13,13 @@ export interface Props {
 export async function getStaticPaths() {
     const reviews = await getCollection("reviews")
     return reviews.map(item => ({
-        params: { slug: item.slug },
+        params: { slug: item.id },
         props:  { item: item }
     }));
 }
 
 const { item } = Astro.props;
-const { Content } = await item.render();
+const { Content } = await render(item);
 ---
 <style>
     .review-card {
@@ -37,7 +37,7 @@ const { Content } = await item.render();
         </div>
 
         <div class="text-center mt-200">
-            <SeeMoreLink pointLeft text="Back to all reviews" href={`/personal/reviews#${ item.slug }`} />
+            <SeeMoreLink pointLeft text="Back to all reviews" href={`/personal/reviews#${ item.id }`} />
         </div>
     </div>
 </PersonalPage>

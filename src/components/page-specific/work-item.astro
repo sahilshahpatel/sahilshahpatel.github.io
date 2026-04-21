@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 import Image from "@components/general/image.astro";
 import { getImage } from "../../util";
 
@@ -8,7 +9,7 @@ interface Props {
     long: boolean
 }
 const { job, long } = Astro.props;
-const { Content } = await job.render();
+const { Content } = await render(job);
 const logo = await getImage("jobs", job.data.logo);
 ---
 <div class="work-item">

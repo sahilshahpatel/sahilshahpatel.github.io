@@ -9,10 +9,10 @@ import Image from "@components/general/image.astro";
 import SeeMoreLink from "@components/general/see-more-link.astro";
 
 import heroImg from "@images/profiles/sahil-park.jpg"
-import "@styles/index.scss";
+import "../../scss/index.scss";
 
-const reviews     = await getCollection("reviews",     item => featured.reviews.includes(item.slug));
-const collections = await getCollection("collections", item => featured.collections.includes(item.slug));
+const reviews     = await getCollection("reviews",     item => featured.reviews.includes(item.id));
+const collections = await getCollection("collections", item => featured.collections.includes(item.id));
 
 // Check that featured items were parsed correctly
 if (reviews.length     != featured.reviews.length)     throw Error("Featured reviews incorrectly parsed! Check featured.ts");

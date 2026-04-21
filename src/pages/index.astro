@@ -11,11 +11,11 @@ import Image from "@components/general/image.astro";
 import SeeMoreLink from "@components/general/see-more-link.astro";
 
 import heroImg from "@images/profiles/sahil-park.jpg"
-import "@styles/index.scss";
+import "../scss/index.scss";
 
 const jobs     = orderSort(await getCollection("jobs")).slice(0, 1);
-const abroad   = orderSort(await getCollection("abroad",   item => featured.abroad.includes(item.slug)));
-const projects = orderSort(await getCollection("projects", item => featured.projects.includes(item.slug)));
+const abroad   = orderSort(await getCollection("abroad",   item => featured.abroad.includes(item.id)));
+const projects = orderSort(await getCollection("projects", item => featured.projects.includes(item.id)));
 
 // Double check that featured items were pulled correctly
 if (abroad.length   != featured.abroad.length)   throw Error("Featured abroad items misinterpreted. Check featured.ts");

@@ -14,7 +14,7 @@ const { item, loading } = Astro.props;
 const bgImg = await getImage("projects", item.data.img);
 const bgGif = item.data.gif ? await getImage("projects", item.data.gif) : null;
 ---
-<ImageOverlay id={ item.slug } class="project-card" loading={loading} img={{meta: bgImg, alt: "", pos: item.data.imgPos}} gif={bgGif ? {meta: bgGif, alt: "", pos: item.data.imgPos} : undefined}>
+<ImageOverlay id={ item.id } class="project-card" loading={loading} img={{meta: bgImg, alt: "", pos: item.data.imgPos}} gif={bgGif ? {meta: bgGif, alt: "", pos: item.data.imgPos} : undefined}>
     <div class="flow p-400">
         <div>
             <p class="heading-spread text-gradient-accent">{ item.data.category }</p>
@@ -24,14 +24,14 @@ const bgGif = item.data.gif ? await getImage("projects", item.data.gif) : null;
         <div set:html={ item.data.description }></div>
 
         <div class="project-links">
-            <SeeMoreLink text="Read more" href={`/projects/${ item.slug }`} />
+            <SeeMoreLink text="Read more" href={`/projects/${ item.id }`} />
             <ProjectLinkIcons links={ item.data.links } />
         </div>
     </div>
 </ImageOverlay>
 
 <style lang="scss">
-    @use "@styles/global/variables" as *;
+    @use "../../scss/global/variables" as *;
 
     .project-card {
         box-shadow: $box-shadow-float;

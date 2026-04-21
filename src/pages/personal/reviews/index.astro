@@ -52,7 +52,7 @@ const reviews = dateSort(await getCollection("reviews"));
             <div class="grid-list">
                 {
                     reviews.map( item => {
-                        return <ReviewCard id={ item.slug } item={ item } fillParent asLink />
+                        return <ReviewCard id={ item.id } item={ item } fillParent asLink />
                     })
                 }
             </div>

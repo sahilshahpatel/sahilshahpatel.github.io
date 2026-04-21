@@ -18,7 +18,7 @@ const abroad = orderSort<CollectionEntry<"abroad">>(abroadCollection);
     <div>
         {
             abroad.map( item =>
-                <div id={ item.slug } class="container my-400">
+                <div id={ item.id } class="container my-400">
                     <TravelCard item={ item } />
                 </div>
             )

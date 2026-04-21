@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from 'astro:content';
 
 import PersonalPage from "@layouts/personal-page.astro";
@@ -15,13 +15,13 @@ export interface Props {
 export async function getStaticPaths() {
     const collections = await getCollection("collections")
     return collections.map(item => ({
-        params: { slug: item.slug },
+        params: { slug: item.id },
         props:  { item: item }
     }));
 }
 
 const { item } = Astro.props;
-const { Content } = await item.render();
+const { Content } = await render(item);
 ---
 
 <PersonalPage title={`${item.data.title} Collection | Sahil Patel`}>
@@ -38,7 +38,7 @@ const { Content } = await item.render();
         </div>
 
         <div class="text-center mt-400">
-            <SeeMoreLink pointLeft text="Back to all collections" href={`/personal/collections#${ item.slug }`} />
+            <SeeMoreLink pointLeft text="Back to all collections" href={`/personal/collections#${ item.id }`} />
         </div>
     </div>
 </PersonalPage>
