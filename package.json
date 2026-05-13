@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",
-    "astro": "^6.1.8",
+    "astro": "^6.3.1",
     "autoprefixer": "^10.4.19",
     "jsdom": "^24.0.0"
   },
