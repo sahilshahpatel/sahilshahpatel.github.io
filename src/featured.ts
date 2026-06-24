@@ -3,6 +3,6 @@ export default {
     projects: ["fluid-sim", "webgl-path-tracer", "391os"],
 
     // Personal
-    reviews: ["tai-pan", "andor"],
+    reviews: ["little-women", "project-hail-mary-movie"],
     collections: ["graphics"]
 };
