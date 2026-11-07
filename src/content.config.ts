@@ -113,6 +113,7 @@ const REVIEW_TAGS = [
 
     // Movie/TV specific
     "animation",
+    "documentary",
 
     // Video game specific
     "space",
